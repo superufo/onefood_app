@@ -122,3 +122,8 @@ C:\Users\liuniuyou\.android\avd\API2301.avd
 
    import {StyleSheet, TouchableOpacity, View} from 'react-native'
    transparent
+   
+7 图标库:http://fontawesome.dashgame.com/
+        https://fontawesome.com/icons?d=gallery&c=buildings
+        https://rn.mobile.ant.design/components/icon-cn/      
+   

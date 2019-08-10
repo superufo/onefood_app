@@ -13,21 +13,21 @@ import BR from '../base_components/BR';
 class RewardIndex extends Component {
     render(){
         return (
-            <StyleProvider  style={getTheme(commonColor)}>
-            <Container >
-                 <Header style={{ backgroundColor: "#ffffff" }}>
+            <StyleProvider  style={getTheme(material)}>
+            <Container>
+                 <Header>
                     <Left>
                        <Text style={styles.layoutInCenter}>    </Text>
                     </Left>
                     <Body style={{ justifyContent: "center", alignItems: "center",}} >
-                       <Title>    Redeem</Title>
+                       <Title>         One Food</Title>
                     </Body>
                     <Right>
                       <Icon name="cart" style={{fontSize: 20, color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
                     </Right>
                  </Header>
 
-                 <Grid>
+                 <Grid padder style={{ marginTop:60}} >
                    <Row size={3} style={styles.layoutInCenter}>
                         <Image source={Assets.Images.foodBg} style={{height: 200, width: 250,paddingTop:50}}/>
                    </Row>

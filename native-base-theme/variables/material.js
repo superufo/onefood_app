@@ -149,8 +149,8 @@ export default {
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#3F51B5",
-  toolbarHeight: 56,
+  toolbarDefaultBg: "#fff",
+  toolbarHeight: 40,
   toolbarSearchIconSize: 23,
   toolbarInputColor: "#fff",
   searchBarHeight: platform === "ios" ? 30 : 40,
@@ -172,14 +172,14 @@ export default {
   // Icon
   iconFamily: "Ionicons",
   iconFontSize: 28,
-  iconHeaderSize: 24,
+  iconHeaderSize: 20,
 
   // InputGroup
-  inputFontSize: 17,
+  inputFontSize: 14,
   inputBorderColor: "#D9D5DC",
   inputSuccessBorderColor: "#2b8339",
   inputErrorBorderColor: "#ed2f2f",
-  inputHeightBase: 50,
+  inputHeightBase: 45,
   get inputColor() {
     return this.textColor;
   },

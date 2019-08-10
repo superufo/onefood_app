@@ -11,6 +11,7 @@
  react-native unlink react-native-qrcode-scanner
  react-native unlink react-native-permissions
  
+<Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.pop()}}/>
  
  28.0.3
  
