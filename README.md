@@ -108,3 +108,17 @@ emulator.exe -netdelay  none  -netspeed full -avd API2301
 C:\Users\liuniuyou\.android\avd\API2301.avd
 模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,有一些可能是10.0.0.2，
 模拟器会映射到PC本地的localhost
+
+
+
+6 import CustomVariables from './native-base-theme/variables'
+  import getTheme from './native-base-theme/components'
+  
+  import { Container, Content, Text, StyleProvider } from 'native-base';
+  
+   <StyleProvider style={getTheme(material)}>   
+   <StyleProvider style={getTheme(CustomVariables)}>
+   </StyleProvider>
+
+   import {StyleSheet, TouchableOpacity, View} from 'react-native'
+   transparent

@@ -22,13 +22,13 @@ class LoadingView extends React.Component {
     Animated.sequence([
       Animated.timing(this.state.spinValue, {
         toValue: 1,
-        duration: 2000,
+        duration:8000,
         useNativeDriver: true,
       }),
       Animated.timing(this.state.spinValue, {
         toValue: 0,
         delay: 0,
-        duration: 0,
+        duration: 8000,
         useNativeDriver: true,
       })]).start(() => this.spin());
   };
@@ -44,7 +44,7 @@ class LoadingView extends React.Component {
       <AppBase style={{
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#feffeb',
+        backgroundColor: '#34C47C',//feffeb
       }}
       >
         <Animated.Image
@@ -60,7 +60,7 @@ class LoadingView extends React.Component {
             width: 80,
             minHeight: 20,
             borderRadius: 5,
-            backgroundColor: '#feffeb',
+            backgroundColor: '#34C47C',
             shadowColor: '#dcddcc',
             shadowRadius: 0,
             shadowOpacity: 0.2,
@@ -74,7 +74,7 @@ class LoadingView extends React.Component {
             fontFamily: 'Roboto Slab',
           }}
         >
-          Hang on. we will be right back…
+         One Food is Loading......
         </Text>
       </AppBase>
     );
