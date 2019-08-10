@@ -13,6 +13,14 @@
  
 <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.pop()}}/>
  
+ 
+λ git push
+git: 'credential-cache' is not a git command. See 'git --help'.
+Everything up-to-date
+
+D:\reactnative_pro\food\CodebaseApp (master -> origin)
+λ git config --global credential.helper wincred 
+ 
  28.0.3
  
  ext {
@@ -29,5 +37,8 @@
    react-native unlink react-native-camera
   
  1  ndk 升级问题:  https://www.cnblogs.com/dongweiq/p/9779142.html
+ 
+ 
+ 
  
  
