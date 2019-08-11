@@ -68,7 +68,8 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 15,
     textAlign: "center",
-    margin: 10
+    margin: 10,
+    height:35
   },
   instructions: {
     textAlign: "center",

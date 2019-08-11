@@ -83,7 +83,7 @@ class SignupComponent extends Component {
                       </View>
                   </View>
 
-                  <Button block success style={{ marginTop: 10,marginBottom: 20 }}
+                  <Button block success style={{ marginTop: 10,marginBottom: 20 ,height:35}}
                         disabled={disableSignUp} loading={loading} onPress={onSignupSubmit} >
                     <Text>Sign In</Text>
                   </Button>

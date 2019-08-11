@@ -63,7 +63,7 @@ class LoginComponent extends Component {
                                 <Button transparent  success hasText  onPress={() =>{Actions.Menu()}}  >
                                   <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget passwor</Text>
                                 </Button>
-                                <Button block success style={{ marginTop: 8,marginBottom: 20 }}
+                                <Button block success style={{ marginTop: 8,marginBottom: 20,height:35 }}
                                       d disabled={disableLogin} loading={loading} onPress={onLoginSubmit} >
                                   <Text>Sign In</Text>
                                 </Button>
