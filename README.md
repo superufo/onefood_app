@@ -127,8 +127,14 @@ C:\Users\liuniuyou\.android\avd\API2301.avd
         https://fontawesome.com/icons?d=gallery&c=buildings
         https://rn.mobile.ant.design/components/icon-cn/      
         
-8   nvm    使用 npm    10.5.0    构建      
+8  nvm  使用 npm    10.5.0  构建      
         
-        
+9  调试分支  新建远程零时分支  git checkout -b tmp
+   把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名）：
+   git push origin tmp:tmp   
+   删除指定的远程分支
+   git push origin --delete tmp
+   
+   
         
    
