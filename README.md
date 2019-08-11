@@ -63,11 +63,11 @@ web and mobile apps with the logic and view separated.
 ```
 
 #### ScreenShots - Native App
-<img src="screenshots/4.png" data-canonical-src="screenshots/debug.png" width="250" />
-<img src="screenshots/5.png" data-canonical-src="screenshots/11.png" width="250" />
-<img src="screenshots/6.png" data-canonical-src="screenshots/12.png" width="250" />
-<img src="screenshots/7.png" data-canonical-src="./screenshots/13.png" width="250" />
-<img src="screenshots/8.png" data-canonical-src="./screenshots/npm.png" width="250" />
+<img src="screenshots/debug.png" data-canonical-src="screenshots/debug.png" width="250" />
+<img src="screenshots/11.png" data-canonical-src="screenshots/11.png" width="250" />
+<img src="screenshots/12.png" data-canonical-src="screenshots/12.png" width="250" />
+<img src="screenshots/13.png" data-canonical-src="./screenshots/13.png" width="250" />
+<img src="screenshots/npm.png" data-canonical-src="./screenshots/npm.png" width="250" />
 
 
 ### 运行
