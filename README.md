@@ -107,6 +107,7 @@ web and mobile apps with the logic and view separated.
     import {StyleSheet, TouchableOpacity, View} from 'react-native'  
     transparent   
    
+  
 - 7. 图标库:http://fontawesome.dashgame.com/     
      https://fontawesome.com/icons?d=gallery&c=buildings    
      https://rn.mobile.ant.design/components/icon-cn/          
@@ -116,18 +117,29 @@ web and mobile apps with the logic and view separated.
      git push origin tmp:tmp    
      合并分支  git merge   
      删除指定的远程分支  git push origin --delete tmp  
-                     git branch -d  tmp  
+     删除指定的本地分支  git branch -d  tmp
 
 - 9.  npm get registry
       https://registry.npmjs.org/
         
       yarn config set registry  https://registry.npmjs.org/
-      npm config set registry http://registry.npm.taobao.org/
+      npm config set registry http://registry.npmjs.org/
       npm config set registry http://registry.npm.taobao.org/
     
-- 10. cnpm install node-sass
-      npm info  npm   查看版本  npm view npm versions
+- 10. cnpm install node-sass -g
+      查看所有版本  npm view(info) npm versions
+      npm info expo@30.0.0
+      npm info  npm 
+      npm  ls  expo -g
+      
       
 - 11.  npm --version   6.5.0    
        node --version  v10.16.2
    
+       npm install --save-dev webpack-cli@3.3.6 &&
+       npm install --save-dev jest@24.8.0 && 
+       npm install --save-dev css-loader@3.2.0 && 
+       npm install --save-dev optimize-css-assets-webpack-plugin@5.0.3 && 
+       npm install --save-dev webpack-bundle-analyzer@3.4.1 &&
+       
+       npm install react-native@0.60.4
