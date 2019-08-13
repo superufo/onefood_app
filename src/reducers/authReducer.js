@@ -5,6 +5,7 @@ const initialState = {
   registerLoading: false,
   registerError: null,
   registerMessage: null,
+  showToast:false
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -56,6 +57,12 @@ export default (state = initialState, { type, payload }) => {
       };
     case 'AUTH_LOGOUT_RESET':
       return initialState;
+    case 'AUTH_INPUT_CHECK':
+       const {loginError,registerError,...rest} = state;
+       return {
+             ...rest,
+             ...payload,
+       };
     default:
       return state;
   }

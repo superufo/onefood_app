@@ -6,6 +6,15 @@ export const authLogin = (email, password) => ({
   },
 });
 
+//被 Saga 的  take 监听到 执行新的dispatch,取数据或者传递数据
+export const loginCheck = (loginError, registerError) => ({
+  type: 'AUTH_INPUT',
+  payload: {
+    loginError: loginError,
+    registerError: registerError,
+  },
+});
+
 export const authRegister = (email, password) => ({
   type: 'AUTH_REGISTER',
   payload: {
@@ -13,6 +22,7 @@ export const authRegister = (email, password) => ({
     password,
   },
 });
+
 export const authLogout = () => ({
   type: 'AUTH_LOGOUT',
 });

@@ -89,7 +89,7 @@ expo
   
  1  ndk 升级问题:  https://www.cnblogs.com/dongweiq/p/9779142.html
  
- 
- 
- 
- 
+ ,duration:3000,position:"top"
+console.log("login.js loginError:",loginError.message)
+
+onChangeText={debounce(onEmailChange, 500)}

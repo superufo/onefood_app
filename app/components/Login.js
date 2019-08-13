@@ -13,14 +13,21 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 
 class LoginComponent extends Component {
+  onEmailBlur = (emailValue) => {
+    console.log("emailValue::::",emailValue)
+  }
+
   render() {
      const {
           loading, onLoginSubmit, onEmailChange, onPasswordChange, loginError, disableLogin,
     } = this.props;
 
+    {loginError && console.log("login.js loginError:",loginError)}
+
     return (
       <StyleProvider  style={getTheme(material)}>
                   <Container>
+                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:1000,position:"top"}) }
                       <Header style={{ backgroundColor: "#ffffff" }}>
                         <Left>
                            <Button transparent>
@@ -38,16 +45,15 @@ class LoginComponent extends Component {
                       </Header>
 
                       <Content padder>
-                                {loginError && Toast.show({text:registerError.message,textStyle:{ color: "yellow" }, buttonText: "Okay"}) }
                                 <Title  style={{ justifyContent:'flex-start',marginBottom:5 }}>Welcome Back ! </Title>
                                 <Title  style={{ justifyContent:'flex-start',marginBottom:50 }}>You are Been Missed</Title>
 
                                 <Form style={{ justifyContent:'flex-start',marginBottom:20 }}>
                                   <Item >
-                                      <Input placeholder="Enter your email address/phone number"  onChangeText={debounce(onEmailChange, 500)}/>
+                                      <Input placeholder="Enter your email address/phone number" autoFocus onBlur={this.onEmailChange} onChangeText={debounce(onEmailChange, 1000)} />
                                   </Item>
                                   <Item >
-                                    <Input placeholder="Enter your password" secureTextEntry onChangeText={debounce(onPasswordChange, 500)}/>
+                                    <Input placeholder="Enter your password" secureTextEntry  ref="password" onChangeText={debounce(onPasswordChange, 500)}/>
                                   </Item>
                                 </Form>
 
@@ -60,8 +66,8 @@ class LoginComponent extends Component {
                                     </View>
                                 </View>
 
-                                <Button transparent  success hasText  onPress={() =>{Actions.Menu()}}  >
-                                  <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget passwor</Text>
+                                <Button transparent  block success hasText  onPress={() =>{Actions.Menu()}}  >
+                                  <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget password?</Text>
                                 </Button>
                                 <Button block success style={{ marginTop: 8,marginBottom: 20,height:35 }}
                                       d disabled={disableLogin} loading={loading} onPress={onLoginSubmit} >
@@ -74,6 +80,7 @@ class LoginComponent extends Component {
     );
   }
 }
+
 
 LoginComponent.defaultProps = {
   loginError: null,
@@ -116,5 +123,6 @@ const styles = StyleSheet.create({
       marginRight:1
  },
 });
+
 
 export default LoginComponent;

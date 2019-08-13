@@ -6,7 +6,9 @@ import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
 
 
-import { authLogin } from '../../src/actions/index';
+import { authLogin,loginCheck } from '../../src/actions/index';
+
+
 import LoginComponent from '../components/Login';
 
 class LoginScreen extends Component {
@@ -17,6 +19,7 @@ class LoginScreen extends Component {
     this.state = {
       email: null,
       password: null,
+      showToast: false
     };
   }
 
@@ -38,9 +41,21 @@ class LoginScreen extends Component {
   };
 
   handleEmailChange = (email) => {
+    console.log("handleEmailChange email:",email)
+    var reg  = /^[A-Za-zd0-9]+([-_.][A-Za-zd]+)*@([A-Za-zd]+[-.])+[A-Za-zd]{2,5}$/;
+    if(!(reg.test(email)))
+    {
+       this.setState({loginError:{message:"Email Is not Right,pliease Verify it！"},email:email});
+       const { loginError, email } = this.state;
+       this.props.loginCheck(loginError,{registerError:null});
+       return false
+    }
+
     this.setState({
-      email,
+       email,
     });
+
+    //this.refs.password.
   };
 
   handlePasswordChange = (password) => {
@@ -77,11 +92,11 @@ class LoginScreen extends Component {
     return (
       <LoginComponent
         loading={loginLoading}
-        loginError={loginError}
-        disableLogin={disableLogin}
         onLoginSubmit={this.handleLoginSubmit}
         onEmailChange={this.handleEmailChange}
         onPasswordChange={this.handlePasswordChange}
+        loginError={loginError}
+        disableLogin={disableLogin}
       />);
   }
 }
@@ -96,6 +111,7 @@ LoginScreen.propTypes = {
   loginError: PropTypes.object,
   loginMessage: PropTypes.object,
   authLogin: PropTypes.func.isRequired,
+  loginCheck:PropTypes.func.isRequired,
 };
 
 function initMapStateToProps(state) {
@@ -108,7 +124,7 @@ function initMapStateToProps(state) {
 
 function initMapDispatchToProps(dispatch) {
   return bindActionCreators({
-    authLogin,
+    authLogin,loginCheck,
   }, dispatch);
 }
 
