@@ -37,15 +37,38 @@ D:\reactnative_pro\food\CodebaseApp (master -> origin)
 <Item >
  <Input placeholder="Enter your password" secureTextEntry onChangeText={debounce(onPasswordChange, 500)}/>
 </Item>
- 
+
+     "react-native-qrcode-scanner": "^1.2.1",
+
  0.60.4  16.8.3-6
  
  0.57.8  16.6.0
 
  2.12.1  2.13.2
 
- 
-  
+native-base: ^2.12.1-2.13.4
+"react": "16.4.1",
+"react-native": "0.56.0",
+
+expo
+34.0.0	0.59.8
+33.0.0	0.59.8
+32.0.0	0.57.1
+31.0.0	0.57.1
+30.0.0	0.55.4
+29.0.0	0.55.4
+28.0.0	0.55.4
+27.0.0	0.55.2
+26.0.0	0.54.2
+25.0.0	0.52.0
+24.0.0	0.51.0
+23.0.0	0.50.0
+22.0.0	0.49.4
+21.0.0	0.48.4
+20.0.0	0.47.1
+19.0.0	0.46.1
+
+
  npm get registry
  https://registry.npmjs.org/
   
