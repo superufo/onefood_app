@@ -27,7 +27,7 @@ class LoginComponent extends Component {
     return (
       <StyleProvider  style={getTheme(material)}>
                   <Container>
-                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:3000,position:"top"}) }
+                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:3000,position:"top",type: "danger"}) }
                       <Header style={{ backgroundColor: "#ffffff" }}>
                         <Left>
                            <Button transparent>

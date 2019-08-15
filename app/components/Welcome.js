@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Image,  StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import { Image, Dimensions,  StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -9,6 +9,8 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
+
+import UiAdapter from '../utils/UiAdapter';
 
 class RewardWelcome extends Component {
     render(){
@@ -23,10 +25,10 @@ class RewardWelcome extends Component {
                     <Row size={1}>
                     </Row>
 
-                    <Row size={2}>
-                         <View>
+                    <Row size={3}>
                           <View style={styles.vbox}>
-                              <View>
+
+                           <View>
                                 <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:30,fontWeight:"bold",color:'#2B2B2B'}}>
                                     Welcome to onefood
                                 </Label>
@@ -39,17 +41,15 @@ class RewardWelcome extends Component {
                                 <BR size={15} />
                            </View>
 
+                          <View >
+                                <Button block success onPress={() =>{Actions.loginScreen()}} >
+                                      <Text>Sign In</Text>
+                                </Button>
 
-                          <View padder>
-                            <Button block success onPress={() =>{Actions.loginScreen()}} >
-                                  <Text>Sign In</Text>
-                            </Button>
-
-                            <Button block success transparent onPress={() =>{Actions.signupScreen()}}>
-                               <Text>Sign Up</Text>
-                            </Button>
+                                <Button block success transparent  onPress={() =>{Actions.signupScreen()}}>
+                                   <Text>Sign Up</Text>
+                                </Button>
                            </View>
-
 
                             <View>
                                 <Label style={{fontSize:15,flexWrap:'wrap',width:150}}> or continu with </Label>
@@ -63,7 +63,8 @@ class RewardWelcome extends Component {
                                     </View>
                                 </View>
                             </View>
-                         </View>
+
+
                        </View>
                    </Row>
 
@@ -76,6 +77,18 @@ class RewardWelcome extends Component {
 
 //#F5FCFF  flex:1
 const styles = StyleSheet.create({
+  buttonContainer: {
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flexWrap: "wrap",
+    flex: 1
+  },
+  buttonStyle:{
+      width: UiAdapter.autoWidth(320),
+      justifyContent: "center",
+      alignItems: "center"
+  },
   layoutInCenter:{
     backgroundColor: "#ffffff",
     justifyContent: "center",

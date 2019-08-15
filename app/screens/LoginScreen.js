@@ -1,14 +1,11 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
+import { AsyncStorage } from "react-native";
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
-
-
 import { authLogin,loginCheck } from '../../src/actions/index';
-
-
 import LoginComponent from '../components/Login';
 
 class LoginScreen extends Component {
@@ -23,17 +20,25 @@ class LoginScreen extends Component {
     };
   }
 
-  componentDidMount() {
-    const { loginMessage } = this.props;
-    if (loginMessage !== null && loginMessage.token && loginMessage.token.length > 10) {
-      Actions.reset('drawer');
+  async componentDidMount() {
+    //await AsyncStorage.clear(); 注销
+    const loginMessageInStorage = await AsyncStorage.getItem("loginMessage");
+    if( loginMessageInStorage.token!=null ||  loginMessageInStorage.token!="" ){
+        await this.handleRedirect(loginMessageInStorage);
+    } else {
+        const { loginMessage } = this.props;
+        if (loginMessage !== null && loginMessage.token && loginMessage.token.length > 10) {
+          await this.handleRedirect(loginMessage);
+        }
     }
   }
 
   async componentWillReceiveProps(nextProps, nextContext) {
+    if (loginMessage !== null && loginMessage.token && loginMessage.token.length > 10) {
+         await AsyncStorage.setItem("loginMessage", loginMessage);
+    }
     await this.handleRedirect(nextProps.loginMessage);
   }
-
 
   handleLoginSubmit = () => {
     const { email, password } = this.state;
@@ -67,7 +72,8 @@ class LoginScreen extends Component {
   handleRedirect = (loginMessage) => {
     if (loginMessage && loginMessage.token) {
       try {
-        Actions.reset('drawer');
+        //Actions.reset('drawer');
+        Actions.RewardScreen();
       } catch (e) {
         console.log(e);
       }
