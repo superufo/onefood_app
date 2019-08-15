@@ -41,7 +41,7 @@ class SignupComponent extends Component {
                     <Title style={{fontSize:15, color: '#34C47C'}}>          One Food</Title>
                   </Body>
                   <Right >
-                      <Button transparent hasText  onPress={() =>{Actions.Menu()}}  >
+                      <Button transparent hasText  onPress={() =>{Actions.loginScreen()}}  >
                         <Text style={{fontSize:15, color: '#34C47C'}}>Sight In</Text>
                       </Button>
                   </Right>
@@ -51,7 +51,7 @@ class SignupComponent extends Component {
                    {registerError && Toast.show({text:registerError.message,textStyle:{ color: "yellow" }, buttonText: "Okay"}) }
                    {registerMessage && Toast.show({text:JSON.stringify(registerMessage),textStyle:{ color: "#34C47C" }, buttonText: "Okay"})}
 
-                  <Title style={{ justifyContent:'flex-start',marginBottom:30 }}>Let is Create your foodies Account</Title>
+                  <Title style={{ justifyContent:'flex-start',marginBottom:30, marginTop:30,}}>Let is Create your foodies Account</Title>
 
                   <Form style={{ justifyContent:'flex-start',marginBottom:20 }}>
                     <Item>

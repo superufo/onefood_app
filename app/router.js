@@ -17,6 +17,9 @@ import DrawerImage from './components/DrawerImage';
 import OrdersList from './screens/OrderListScreen';
 
 import WelcomeScreen from './screens/WelcomeScreen';
+
+import TestScreen from './screens/TestScreen';
+
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
 
@@ -40,7 +43,6 @@ const MoreIcon = ({focused , title}) => {
   );
 };
 
-
 //https://github.com/aksonov/react-native-router-flux/blob/master/examples/react-native/App.js
 const AppRouter = () => (
   <Router>
@@ -58,27 +60,30 @@ const AppRouter = () => (
                           panHandlers={null}
                           drawerWidth={300}
                         >
+
                             <Scene
                                 key="welcomeScreen"
                                 component={WelcomeScreen}
-                            />
-
-                            <Scene
-                              key="homeScreen"
-                              component={HomeScreen}
-                              title="Restaurant App"
-                              titleStyle={{
-                                fontFamily: 'Roboto Slab',
-                                color: Colors.primaryColor,
-                              }}
+                                title="Reward"
+                                hideNavBar
+                                initial
                             />
 
                             <Scene
                                 key="loginScreen"
                                 component={LoginScreen}
-                                initial
                                 hideNavBar
                               />
+
+                            <Scene
+                                 key="homeScreen"
+                                 component={HomeScreen}
+                                 title="Restaurant App"
+                                 titleStyle={{
+                                   fontFamily: 'Roboto Slab',
+                                   color: Colors.primaryColor,
+                                 }}
+                            />
 
                             <Scene
                                  key="signupScreen"
@@ -153,17 +158,18 @@ const AppRouter = () => (
                                  inactiveBackgroundColor="#EAEAEB"
                                >
                                  <Scene
-                                   key="Menu"
+                                   key="Test"
                                    icon={MenuIcon}
-                                   component={WelcomeScreen}
+                                   component={TestScreen}
                                    title="Menu"
                                  />
 
                                  <Scene
-                                   key="Reward"
-                                   component={RewardScreen}
-                                   title="Reward"
-                                   icon={RewardIcon}
+                                      key="rewardScreen"
+                                      component={RewardScreen}
+                                      title="Reward"
+                                      icon={RewardIcon}
+                                      hideNavBar
                                  />
 
                                  <Scene

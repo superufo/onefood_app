@@ -2,32 +2,25 @@ import React, { Component } from "react";
 import { Image,Text, View, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
 import { Container, Header, Left, Body,Content, Right, Button, Icon, Title } from 'native-base';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-
-import Welcome from '../components/Welcome';
-
-class WelcomeScreen extends Component {
+class TestScreen extends Component {
   render() {
+
+
+
+
     return (
-     <Welcome />
+    <Container>
+      <Content>
+           <ImageBackground
+               source={{uri: 'http://res.downhot.com/d/file/p/2014/02/20/7552b2a13b4807a0b449bb35327b1446.jpg'}}  style={{height:600,width:400}}  resizeMode='stretch'>
+                  <View style={styles.container}>
+                       <Text style={styles.welcome}>Welcome to One  Food!</Text>
+                  </View>
+           </ImageBackground>
+      </Content>
+      </Container>
     );
   }
-}
-
-WelcomeScreen.defaultProps = {
-}
-
-WelcomeScreen.ProType = {
-}
-
-function initMapStateToProps(State){
-  return {}
-}
-
-function InitDispachTOProps(state){
-    return {}
 }
 
 const styles = StyleSheet.create({
@@ -49,4 +42,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(initMapStateToProps,InitDispachTOProps)(WelcomeScreen);
+export default TestScreen;

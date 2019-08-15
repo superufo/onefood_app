@@ -3,12 +3,12 @@ import { Image,  StyleSheet, TouchableOpacity, ImageBackground } from "react-nat
 import { Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
-import getTheme from '../../native-base-theme/components';
-import material from '../../native-base-theme/variables/material';
-import commonColor from '../../native-base-theme/variables/commonColor';
+import getTheme from '../../../native-base-theme/components';
+import material from '../../../native-base-theme/variables/material';
+import commonColor from '../../../native-base-theme/variables/commonColor';
 
-import Assets from '../../src/constants/assets';
-import BR from '../base_components/BR';
+import Assets from '../../../src/constants/assets';
+import BR from '../../base_components/BR';
 
 class RewardIndex extends Component {
     render(){

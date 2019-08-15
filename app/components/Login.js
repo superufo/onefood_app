@@ -27,28 +27,29 @@ class LoginComponent extends Component {
     return (
       <StyleProvider  style={getTheme(material)}>
                   <Container>
-                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:1000,position:"top"}) }
+                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:3000,position:"top"}) }
                       <Header style={{ backgroundColor: "#ffffff" }}>
                         <Left>
                            <Button transparent>
-                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={() => {  Actions.pop()}}/>
+                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={() => {  Actions.Reward()}}/>
+                              {/*<Title style={{fontSize:15, color: '#34C47C'}} onPress={() => {  Actions.Reward()}}>Redeem</Title>*/}
                           </Button>
                         </Left>
                         <Body style={{justifyContent: "center",alignItems: "center"}}>
                           <Title style={{fontSize:15, color: '#34C47C'}}>          One Food</Title>
                         </Body>
                         <Right >
-                            <Button transparent hasText  onPress={() =>{Actions.Menu()}}  >
-                              <Text style={{fontSize:15, color: '#34C47C'}}>Sight In</Text>
+                            <Button transparent hasText  onPress={() =>{Actions.signupScreen()}}  >
+                              <Text style={{fontSize:15, color: '#34C47C'}}>Sight Up</Text>
                             </Button>
                         </Right>
                       </Header>
 
                       <Content padder>
-                                <Title  style={{ justifyContent:'flex-start',marginBottom:5 }}>Welcome Back ! </Title>
-                                <Title  style={{ justifyContent:'flex-start',marginBottom:50 }}>You are Been Missed</Title>
+                                <Title  style={{justifyContent:'flex-start',marginBottom:5 }}>Welcome Back ! </Title>
+                                <Title  style={{justifyContent:'flex-start',marginBottom:50 }}>You are Been Missed</Title>
 
-                                <Form style={{ justifyContent:'flex-start',marginBottom:20 }}>
+                                <Form style={{justifyContent:'flex-start',marginBottom:20 }}>
                                   <Item >
                                       <Input placeholder="Enter your email address/phone number" autoFocus onBlur={this.onEmailChange} onChangeText={debounce(onEmailChange, 1000)} />
                                   </Item>
@@ -57,20 +58,23 @@ class LoginComponent extends Component {
                                   </Item>
                                 </Form>
 
-                                <View style={styles.box}>
-                                     <View style={styles.list}>
-                                       <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
-                                     </View>
-                                     <View style={styles.list} >
-                                       <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                <View>
+                                    <Label style={{fontSize:15,flexWrap:'wrap',width:150,}}> or continu with </Label>
+                                    <View style={styles.box}>
+                                         <View style={styles.list}>
+                                           <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                         </View>
+                                         <View style={styles.list} >
+                                           <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                        </View>
                                     </View>
                                 </View>
 
                                 <Button transparent  block success hasText  onPress={() =>{Actions.Menu()}}  >
                                   <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget password?</Text>
                                 </Button>
-                                <Button block success style={{ marginTop: 8,marginBottom: 20,height:35 }}
-                                      d disabled={disableLogin} loading={loading} onPress={onLoginSubmit} >
+                                <Button block success style={{marginTop: 8,marginBottom: 20}}
+                                      disabled={disableLogin} loading={loading} onPress={onLoginSubmit} >
                                   <Text>Sign In</Text>
                                 </Button>
 
@@ -115,12 +119,11 @@ const styles = StyleSheet.create({
       flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start',marginBottom:40
   },
   list: {
-      width: 40,
-      height: 50,
+      width: 50,
+      height: 70,
       borderWidth:0,
       marginTop: 10,
-      marginLeft:1,
-      marginRight:1
+      marginLeft:20
  },
 });
 
