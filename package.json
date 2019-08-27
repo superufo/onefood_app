@@ -20,6 +20,7 @@
     "babel-eslint": "^8.2.3",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-stage-2": "^6.24.1",
+    "es6-promise": "^4.2.8",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.12.0",

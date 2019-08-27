@@ -5,16 +5,37 @@ import { Container, Header, Left, Body,Content, Right, Button, Icon, Title } fro
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
-
 import Welcome from '../components/Welcome';
 
+import { Actions } from 'react-native-router-flux';
+import storage from 'redux-persist/lib/storage';
+import DeviceStorage from '../../src/utils/DeviceStorage';
+
+import { AsyncStorage} from  'react-native';
+
 class WelcomeScreen extends Component {
+  constructor(props) {
+      super(props);
+  }
+
+  componentWillMount(){
+      /*AsyncStorage.getItem("authToken").then( (val)=>{
+        if(  val!=null &&  val!="" ){
+          Actions.rewardScreen();
+        }
+      });*/
+  }
+
+  componentDidMount() {
+  }
+
   render() {
     return (
      <Welcome />
     );
   }
 }
+
 
 WelcomeScreen.defaultProps = {
 }

@@ -1,18 +1,28 @@
 import request from './request';
 import { LOGIN_URL, REGISTER_URL } from './api_constants';
 
-function doLogin(email, password) {
+const shopId = 2;
+
+function doLogin(email, password,loginType) {
   const data = {
-    email,
+    useremail:email,
     password,
+    loginType,
+    shopId:shopId
   };
   return request({ url: LOGIN_URL, method: 'POST', data });
 }
 
-function doRegister(email, password) {
+//{"account":"test000081", "useremail":"liu0214065121@qq.com","mobile":"13549748857","password":"123456","firstname":"jim","lastname":"green","shopId":"2"}
+function doRegister(account, useremail,mobile,password,firstname,lastname) {
   const data = {
-    email,
+    account,
+    useremail,
+    mobile,
     password,
+    firstname,
+    lastname,
+    shopId:shopId
   };
   return request({ url: REGISTER_URL, method: 'POST', data });
 }

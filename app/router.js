@@ -23,7 +23,18 @@ import TestScreen from './screens/TestScreen';
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
 
+import storage from 'redux-persist/lib/storage';
+import { Actions } from 'react-native-router-flux';
+
+import DeviceStorage from '../src/utils/DeviceStorage';
+
 //import TabNavigation from './screens/TabNavigation';
+
+var inited = false;
+DeviceStorage.get("authToken").then( (val)=>{
+  console.log("***************882222",val);
+});
+
 
 const MenuIcon = ({focused , title}) => {
   return (
@@ -64,7 +75,7 @@ const AppRouter = () => (
                             <Scene
                                 key="welcomeScreen"
                                 component={WelcomeScreen}
-                                title="Reward"
+                                title="Welcome"
                                 hideNavBar
                                 initial
                             />
@@ -144,7 +155,7 @@ const AppRouter = () => (
                             />
                         </Drawer>
 
-                       <Scene hideNavBar tabBarPosition="bottom">
+                       <Scene hideNavBar tabBarPosition="bottom"  initial={inited}>
                                <Tabs
                                  key="tabbar"
                                  swipeEnabled

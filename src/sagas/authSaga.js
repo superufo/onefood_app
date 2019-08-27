@@ -1,8 +1,10 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
 import storage from 'redux-persist/lib/storage';
-
-
 import Auth from '../service/login';
+
+import DeviceStorage from '../utils/DeviceStorage';
+import {hex_md5} from '../utils/Md5';
+
 
 function* loginTask(action) {
   try {
@@ -11,19 +13,30 @@ function* loginTask(action) {
     });
     const { payload } = action;
 
-    const res = yield call(Auth.doLogin, payload.email, payload.password);
+    const res = yield call(Auth.doLogin,
+                           payload.email.replace(/\s/g,""),
+                           hex_md5(payload.password.replace(/\s/g,"")),
+                           payload.loginType,
+                           );
+    //console.log("**************8res:",res);
 
 
-    console.log();
-    if (res.status === 200) {
+    if (res.data.status === 0 || res.status === 200) {
+      /*storage.setItem('loginMessage', JSON.stringify(res.data.data));
+      storage.setItem("authToken", res.data.data.token);
+      storage.setItem("jwtMember", JSON.stringify(res.data.data.jwtMember));*/
+      if (res.data.data!=null)  DeviceStorage.save('loginMessage', res.data.data);
+      if (res.data.data.token!=null) DeviceStorage.save("authToken", res.data.data.token);
+      if (res.data.data.jwtMember!=null)  DeviceStorage.save("jwtMember", res.data.data.jwtMember);
+
       yield put({
         type: 'AUTH_LOGIN_SUCCESS',
-        payload: res.data,
+        payload: res.data.data,
       });
     } else {
       yield put({
         type: 'AUTH_LOGIN_ERROR',
-        payload: res.data,
+        payload: res.data.message,
       });
     }
   } catch (e) {
@@ -44,17 +57,26 @@ function* registerTask(action) {
 
     const { payload } = action;
 
-    const res = yield call(Auth.doRegister, payload.email, payload.password);
+    console.log("**************action:",action);
+    const res = yield call( Auth.doRegister,
+                            payload.account.replace(/\s/g,""),
+                            payload.useremail.replace(/\s/g,""),
+                            payload.mobile.replace(/\s/g,""),
+                            hex_md5(payload.password.replace(/\s/g,"")),
+                            payload.firstname.replace(/\s/g,""),
+                            payload.lastname.replace(/\s/g,""),
+                           );
+   console.log("**************res:",res);
 
-    if (res.status === 200) {
+    if (res.data.status === 0 || res.status === 200) {
       yield put({
         type: 'AUTH_REGISTER_SUCCESS',
-        payload: res.data,
+        payload: res.data.data,
       });
     } else {
       yield put({
         type: 'AUTH_REGISTER_ERROR',
-        payload: res.data,
+        payload: res.data.message,
       });
     }
   } catch (e) {
@@ -70,6 +92,7 @@ function* registerTask(action) {
 function* logoutTask() {
   try {
     storage.removeItem('authToken');
+    DeviceStorage.remove("authToken");
     yield put({
       type: 'AUTH_LOGOUT_RESET',
     });

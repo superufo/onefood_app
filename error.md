@@ -95,3 +95,10 @@ console.log("login.js loginError:",loginError.message)
 onChangeText={debounce(onEmailChange, 500)}
 
 flex:有三个参数，默认参数为 0 1 auto。  第一个参数为flex-grow,第二，第三个为:flex-shrink和flex-basis
+
+onBlur={this.onEmailChange}
+onChangeText={debounce(onEmailChange, 1000)}
+
+
+
+
