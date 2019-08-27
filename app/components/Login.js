@@ -12,12 +12,12 @@ import material from '../../native-base-theme/variables/material';
 import commonColor from '../../native-base-theme/variables/commonColor';
 
 class LoginComponent extends Component {
-//  onEmailBlur = (emailValue) => {
-//    console.log("emailValue::::",emailValue)
-//  }
+  onEmailBlur = (emailValue) => {
+    console.log("emailValue::::",emailValue)
+  }
 
   renderLoginButton() {
-      if (props.loading) {
+      if (loading) {
           return <Spinner />;
       } else {
           return (
@@ -35,6 +35,11 @@ class LoginComponent extends Component {
     } = this.props;
 
     {loginError && console.log("login.js loginError:",loginError)}
+
+    if (!loading)
+      signInButton=(<Button block success style={{marginTop:8,marginBottom:20}} loading={loading} onPress={onLoginSubmit}><Text>Sign In</Text></Button>)
+   else
+      signInButton=(<Spinner/>);
 
     return (
       <StyleProvider  style={getTheme(material)}>
@@ -85,7 +90,7 @@ class LoginComponent extends Component {
                                 <Button transparent  block success hasText  onPress={() =>{Actions.Menu()}}  >
                                   <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget password?</Text>
                                 </Button>
-                                {this.renderLoginButton()}
+                                {signInButton}
                       </Content>
                     </Container>
                    </StyleProvider>

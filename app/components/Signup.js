@@ -36,6 +36,15 @@ class SignupComponent extends Component {
       });
     }
 
+    if (!loading)
+       signUpButton=(<Button block success style={{ marginTop: 10,marginBottom: 20 ,height:35}}
+                         disabled={disableSignUp} loading={loading} onPress={onSignupSubmit} >
+                         <Text>Sign Up</Text>
+                     </Button>)
+    else
+       signUpButton=(<Spinner/>);
+
+
     return (
            <StyleProvider  style={getTheme(material)}>
             <Container>
@@ -94,10 +103,7 @@ class SignupComponent extends Component {
                       </View>
                   </View>
 
-                  <Button block success style={{ marginTop: 10,marginBottom: 20 ,height:35}}
-                        disabled={disableSignUp} loading={loading} onPress={onSignupSubmit} >
-                    <Text>Sign In</Text>
-                  </Button>
+                  {signUpButton}
                 </Content>
               </Container>
              </StyleProvider>
