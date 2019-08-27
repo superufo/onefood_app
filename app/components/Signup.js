@@ -102,7 +102,6 @@ class SignupComponent extends Component {
                          <Icon name="google-plus-square"   type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.pop()}}/>
                       </View>
                   </View>
-
                   {signUpButton}
                 </Content>
               </Container>
