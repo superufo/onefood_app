@@ -11,7 +11,7 @@ import rootSagas from '../sagas';
 
 const persistConfig = {
   key: 'root',
-  storage,
+  storage:storage,
   stateReconciler: autoMergeLevel2,
   blacklist: ['auth', 'cart', 'food', 'restaurant', 'orders'],
 };

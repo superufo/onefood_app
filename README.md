@@ -4,6 +4,12 @@ BoilerPlate Used React Native [https://github.com/kaushiknishchay/React-Native-B
 
 BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boilerplate](https://github.com/Codebrahma/Codebrahma-React-Boilerplate)
 
+## Setup
+
+- Install and  setup the backend server
+ 
+[https://github.com/Codebrahma/RestaurantApp-Express](https://github.com/Codebrahma/RestaurantApp-Express)
+
 ### Installation
 
 - run `npm install` or `yarn install`
@@ -98,9 +104,8 @@ web and mobile apps with the logic and view separated.
      <StyleProvider style={getTheme(material)}>     
      <StyleProvider style={getTheme(CustomVariables)}>  
      </StyleProvider>  
-    import {StyleSheet, TouchableOpacity, View} from 'react-native'  
-    transparent   
-   
+     import {StyleSheet, TouchableOpacity, View} from 'react-native'  
+     transparent
   
 - 7. 图标库:http://fontawesome.dashgame.com/     
      https://fontawesome.com/icons?d=gallery&c=buildings    
@@ -137,3 +142,27 @@ web and mobile apps with the logic and view separated.
        npm install --save-dev webpack-bundle-analyzer@3.4.1 &&
        
        npm install react-native@0.60.4
+       
+       <Scene
+           key="welcomeScreen"
+           component={WelcomeScreen}
+       />
+       
+       <Scene
+               key="Reward"
+               component={RewardScreen}
+               title="Reward"
+               icon={RewardIcon}
+       />
+       
+       
+       
+
+
+
+
+
+
+
+
+

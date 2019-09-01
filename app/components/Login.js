@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from "react";
-import {View,Grid,Row,Container,Header,Title,Content,Button,Item,Label,Input,Body,Left,Right,Icon,Text,Form,StyleProvider,Toast} from "native-base";
+import {Spinner,View,Grid,Row,Container,Header,Title,Content,Button,Item,Label,Input,Body,Left,Right,Icon,Text,Form,StyleProvider,Toast} from "native-base";
 
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';
@@ -11,10 +11,22 @@ import getTheme from '../../native-base-theme/components';
 import material from '../../native-base-theme/variables/material';
 import commonColor from '../../native-base-theme/variables/commonColor';
 
-
 class LoginComponent extends Component {
   onEmailBlur = (emailValue) => {
     console.log("emailValue::::",emailValue)
+  }
+
+  renderLoginButton() {
+      if (loading) {
+          return <Spinner />;
+      } else {
+          return (
+             <Button block success style={{marginTop: 8,marginBottom: 20}}
+                    loading={loading} onPress={onLoginSubmit} >
+               <Text>Sign In</Text>
+             </Button>
+          );
+      }
   }
 
   render() {
@@ -24,56 +36,61 @@ class LoginComponent extends Component {
 
     {loginError && console.log("login.js loginError:",loginError)}
 
+    if (!loading)
+      signInButton=(<Button block success style={{marginTop:8,marginBottom:20}} loading={loading} onPress={onLoginSubmit}><Text>Sign In</Text></Button>)
+   else
+      signInButton=(<Spinner/>);
+
     return (
       <StyleProvider  style={getTheme(material)}>
                   <Container>
-                      {loginError && Toast.show({text:loginError.message,buttonText: "Okay",duration:1000,position:"top"}) }
+                      {loginError && Toast.show({text:loginError.message,buttonText: "OK",position:"top",type: "danger"}) }
                       <Header style={{ backgroundColor: "#ffffff" }}>
                         <Left>
                            <Button transparent>
-                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={() => {  Actions.pop()}}/>
+                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={() => {  Actions.welcomeScreen()}}/>
+                              {/*<Title style={{fontSize:15, color: '#34C47C'}} onPress={() => {  Actions.Reward()}}>Redeem</Title>*/}
                           </Button>
                         </Left>
                         <Body style={{justifyContent: "center",alignItems: "center"}}>
                           <Title style={{fontSize:15, color: '#34C47C'}}>          One Food</Title>
                         </Body>
                         <Right >
-                            <Button transparent hasText  onPress={() =>{Actions.Menu()}}  >
-                              <Text style={{fontSize:15, color: '#34C47C'}}>Sight In</Text>
+                            <Button transparent hasText  onPress={() =>{Actions.signupScreen()}}  >
+                              <Text style={{fontSize:15, color: '#34C47C'}}>Sight Up</Text>
                             </Button>
                         </Right>
                       </Header>
 
                       <Content padder>
-                                <Title  style={{ justifyContent:'flex-start',marginBottom:5 }}>Welcome Back ! </Title>
-                                <Title  style={{ justifyContent:'flex-start',marginBottom:50 }}>You are Been Missed</Title>
+                                <Title  style={{justifyContent:'flex-start',marginBottom:5 }}>Welcome Back ! </Title>
+                                <Title  style={{justifyContent:'flex-start',marginBottom:50 }}>You are Been Missed</Title>
 
-                                <Form style={{ justifyContent:'flex-start',marginBottom:20 }}>
+                                <Form style={{justifyContent:'flex-start',marginBottom:20 }}>
                                   <Item >
-                                      <Input placeholder="Enter your email address/phone number" autoFocus onBlur={this.onEmailChange} onChangeText={debounce(onEmailChange, 1000)} />
+                                      <Input placeholder="Enter your email address/phone number" autoFocus  onChangeText={debounce(onEmailChange, 500)}    />
                                   </Item>
                                   <Item >
                                     <Input placeholder="Enter your password" secureTextEntry  ref="password" onChangeText={debounce(onPasswordChange, 500)}/>
                                   </Item>
                                 </Form>
 
-                                <View style={styles.box}>
-                                     <View style={styles.list}>
-                                       <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
-                                     </View>
-                                     <View style={styles.list} >
-                                       <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                <View>
+                                    <Label style={{fontSize:15,flexWrap:'wrap',width:150,}}> or continu with </Label>
+                                    <View style={styles.box}>
+                                         <View style={styles.list}>
+                                           <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                         </View>
+                                         <View style={styles.list} >
+                                           <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                        </View>
                                     </View>
                                 </View>
 
                                 <Button transparent  block success hasText  onPress={() =>{Actions.Menu()}}  >
                                   <Text style={{flexDirection:'row',justifyContent: 'center',fontSize:12,color:'#2B2B2B'}}>forget password?</Text>
                                 </Button>
-                                <Button block success style={{ marginTop: 8,marginBottom: 20,height:35 }}
-                                      d disabled={disableLogin} loading={loading} onPress={onLoginSubmit} >
-                                  <Text>Sign In</Text>
-                                </Button>
-
+                                {signInButton}
                       </Content>
                     </Container>
                    </StyleProvider>
@@ -115,12 +132,11 @@ const styles = StyleSheet.create({
       flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start',marginBottom:40
   },
   list: {
-      width: 40,
-      height: 50,
+      width: 50,
+      height: 70,
       borderWidth:0,
       marginTop: 10,
-      marginLeft:1,
-      marginRight:1
+      marginLeft:20
  },
 });
 

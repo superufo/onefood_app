@@ -1,8 +1,9 @@
-export const authLogin = (email, password) => ({
+export const authLogin = (email, password,loginType) => ({
   type: 'AUTH_LOGIN',
   payload: {
     email,
     password,
+    loginType
   },
 });
 
@@ -15,11 +16,15 @@ export const loginCheck = (loginError, registerError) => ({
   },
 });
 
-export const authRegister = (email, password) => ({
+export const authRegister = (account,useremail,mobile,password,firstname,lastname) => ({
   type: 'AUTH_REGISTER',
   payload: {
-    email,
-    password,
+      account,
+      useremail,
+      mobile,
+      password,
+      firstname,
+      lastname,
   },
 });
 

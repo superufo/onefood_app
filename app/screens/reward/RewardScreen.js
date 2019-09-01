@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import RewardIndex from '../../components/RewardIndex';
+import RewardIndex from '../../components/reward/RewardIndex';
 
 class RewardScreen extends Component {
   render() {
