@@ -4,12 +4,6 @@ BoilerPlate Used React Native [https://github.com/kaushiknishchay/React-Native-B
 
 BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boilerplate](https://github.com/Codebrahma/Codebrahma-React-Boilerplate)
 
-## Setup
-
-- Install and  setup the backend server
- 
-[https://github.com/Codebrahma/RestaurantApp-Express](https://github.com/Codebrahma/RestaurantApp-Express)
-
 ### Installation
 
 - run `npm install` or `yarn install`
