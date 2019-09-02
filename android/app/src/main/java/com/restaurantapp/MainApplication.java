@@ -1,4 +1,4 @@
-package com.expro;
+package com.restaurantapp;
 
 import android.app.Application;
 import android.util.Log;

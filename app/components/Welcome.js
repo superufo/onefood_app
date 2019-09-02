@@ -7,6 +7,7 @@ import getTheme from '../../native-base-theme/components';
 import material from '../../native-base-theme/variables/material';
 import commonColor from '../../native-base-theme/variables/commonColor';
 
+
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
 
@@ -33,12 +34,12 @@ class RewardWelcome extends Component {
                                     Welcome to onefood
                                 </Label>
 
-                                <BR size={15} />
+                                <BR size={20} />
 
                                 <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:15}}>
                                     want to enjoy a free food?
                                 </Label>
-                                <BR size={15} />
+                                <BR size={20} />
                            </View>
 
                           <View >
@@ -75,25 +76,11 @@ class RewardWelcome extends Component {
      }
 }
 
+//1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
+const width = UiAdapter.autoWidth(360);
+
 //#F5FCFF  flex:1
 const styles = StyleSheet.create({
-  buttonContainer: {
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    flexWrap: "wrap",
-    flex: 1
-  },
-  buttonStyle:{
-      width: UiAdapter.autoWidth(320),
-      justifyContent: "center",
-      alignItems: "center"
-  },
-  layoutInCenter:{
-    backgroundColor: "#ffffff",
-    justifyContent: "center",
-    alignItems: "center"
-  },
   container: {
     flex: 1,
     justifyContent: "center",
@@ -107,10 +94,10 @@ const styles = StyleSheet.create({
     height:35
   },
   vbox : {
-    flex: 1, flexDirection: 'column', flexWrap: 'wrap', justifyContent: 'flex-start',marginBottom:40,backgroundColor: "#ffffff",
+     flex: 1, flexDirection: 'column', flexWrap: 'wrap', justifyContent:'center',marginBottom:40,backgroundColor: "#ffffff",
   },
   box: {
-        flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'flex-start',marginBottom:40
+    flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center',marginBottom:40,
   },
   list: {
         width: 60,

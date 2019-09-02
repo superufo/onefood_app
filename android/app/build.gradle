@@ -128,7 +128,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.expro"
+        applicationId "com.restaurantapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

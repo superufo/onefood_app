@@ -1,4 +1,4 @@
-package com.expro;
+package com.restaurantapp;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "expro";
+        return "RestaurantApp";
     }
 }

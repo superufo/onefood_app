@@ -99,6 +99,9 @@ flex:有三个参数，默认参数为 0 1 auto。  第一个参数为flex-grow,
 onBlur={this.onEmailChange}
 onChangeText={debounce(onEmailChange, 1000)}
 
+"react-native-fbsdk": "^1.0.3",
+
+
 
 
 

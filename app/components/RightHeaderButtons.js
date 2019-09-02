@@ -11,8 +11,8 @@ import RippleIcon from '../base_components/RippleIcon';
 import PrimaryText from '../base_components/PrimaryText';
 
 class RightHeaderButtons extends Component {
-  componentWillReceiveProps(nexProps, nextContext) {
-    const { loginMessage } = nexProps;
+  componentWillReceiveProps(nrestaurantappps, nextContext) {
+    const { loginMessage } = nrestaurantappps;
     if (!loginMessage || !loginMessage.token) {
       Actions.reset('loginScreen');
     }
