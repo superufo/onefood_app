@@ -126,6 +126,7 @@ web and mobile apps with the logic and view separated.
       npm config set registry http://registry.npm.taobao.org/
     
 - 10. cnpm install node-sass -g
+      npm install -g node-gyp
       查看所有版本  npm view(info) npm versions
       npm info expo@30.0.0
       npm info  npm 

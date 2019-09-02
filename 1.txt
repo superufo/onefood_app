@@ -1,0 +1,1054 @@
+=== npm audit security report ===                        
+                                                                                
+# Run  npm install --save-dev jest@25.0.0  to resolve 63 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-environment-jsdom >      
+                  jest-util > jest-message-util > micromatch > braces           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config >                 
+                  jest-environment-jsdom > jest-util > jest-message-util >      
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-environment-jsdom > jest-util > jest-message-util >      
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config >                
+                  jest-environment-jsdom > jest-util > jest-message-util >      
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-environment-jsdom > jest-util >          
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-environment-jsdom > jest-util > jest-message-util >    
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config >               
+                  jest-environment-jsdom > jest-util > jest-message-util >      
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-environment-jsdom > jest-util >        
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-environment-node >       
+                  jest-util > jest-message-util > micromatch > braces           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config >                 
+                  jest-environment-node > jest-util > jest-message-util >       
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-environment-node > jest-util > jest-message-util >       
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config >                
+                  jest-environment-node > jest-util > jest-message-util >       
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-environment-node > jest-util >           
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-environment-node > jest-util > jest-message-util >     
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config >               
+                  jest-environment-node > jest-util > jest-message-util >       
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-jasmine2 > expect >      
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config > jest-jasmine2   
+                  > expect > jest-message-util > micromatch > braces            
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-jasmine2 > expect > jest-message-util > micromatch >     
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config > jest-jasmine2  
+                  > expect > jest-message-util > micromatch > braces            
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-jasmine2 > expect > jest-message-util >  
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-jasmine2 > expect > jest-message-util > micromatch >   
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config >               
+                  jest-jasmine2 > expect > jest-message-util > micromatch >     
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-jasmine2 > expect >      
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-jasmine2 >               
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config > jest-jasmine2   
+                  > jest-message-util > micromatch > braces                     
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-jasmine2 > jest-message-util > micromatch > braces       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config > jest-jasmine2  
+                  > jest-message-util > micromatch > braces                     
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-jasmine2 > jest-message-util >           
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-jasmine2 > jest-message-util > micromatch > braces     
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config >               
+                  jest-jasmine2 > jest-message-util > micromatch > braces       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-jasmine2 >               
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-jasmine2 > jest-util >   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config > jest-jasmine2   
+                  > jest-util > jest-message-util > micromatch > braces         
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-jasmine2 > jest-util > jest-message-util > micromatch >  
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config > jest-jasmine2  
+                  > jest-util > jest-message-util > micromatch > braces         
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-jasmine2 > jest-util >                   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-jasmine2 > jest-util > jest-message-util > micromatch  
+                  > braces                                                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config >               
+                  jest-jasmine2 > jest-util > jest-message-util > micromatch >  
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-jasmine2 > jest-util >   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-config > jest-util >                   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-config > jest-util >     
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-config >  
+                  jest-util > jest-message-util > micromatch > braces           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-config > jest-util >    
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-validate  
+                  > jest-config > jest-util > jest-message-util > micromatch >  
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-validate > jest-config  
+                  > jest-util > jest-message-util > micromatch > braces         
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-validate > jest-config > jest-util >   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-haste-map > micromatch > braces        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-message-util > micromatch > braces     
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-util > jest-message-util > micromatch  
+                  > braces                                                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > micromatch > braces                         
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-haste-map > micromatch   
+                  > braces                                                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-message-util >           
+                  micromatch > braces                                           
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-util >                   
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > babel-jest >   
+                  babel-plugin-istanbul > test-exclude > micromatch > braces    
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > babel-jest >                 
+                  babel-plugin-istanbul > test-exclude > micromatch > braces    
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime >                
+                  babel-plugin-istanbul > test-exclude > micromatch > braces    
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > babel-plugin-istanbul >      
+                  test-exclude > micromatch > braces                            
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime >                
+                  jest-haste-map > micromatch > braces                          
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-haste-map > micromatch  
+                  > braces                                                      
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > jest-util >    
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > jest-util >                  
+                  jest-message-util > micromatch > braces                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runner > jest-runtime > micromatch >   
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   jest [dev]                                                    
+                                                                                
+  Path            jest > jest-cli > jest-runtime > micromatch > braces          
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+# Run  npm install --save-dev webpack-cli@3.3.7  to resolve 2 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   webpack-cli [dev]                                             
+                                                                                
+  Path            webpack-cli > jscodeshift > micromatch > braces               
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+                                                                                
+  Low             Regular Expression Denial of Service                          
+                                                                                
+  Package         braces                                                        
+                                                                                
+  Dependency of   webpack-cli [dev]                                             
+                                                                                
+  Path            webpack-cli > webpack-addons > jscodeshift > micromatch >     
+                  braces                                                        
+                                                                                
+  More info       https://nodesecurity.io/advisories/786                        
+                                                                                
+
+
+# Run  npm install --save-dev css-loader@3.2.0  to resolve 2 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+                                                                                
+  Moderate        Denial of Service                                             
+                                                                                
+  Package         js-yaml                                                       
+                                                                                
+  Dependency of   css-loader [dev]                                              
+                                                                                
+  Path            css-loader > cssnano > postcss-svgo > svgo > js-yaml          
+                                                                                
+  More info       https://nodesecurity.io/advisories/788                        
+                                                                                
+
+
+                                                                                
+  High            Code Injection                                                
+                                                                                
+  Package         js-yaml                                                       
+                                                                                
+  Dependency of   css-loader [dev]                                              
+                                                                                
+  Path            css-loader > cssnano > postcss-svgo > svgo > js-yaml          
+                                                                                
+  More info       https://nodesecurity.io/advisories/813                        
+                                                                                
+
+
+# Run  npm install --save-dev optimize-css-assets-webpack-plugin@5.0.3  to resolve 2 vulnerabilities
+SEMVER WARNING: Recommended action is a potentially breaking change
+                                                                                
+  Moderate        Denial of Service                                             
+                                                                                
+  Package         js-yaml                                                       
+                                                                                
+  Dependency of   optimize-css-assets-webpack-plugin [dev]                      
+                                                                                
+  Path            optimize-css-assets-webpack-plugin > cssnano > postcss-svgo   
+                  > svgo > js-yaml                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/788                        
+                                                                                
+
+
+                                                                                
+  High            Code Injection                                                
+                                                                                
+  Package         js-yaml                                                       
+                                                                                
+  Dependency of   optimize-css-assets-webpack-plugin [dev]                      
+                                                                                
+  Path            optimize-css-assets-webpack-plugin > cssnano > postcss-svgo   
+                  > svgo > js-yaml                                              
+                                                                                
+  More info       https://nodesecurity.io/advisories/813                        
+                                                                                
+
+
+# Run  npm install --save-dev webpack-bundle-analyzer@3.4.1  to resolve 1 vulnerability
+SEMVER WARNING: Recommended action is a potentially breaking change
+                                                                                
+  Moderate        Cross-Site Scripting                                          
+                                                                                
+  Package         webpack-bundle-analyzer                                       
+                                                                                
+  Dependency of   webpack-bundle-analyzer [dev]                                 
+                                                                                
+  Path            webpack-bundle-analyzer                                       
+                                                                                
+  More info       https://nodesecurity.io/advisories/826                        
+                                                                                
+
+
+                                                                                
+                                 Manual Review                                  
+             Some vulnerabilities require your attention to resolve             
+                                                                                
+          Visit https://go.npm.me/audit-guide for additional guidance           
+                                                                                
+                                                                                
+  Low             Prototype Pollution                                           
+                                                                                
+  Package         lodash                                                        
+                                                                                
+  Patched in      >=4.17.5                                                      
+                                                                                
+  Dependency of   react-native-credit-card-input                                
+                                                                                
+  Path            react-native-credit-card-input > card-validator > lodash      
+                                                                                
+  More info       https://nodesecurity.io/advisories/577                        
+                                                                                
+                                                                                
+  High            Prototype Pollution                                           
+                                                                                
+  Package         lodash                                                        
+                                                                                
+  Patched in      >=4.17.11                                                     
+                                                                                
+  Dependency of   react-native-credit-card-input                                
+                                                                                
+  Path            react-native-credit-card-input > card-validator > lodash      
+                                                                                
+  More info       https://nodesecurity.io/advisories/782                        
+                                                                                
+                                                                                
+  High            Prototype Pollution                                           
+                                                                                
+  Package         lodash                                                        
+                                                                                
+  Patched in      >=4.17.12                                                     
+                                                                                
+  Dependency of   react-native-credit-card-input                                
+                                                                                
+  Path            react-native-credit-card-input > card-validator > lodash      
+                                                                                
+  More info       https://nodesecurity.io/advisories/1065                       
+                                                                                
+found 73 vulnerabilities (66 low, 3 moderate, 4 high) in 115248 scanned packages
+  70 vulnerabilities require semver-major dependency updates.
+  3 vulnerabilities require manual review. See the full report for details.
