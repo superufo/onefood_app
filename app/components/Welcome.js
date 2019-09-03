@@ -12,79 +12,67 @@ import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
 
 import UiAdapter from '../utils/UiAdapter';
+//1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
+const screenWidth = UiAdapter.autoWidth(360);
+const tilteText = (<Title style={{flex:1,paddingTop:15,heght:50,width:screenWidth,flexDirection:'row',textAlign:'center',fontSize:25,color:'#34C47C'}}>One Food</Title>);
 
 class RewardWelcome extends Component {
     render(){
         return (
             <StyleProvider  style={getTheme(material)}>
-            <Container padder>
-                 <View style={{alignItems:'center',justifyContent:'center',heght:50}}>
-                    <Title style={{paddingTop:15,fontSize:25,color:'#34C47C'}}>One Food</Title>
+            <Container padder style={styles.container}>
+                 <View style={{flex:1,alignItems: "center", justifyContent:'center'}}>
+                   {tilteText}
                  </View>
 
-                 <Grid>
-                    <Row size={1}>
-                    </Row>
+                  <View style={styles.vbox}>
+                       <View style={{flex:2,alignItems: "center",justifyContent:'center',width:screenWidth}}>
+                            <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:30,fontWeight:"bold",color:'#2B2B2B'}}>
+                                Welcome to onefood
+                            </Label>
 
-                    <Row size={3}>
-                          <View style={styles.vbox}>
+                            <BR size={20} />
 
-                           <View>
-                                <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:30,fontWeight:"bold",color:'#2B2B2B'}}>
-                                    Welcome to onefood
-                                </Label>
+                            <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:15}}>
+                                want to enjoy a free food?
+                            </Label>
+                            <BR size={20} />
 
-                                <BR size={20} />
+                            <Button block success onPress={() =>{Actions.loginScreen()}} >
+                                  <Text>Sign In</Text>
+                            </Button>
 
-                                <Label style={{alignItems:'center',justifyContent:'center',flexWrap:'wrap',textAlign:"center",fontSize:15}}>
-                                    want to enjoy a free food?
-                                </Label>
-                                <BR size={20} />
-                           </View>
+                            <Button block success transparent  onPress={() =>{Actions.signupScreen()}}>
+                               <Text>Sign Up</Text>
+                            </Button>
+                       </View>
 
-                          <View >
-                                <Button block success onPress={() =>{Actions.loginScreen()}} >
-                                      <Text>Sign In</Text>
-                                </Button>
+                       <View style={{flex:1,alignItems: "flex-start", justifyContent:'flex-start'}}>
+                            <Label style={{fontSize:15,flexWrap:'wrap',width:150}}> or continu with </Label>
 
-                                <Button block success transparent  onPress={() =>{Actions.signupScreen()}}>
-                                   <Text>Sign Up</Text>
-                                </Button>
-                           </View>
-
-                            <View>
-                                <Label style={{fontSize:15,flexWrap:'wrap',width:150}}> or continu with </Label>
-
-                                <View style={styles.box}>
-                                     <View style={styles.list}>
-                                       <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
-                                     </View>
-                                     <View style={styles.list} >
-                                       <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
-                                    </View>
+                            <View style={styles.box}>
+                                 <View style={styles.list}>
+                                   <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
+                                 </View>
+                                 <View style={styles.list} >
+                                   <Icon name="google-plus-square" type="FontAwesome" style={{fontSize:50, color: '#34C47C'}} onPress={() =>{Actions.signupScreen()}}/>
                                 </View>
                             </View>
-
-
-                       </View>
-                   </Row>
-
-                 </Grid>
+                      </View>
+                 </View>
              </Container>
           </StyleProvider>
           )
      }
 }
 
-//1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
-const width = UiAdapter.autoWidth(360);
-
 //#F5FCFF  flex:1
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     justifyContent: "center",
-    alignItems: "center",
+    alignItems: "baseline",
     backgroundColor: "#ffffff",
   },
   welcome: {
@@ -94,10 +82,20 @@ const styles = StyleSheet.create({
     height:35
   },
   vbox : {
-     flex: 1, flexDirection: 'column', flexWrap: 'wrap', justifyContent:'center',marginBottom:40,backgroundColor: "#ffffff",
+      flex: 2,
+      flexDirection: 'column',
+      flexWrap: 'wrap',
+      justifyContent:'center',
+      marginBottom:40,
+      backgroundColor: "#ffffff",
+      width:screenWidth,
   },
   box: {
-    flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent:'center',marginBottom:40,
+      flex: 1,
+       flexDirection: 'row',
+       flexWrap: 'wrap',
+       justifyContent:'center',
+       marginBottom:40,
   },
   list: {
         width: 60,
