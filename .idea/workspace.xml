@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c91d0ea1-ad09-4768-bd8a-6132c19f43c8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Welcome.js" afterDir="false" />
-    </list>
+    <list default="true" id="c91d0ea1-ad09-4768-bd8a-6132c19f43c8" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/components/Welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="28" column="106" selection-start-line="28" selection-start-column="106" selection-end-line="28" selection-end-column="106" />
+            <state relative-caret-position="239">
+              <caret line="50" column="40" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -106,7 +98,6 @@
       <find>expro</find>
       <find>RestaurantApp</find>
       <find>index.android.js</find>
-      <find>vbox</find>
       <find>react-native-fbsdk</find>
       <find>buttonContainer</find>
       <find>buttonStyle</find>
@@ -122,6 +113,7 @@
       <find>renderLoginButton</find>
       <find>box</find>
       <find>list</find>
+      <find>vbox</find>
     </findStrings>
     <replaceStrings>
       <replace>restaurantapp</replace>
@@ -411,7 +403,7 @@
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info id="Storybook" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.15327695" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.14852008" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
@@ -419,7 +411,7 @@
       <window_info id="Resources Explorer" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info active="true" anchor="bottom" id="RNConsole" order="1" visible="true" weight="0.05491991" />
+      <window_info active="true" anchor="bottom" id="RNConsole" order="1" visible="true" weight="0.13844393" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Buck" order="3" weight="0.36498857" />
       <window_info anchor="bottom" id="Terminal" order="4" weight="0.16819222" />
@@ -715,8 +707,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="28" column="106" selection-start-line="28" selection-start-column="106" selection-end-line="28" selection-end-column="106" />
+        <state relative-caret-position="239">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="35" selection-end-line="50" selection-end-column="40" />
         </state>
       </provider>
     </entry>
