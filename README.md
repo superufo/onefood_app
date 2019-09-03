@@ -69,8 +69,6 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
    adb reverse tcp:8081 tcp:8081
   ```
 
-   
-  
 - ​    调试工具
   
    配置:”scripts”: {“react-devtools”:” react-devtools”}
@@ -83,15 +81,11 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   npm  run react-devtools
   ```
   
-  
-  
 -   android avd  命令无效，可以重启使得环境变量彻底生效
   
 ```
   adb devices
   ```
-  
-  
   
 - bundle 
 
@@ -118,9 +112,7 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
      adb shell input keyevent 82  
   ```
   
-   模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,有一些可能是10.0.0.2,模拟器会映射到PC本地的localhost  
-  
-  
+  模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,有一些可能是10.0.0.2,模拟器会映射到PC本地的localhost  
   
 - native-base 库定制界面
   
@@ -138,17 +130,13 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   transparent
   ```
   
-  
-  
 - 7. 图标库
      
      ```
    http://fontawesome.dashgame.com/     
      https://fontawesome.com/icons?d=gallery&c=buildings    
-     https://rn.mobile.ant.design/components/icon-cn/ 
+     https://rn.mobile.ant.design/components/icon-cn/          
      ```
-     
-     ​         
   
 - 调试分支  git调试
   
@@ -158,8 +146,6 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   合并分支  git merge   
 删除指定的远程分支  git push origin --delete tmp  
   删除指定的本地分支  git branch -d  tmp
-  
-  
   
 - npm 设置
   
@@ -171,8 +157,6 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   npm config set registry http://registry.npmjs.org/
   npm config set registry http://registry.npm.taobao.org/
   ```
-  
-  
   
 - npm 语法
   
@@ -211,8 +195,6 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
           icon={RewardIcon}
   />
   ```
-  
-  
   
 - 线上 
 
