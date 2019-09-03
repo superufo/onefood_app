@@ -140,12 +140,26 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   
 - 调试分支  git调试
   
-  新建远程零时分支 git checkout -b tmp    
-  把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名）：   
-  git push origin tmp:tmp    
-  合并分支  git merge   
-删除指定的远程分支  git push origin --delete tmp  
-  删除指定的本地分支  git branch -d  tmp
+  新建远程零时分支 
+  
+  ```
+  git checkout -b tmp 
+```
+  
+  把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名） 合并分支 ：
+  
+  ```
+  git push origin tmp:tmp     
+  git merge  
+  ```
+  
+  
+  删除指定的远程分支,   删除指定的本地分支
+  
+  ```
+  git push origin --delete tmp  
+  git branch -d  tmp
+  ```
   
 - npm 设置
   
@@ -199,18 +213,10 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 - 线上 
 
   ```
-  http://47.74.240.50:8080/   
-   
-   
+  http://47.74.240.50:8080/ 
+  
+  apt install nodejs
+  https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz
+  tar zxvf node-v10.16.3.tar.gz
+  ./configure && make && make install
   ```
-
-     
-
-
-
-
-
-
-
-
-
