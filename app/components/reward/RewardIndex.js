@@ -39,12 +39,12 @@ class RewardIndex extends Component {
                         <Label style={{flexWrap:'wrap',width:150}}>You are xx points away from the next reward.</Label>
                    </Row>
                    <Row size={2} style={styles.layoutInCenter}>
-                      <Button success style={styles.welcome}  onPress={() => { alert(11111); Actions.welcomeScreen();}}>
+                      <Button success style={styles.welcome}  onPress={() => {  Actions.welcomeScreen();}}>
                           <Text onPress={() => { Actions.welcomeScreen();}}>  Redeem     </Text>
                       </Button>
 
                        <Button success style={styles.welcome}>
-                           <Text  onPress={() =>{storage.clear();storage.removeItem('authToken'); Actions.welcomeScreen();}}>Scan To Earn</Text>
+                           <Text  onPress={() =>{Actions.cameraScreen();}}>Scan To Earn</Text>
                        </Button>
                    </Row>
                  </Grid>

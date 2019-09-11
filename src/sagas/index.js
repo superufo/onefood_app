@@ -9,6 +9,8 @@ import cartItemsDeleteSaga from './cart/cartItemsDeleteSaga';
 import cartItemsFetchSaga from './cart/cartItemsFetchSaga';
 import cartItemUpdateQtySaga from './cart/cartItemsUpdateQtySaga';
 import orderSaga from './orderSaga';
+import validateSaga from './validateSaga';
+
 
 function* rootSaga() {
   yield fork(authSaga);
@@ -21,6 +23,7 @@ function* rootSaga() {
   yield fork(cartItemsFetchSaga);
   yield fork(cartItemUpdateQtySaga);
   yield fork(orderSaga);
+  yield fork(validateSaga);
 }
 
 export default rootSaga;

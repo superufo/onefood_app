@@ -8,7 +8,7 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 
 ### 安装
 
-- run `npm install` or `yarn install`
+- run `npm install --msvs_version=2017` or `yarn install`
 
 ### 运行
 
@@ -75,18 +75,16 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 
   ```
   npm install -g react-devtools     
-  
   npm install -g   react-native
-  
   npm  run react-devtools
   ```
   
 -   android avd  命令无效，可以重启使得环境变量彻底生效
-  
+
 ```
   adb devices
-  ```
-  
+```
+
 - bundle 
 
   ```
@@ -108,8 +106,7 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   
   ```
     C:\Users\liuniuyou\.android\avd\API2301.avd  
-  
-     adb shell input keyevent 82  
+    adb shell input keyevent 82  
   ```
   
   模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,有一些可能是10.0.0.2,模拟器会映射到PC本地的localhost  
@@ -130,13 +127,13 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   transparent
   ```
   
-- 7. 图标库
-     
-     ```
-   http://fontawesome.dashgame.com/     
-     https://fontawesome.com/icons?d=gallery&c=buildings    
-     https://rn.mobile.ant.design/components/icon-cn/          
-     ```
+- 图标库
+  
+  ```
+  http://fontawesome.dashgame.com/     
+  https://fontawesome.com/icons?d=gallery&c=buildings    
+  https://rn.mobile.ant.design/components/icon-cn/          
+  ```
   
 - 调试分支  git调试
   
@@ -144,79 +141,115 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   
   ```
   git checkout -b tmp 
-```
+  ```
   
   把新建的本地分支push到远程服务器，远程分支与本地分支同名（当然可以随意起名） 合并分支 ：
   
   ```
-  git push origin tmp:tmp     
-  git merge  
+    git push origin tmp:tmp     
+    git merge    git push origin tmp:tmp     
+    git merge  
   ```
-  
-  
-  删除指定的远程分支,   删除指定的本地分支
-  
+
+​        删除指定的远程分支,   删除指定的本地分支
   ```
-  git push origin --delete tmp  
-  git branch -d  tmp
+ git push origin --delete tmp  
+ git branch -d  tmp
   ```
-  
 - npm 设置
-  
+
   ```
   npm get registry
   https://registry.npmjs.org/
-  
+
   yarn config set registry  https://registry.npmjs.org/
   npm config set registry http://registry.npmjs.org/
   npm config set registry http://registry.npm.taobao.org/
+  C:\Users\liuniuyou\.npmrc  
+
+   yarn start --reset-cache 或者 npm start --reset-cache  npm cache clean --force
   ```
-  
-- npm 语法
-  
+- 并行生成，请添加“/m”
+
   ```
+  更新npm
+
+  ```
+-   npm c c++编译工具
+
+  ```
+  PROGRA~2 = Program Files (x86)
+  PROGRA~1 = Program Files
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise
+  cd  "C:\PROGRA~2\Microsoft Visual Studio\2017\Enterprise"
+  
+  npm install --msvs_version=2017
+  npm install -g npm
+  
+  npm configs set msbuild_path "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\BuildTools\\MSBuild\\15.0\\Bin"
+  
   cnpm install node-sass -g
+  https://developer.microsoft.com/zh-cn/windows/downloads/sdk-archive
   npm install -g node-gyp
-  查看所有版本  
-  
+  https://www.npmjs.com/package/windows-build-tools
+  npm install --global windows-build-tools
+  ```
+
+
+-   查看所有版本 
+
+
+  ```
   npm view(info) npm versions
   npm info expo@30.0.0
   npm info  npm 
   npm  ls  expo -g
   ```
-  
-  ```
+-   npm
+
+```
   npm --version   6.5.0    
   node --version  v10.16.2
-  
+
   npm install --save-dev webpack-cli@3.3.6 &&
   npm install --save-dev jest@24.8.0 && 
   npm install --save-dev css-loader@3.2.0 && 
   npm install --save-dev optimize-css-assets-webpack-plugin@5.0.3 && 
   npm install --save-dev webpack-bundle-analyzer@3.4.1 &&
-  
+
   npm install react-native@0.60.4
-  
+
   <Scene
       key="welcomeScreen"
       component={WelcomeScreen}
   />
-  
+
   <Scene
           key="Reward"
           component={RewardScreen}
           title="Reward"
           icon={RewardIcon}
   />
-  ```
-  
+```
+
+
+
 - 线上 
 
   ```
   http://47.74.240.50:8080/ 
-  
+
   apt install nodejs
   https://nodejs.org/dist/v10.16.3/node-v10.16.3.tar.gz
   tar zxvf node-v10.16.3.tar.gz
   ./configure && make && make install
+  ```
+- 云服务开发者
+
+  ```
+ https://aws.amazon.com/cn/sns/sms-pricing/
+ https://aws.amazon.com/cn/sns/pricing/
+ https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
+ https://aws-amplify.github.io/docs/
+ Google: developonefood@gmail.com psw：xc8tmg2b
   ```

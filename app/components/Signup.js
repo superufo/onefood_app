@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {View,Container,Header,Title,Content,Button,Item,Label,Input,Body,Left,Right,Icon,Text,Form,StyleProvider,Toast} from "native-base";
+import {View,Container,Header,Title,Content,Button,Item,Label,Input,Body,Left,Right,Icon,Text,Form,Spinner,StyleProvider,Toast} from "native-base";
 
 import PropTypes from 'prop-types';
 import debounce from 'lodash/debounce';

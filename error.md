@@ -101,7 +101,28 @@ onChangeText={debounce(onEmailChange, 1000)}
 
 "react-native-fbsdk": "^1.0.3",
 
+D:\reactnative_pro\food\onefoodRn0.60Stable
+rm -Rf  C:\Users\liuniuyou\AppData\Roaming\npm\node_modules\node-gyp
+npm install node_gyp -g  node编译原生C++ 
+npm config set node_gyp  'node C:\Users\liuniuyou\AppData\Roaming\npm\node_modules\node-gyp.js'
 
+"weak-napi": "1.0.3",
 
+import CameraScreen from './screens/CameraScreen';
+"react-native-camera": "^3.3.2", "3.4.0"
+
+<Scene
+    key="cameraScreen"
+    component={CameraScreen}
+    hideNavBar
+/>
+
+"node-gyp": "^5.0.3",
+"node-sass": "^4.12.0",
+
+C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin
+    
+子传父    
+{this.makeMoney.bind(this,100)
 
 

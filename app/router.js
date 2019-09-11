@@ -19,10 +19,10 @@ import OrdersList from './screens/OrderListScreen';
 import WelcomeScreen from './screens/WelcomeScreen';
 
 import TestScreen from './screens/TestScreen';
+import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
-
 import storage from 'redux-persist/lib/storage';
 import { Actions } from 'react-native-router-flux';
 
@@ -32,9 +32,7 @@ import DeviceStorage from '../src/utils/DeviceStorage';
 
 var inited = false;
 DeviceStorage.get("authToken").then( (val)=>{
-  console.log("***************882222",val);
 });
-
 
 const MenuIcon = ({focused , title}) => {
   return (
@@ -78,6 +76,13 @@ const AppRouter = () => (
                                 title="Welcome"
                                 hideNavBar
                                 initial
+                            />
+
+                            <Scene
+                                path={"/choiceSendTypeScreen/:useremail/:mobile/:choice/"}
+                                key="choiceSendTypeScreen"
+                                component={ChoiceSendTypeScreen}
+                                hideNavBar
                             />
 
                             <Scene
@@ -154,6 +159,13 @@ const AppRouter = () => (
                               title="My Orders"
                             />
                         </Drawer>
+
+                       <Scene
+                           path={"/choiceSendTypeScreen/:useremail/:mobile/:choice/"}
+                           key="choiceSendTypeScreenS"
+                           component={ChoiceSendTypeScreen}
+                           hideNavBar
+                       />
 
                        <Scene hideNavBar tabBarPosition="bottom"  initial={inited}>
                                <Tabs

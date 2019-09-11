@@ -29,9 +29,10 @@ class SignupScreen extends Component {
 
     handleRedirect = (registerMessage) => {
         if (registerMessage) {
-          alert("loginMessage");
           try {
-            Actions.rewardScreen();
+            //Actions.rewardScreen();
+            console.log("***************componentWillReceiveProps",{useremail:this.state.useremail,mobile:this.state.mobile});
+            Actions.choiceSendTypeScreen({useremail:this.state.useremail,mobile:this.state.mobile,});
           } catch (e) {
             console.log(e);
           }
@@ -41,7 +42,9 @@ class SignupScreen extends Component {
    componentDidMount() {
        const { registerMessage,registerError,...rest } = this.props;
        if( registerMessage !== null  ){
-         Actions.rewardScreen();
+         //Actions.rewardScreen();
+         console.log("***************componentDidMount",{useremail:this.state.useremail,mobile:this.state.mobile});
+         Actions.choiceSendTypeScreen({useremail:this.state.useremail,mobile:this.state.mobile,choice:"mobile"});
        }
   }
 

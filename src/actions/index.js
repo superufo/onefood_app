@@ -67,3 +67,11 @@ export const createOrder = (items, total) => ({
   },
 });
 
+export const choiceVd = (useremail, mobile,choice) => ({
+  type: 'CHOICE_VALIDATE_TYPE',
+  payload: {
+    useremail,
+    mobile,
+    choice
+  },
+});
