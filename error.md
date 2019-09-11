@@ -109,9 +109,8 @@ npm config set node_gyp  'node C:\Users\liuniuyou\AppData\Roaming\npm\node_modul
 "weak-napi": "1.0.3",
 
 import CameraScreen from './screens/CameraScreen';
-"react-native-camera": "^3.3.2", "3.4.0"
-
-<Scene
+"react-native-camera": "^3.3.2",
+ <Scene
     key="cameraScreen"
     component={CameraScreen}
     hideNavBar
