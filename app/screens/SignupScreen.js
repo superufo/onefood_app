@@ -31,7 +31,7 @@ class SignupScreen extends Component {
         if (registerMessage) {
           try {
             //Actions.rewardScreen();
-            console.log("***************componentWillReceiveProps",{useremail:this.state.useremail,mobile:this.state.mobile});
+            //console.log("***************componentWillReceiveProps",{useremail:this.state.useremail,mobile:this.state.mobile});
             Actions.choiceSendTypeScreen({useremail:this.state.useremail,mobile:this.state.mobile,});
           } catch (e) {
             console.log(e);

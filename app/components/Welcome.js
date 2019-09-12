@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Image, Dimensions,  StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import { Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
+import { Toast,Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import getTheme from '../../native-base-theme/components';
@@ -9,6 +9,7 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
+import DeviceStorage from '../../src/utils/DeviceStorage';
 
 import UiAdapter from '../utils/UiAdapter';
 //1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
@@ -37,7 +38,15 @@ class RewardWelcome extends Component {
                             </Label>
                             <BR size={20} />
 
-                            <Button block success onPress={() =>{Actions.loginScreen()}} >
+                            <Button block success onPress={() =>{
+                                                                   DeviceStorage.get("authToken").then( (val)=>{
+                                                                        if (val!=null ||  val!=""){
+                                                                            Toast.show({text:"You have been login ok, plese login out to relogin",position:"top",textStyle:{ color: "#34C47C" }, buttonText: "Okay"})
+                                                                        }else {
+                                                                            Actions.loginScreen()
+                                                                        }
+                                                                   });
+                                                                  }} >
                                   <Text>Sign In</Text>
                             </Button>
 

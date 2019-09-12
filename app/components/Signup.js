@@ -66,7 +66,7 @@ class SignupComponent extends Component {
 
                 <Content padder>
                    {registerError && Toast.show({text:registerError.message,buttonText: "OK",position:"top",type: "danger"}) }
-                   {registerMessage && Toast.show({text:JSON.stringify(registerMessage.message),textStyle:{ color: "#34C47C" }, buttonText: "Okay"})}
+                   {registerMessage && Toast.show({text:JSON.stringify(registerMessage.message),position:"top",textStyle:{ color: "#34C47C" }, buttonText: "Okay"})}
 
                   <Title style={{ justifyContent:'flex-start',marginBottom:10, marginTop:10,}}>Let's Create Your foodies Account</Title>
 

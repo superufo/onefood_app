@@ -184,7 +184,7 @@ const AppRouter = () => (
                                  <Scene
                                    key="Test"
                                    icon={MenuIcon}
-                                   component={CoureselScreen}
+                                   component={TestScreen}
                                    title="Menu"
                                  />
 

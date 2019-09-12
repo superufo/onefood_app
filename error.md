@@ -125,3 +125,37 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin
 {this.makeMoney.bind(this,100)
 
 
+const LAYOUT_WIDTH = SCREEN_WIDTH-40
+
+layout
+    alignItems: 'center',
+    justifyContent: 'center',
+
+          itemHeight={100}
+          sliderHeight={100}
+
+ tabBar : {
+    position : 'absolute',
+    height:20,
+    right : 0,
+    bottom : 0,
+    left : 0,
+    borderTopWidth : 3,
+    borderColor : '#ddd',
+    backgroundColor : '#fff'
+  },
+
+    <View style={styles.tabBar}>
+            <Pagination
+                  containerStyle={{backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
+                  dotsLength={3}
+                  dotStyle={styles.ww}
+                  inactiveDotStyle={{
+                        // Define styles for inactive dots here
+                  }}
+                  inactiveDotOpacity={0.4}
+                  inactiveDotScale={0.6}
+                  activeDotIndex={ this.state.activeTab }
+            />
+      </View>
+

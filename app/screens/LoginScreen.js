@@ -30,32 +30,32 @@ class LoginScreen extends Component {
     };
   }
 
-  componentDidMount() {
-    //await AsyncStorage.clear(); 注销
-    /*const { loginMessage } = this.props;
-    if (loginMessage !== null &&  loginMessage.token!=null && loginMessage.token && loginMessage.token.length > 10) {
-       Toast.show({text:"login Success",buttonText: "Okay",duration:1000,position:"bottom",type: "success"});
-       Actions.rewardScreen();
-    }*/
-
-    const authToken =  DeviceStorage.get("authToken");
-    if( typeof authToken==Object && authToken!=null ){
-      Actions.rewardScreen();
-    }
-  }
-
 //  componentDidMount() {
-//      //await AsyncStorage.clear(); 注销
-//      const loginMessageInStorage =  AsyncStorage.getItem("loginMessage");
-//      if( loginMessageInStorage.token!=null ||  loginMessageInStorage.token!="" ){
-//           this.handleRedirect(loginMessageInStorage);
-//      } else {
-//          const { loginMessage } = this.props;
-//          if (loginMessage !== null && loginMessage.token && loginMessage.token.length > 10) {
-//             this.handleRedirect(loginMessage);
-//          }
-//      }
-//   }
+//    //await AsyncStorage.clear(); 注销
+//    /*const { loginMessage } = this.props;
+//    if (loginMessage !== null &&  loginMessage.token!=null && loginMessage.token && loginMessage.token.length > 10) {
+//       Toast.show({text:"login Success",buttonText: "Okay",duration:1000,position:"bottom",type: "success"});
+//       Actions.rewardScreen();
+//    }*/
+//
+//    const authToken =  DeviceStorage.get("authToken");
+//    if( typeof authToken==Object && authToken!=null ){
+//      Actions.rewardScreen();
+//    }
+//  }
+
+    componentDidMount() {
+      AsyncStorage.clear(); //注销
+      const loginMessageInStorage =  AsyncStorage.getItem("loginMessage");
+      if( loginMessageInStorage.token!=null ||  loginMessageInStorage.token!="" ){
+           this.handleRedirect(loginMessageInStorage);
+      } else {
+          const { loginMessage } = this.props;
+          if (loginMessage !== null && loginMessage.token && loginMessage.token.length > 10) {
+             this.handleRedirect(loginMessage);
+          }
+      }
+  }
 
   componentWillReceiveProps(nextProps, nextContext) {
      this.handleRedirect(nextProps.loginMessage);
