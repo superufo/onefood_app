@@ -22,6 +22,8 @@ import TestScreen from './screens/TestScreen';
 import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 import CoureselScreen from './screens/CoureselScreen';
 
+import HomePageScreen from './screens/HomePageScreen';
+
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
 import storage from 'redux-persist/lib/storage';
@@ -184,7 +186,7 @@ const AppRouter = () => (
                                  <Scene
                                    key="Test"
                                    icon={MenuIcon}
-                                   component={CoureselScreen}
+                                   component={HomePageScreen}
                                    title="Menu"
                                  />
 

@@ -159,3 +159,10 @@ layout
             />
       </View>
 
+<view style="flex:1">
+                       <HotCoursel />
+                    </view>
+
+                    <view style="flex:1">
+                       <FeatureCoursel />
+                    </view>

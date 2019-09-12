@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Image,  StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import { Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
+import { Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label,Item,Input } from 'native-base';
 
 import getTheme from '../../../native-base-theme/components';
 import material from '../../../native-base-theme/variables/material';
@@ -13,12 +13,17 @@ import storage from 'redux-persist/lib/storage';
 import { Actions } from 'react-native-router-flux';
 
 class Search extends Component {
-         <Item>
-           <Icon name="ios-search" />
-           <Input placeholder="Search" />
-           <Icon name="ios-people" />
-         </Item>
-         <Button transparent>
-           <Text>Search</Text>
-         </Button>
+      render(){
+         return (
+             <View style={{height:50,marginTop:-10,marginBottom:-10,backgroundColor: 'rgba(0, 0, 0,0.01)'}} transparent >
+                 <Item style={{paddingLeft:30,}}>
+                   <Icon style={{fontSize:14, color: '#34C47C'}} name="ios-search" />
+                   <Input style={{fontSize:14, color: '#34C47C'}}  placeholder="Search food you like" />
+                 </Item>
+              </View>
+         )
+      }
+
 }
+
+export default Search;

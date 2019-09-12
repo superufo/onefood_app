@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Image,Text, View, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import { Container, Header, Left, Body,Content, Right, Button, Icon, Title } from 'native-base';
+import { Container, Header, Left, Body,Content, Right, Button, Icon, Title,Item,Card, CardItem } from 'native-base';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -13,7 +13,6 @@ import FeatureCoursel from '../components/home/FeatureCoursel';
 import { Actions } from 'react-native-router-flux';
 import storage from 'redux-persist/lib/storage';
 import DeviceStorage from '../../src/utils/DeviceStorage';
-
 import { AsyncStorage} from  'react-native';
 
 class HomePageScreen extends Component {
@@ -48,21 +47,42 @@ class HomePageScreen extends Component {
                </Header>
 
                <Content padder>
-                  <view style="flex:1">
+                  <View style="">
 
-                    <view style="flex:1">
+                    <View style="height:50">
                        <Search />
-                    </view>
+                    </View>
 
-                    <view style="flex:1">
-                       <HotCoursel />
-                    </view>
+                   <View style="height:170">
+                      <HotCoursel />
+                   </View>
 
-                    <view style="flex:1">
+                    <View>
+                        <Card transparent style={{height:50,marginTop:-10,marginBottom:-10}} >
+                        <CardItem>
+                              <Left>
+                                <Button transparent>
+                                  <Text style={{fontSize:25,color: '#34C47C'}}>Feature</Text>
+                                </Button>
+                              </Left>
+
+                              <Right>
+                                <Item>
+                                    <Text>View all</Text>
+                                    <Icon name='menu' />
+                                </Item>
+                              </Right>
+                            </CardItem>
+                        </Card>
+                    </View>
+
+
+
+                    <View style="height:50">
                        <FeatureCoursel />
-                    </view>
+                    </View>
 
-                  </view>
+                  </View>
                </Content>
 
 
@@ -72,10 +92,10 @@ class HomePageScreen extends Component {
 }
 
 
-WelcomeScreen.defaultProps = {
+HomePageScreen.defaultProps = {
 }
 
-WelcomeScreen.ProType = {
+HomePageScreen.ProType = {
 }
 
 function initMapStateToProps(State){

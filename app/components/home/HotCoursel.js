@@ -7,7 +7,7 @@ const SCREEN_WIDTH = Dimensions.get('window').width
 //https://github.com/archriss/react-native-snap-carousel/blob/master/doc/PROPS_METHODS_AND_GETTERS.md
 
 const Screen = (props) => (
-  <View style={{ width:SCREEN_WIDTH,height:180,backgroundColor:"#369"}}>
+  <View style={{ width:SCREEN_WIDTH,height:170,backgroundColor:"#369"}}>
     <Text>{ props.text }</Text>
   </View>
 );
@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
   },
   container: {
     width:SCREEN_WIDTH,
-    height:200,
-    paddingTop: 40,
+    height:170,
+    paddingTop:-1,
   },
   tabBar : {
     marginTop: -40,

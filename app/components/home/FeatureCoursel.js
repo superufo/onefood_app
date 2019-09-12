@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Dimensions,TouchableOpacity } from 'react-native';
+import { View, Image, StyleSheet, Dimensions,TouchableOpacity } from 'react-native';
+
+import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base'
+
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 
 const SCREEN_WIDTH = Dimensions.get('window').width
@@ -7,9 +10,37 @@ const SCREEN_WIDTH = Dimensions.get('window').width
 //https://github.com/archriss/react-native-snap-carousel/blob/master/doc/PROPS_METHODS_AND_GETTERS.md
 
 const Screen = (props) => (
-  <View style={{ width:SCREEN_WIDTH,height:180,backgroundColor:"#369"}}>
-    <Text>{ props.text }</Text>
-  </View>
+   <Card>
+      <CardItem>
+        <Left>
+          <Thumbnail source={{uri: 'Image URL'}} />
+          <Body>
+            <Text>NativeBase</Text>
+            <Text note>GeekyAnts</Text>
+          </Body>
+        </Left>
+      </CardItem>
+      <CardItem cardBody>
+        <Image source={{uri: 'Image URL'}} style={{height: 200, width: null, flex: 1}}/>
+      </CardItem>
+      <CardItem>
+        <Left>
+          <Button transparent>
+            <Icon active name="thumbs-up" />
+            <Text>12 Likes</Text>
+          </Button>
+        </Left>
+        <Body>
+          <Button transparent>
+            <Icon active name="chatbubbles" />
+            <Text>4 Comments</Text>
+          </Button>
+        </Body>
+        <Right>
+          <Text>11h ago</Text>
+        </Right>
+      </CardItem>
+    </Card>
 );
 
 class HotCoursel extends Component {
@@ -45,23 +76,6 @@ class HotCoursel extends Component {
           inactiveSlideScale={ 1 }
 
         />
-
-        <TouchableOpacity style={styles.tabBar}>
-                <Pagination
-                      dotContainerStyle = {{height:10}}
-                      containerStyle={{height:10}}
-                      dotsLength={3}
-                      dotStyle={styles.ww}
-
-                      inactiveDotStyle={{
-                          backgroundColor: 'rgba(0, 0, 0,1)'
-                      }}
-                      inactiveDotOpacity={0.9}
-                      inactiveDotScale={0.6}
-                      activeDotIndex={ this.state.activeTab }
-                />
-          </TouchableOpacity>
-
       </View>
 
     )
@@ -77,16 +91,8 @@ const styles = StyleSheet.create({
   },
   container: {
     width:SCREEN_WIDTH,
-    height:200,
-    paddingTop: 40,
-  },
-  tabBar : {
-    marginTop: -40,
-    zIndex:999,
-    right : 0,
-    bottom : 0,
-    left : 0,
-  },
+    height:300,
+  }
 })
 
 export default HotCoursel;
