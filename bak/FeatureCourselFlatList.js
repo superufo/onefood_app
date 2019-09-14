@@ -79,17 +79,16 @@ class  FeatureCoursel extends Component {
 
  renderFeatrue() {
      return (
-
-         <View style={styles.topic}>
-             <Text style={styles.topicHead}>专题精选</Text>
-             <FlatList
-                 data={this.state.topic}
-                 keyExtractor={(item, index) => item.gid}
-                 renderItem={this.renderFeatrueItem}
-                 horizontal={true}
-                 showsHorizontalScrollIndicator={false}
-             />
-         </View>
+             <View style={styles.topic}>
+                 <Text style={styles.topicHead}>专题精选</Text>
+                 <FlatList
+                     data={this.state.topic}
+                     keyExtractor={(item, index) => item.gid}
+                     renderItem={this.renderFeatrueItem}
+                     horizontal={true}
+                     showsHorizontalScrollIndicator={false}
+                 />
+             </View>
          )
  }
 

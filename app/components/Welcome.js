@@ -39,14 +39,15 @@ class RewardWelcome extends Component {
                             <BR size={20} />
 
                             <Button block success onPress={() =>{
-                                                                   DeviceStorage.get("authToken").then( (val)=>{
-                                                                        if (val!=null ||  val!=""){
-                                                                            Toast.show({text:"You have been login ok, plese login out to relogin",position:"top",textStyle:{ color: "#34C47C" }, buttonText: "Okay"})
-                                                                        }else {
-                                                                            Actions.loginScreen()
-                                                                        }
-                                                                   });
-                                                                  }} >
+                                                               DeviceStorage.get("authToken").then( (val)=>{
+                                                                    console.log("authToken",val)
+                                                                    if (val==null){
+                                                                        Actions.loginScreen()
+                                                                    }else {
+                                                                        Toast.show({text:"You have been login ok, plese login out to relogin",position:"top",textStyle:{ color: "#34C47C" }, buttonText: "Okay"})
+                                                                    }
+                                                               });
+                                                          }} >
                                   <Text>Sign In</Text>
                             </Button>
 
