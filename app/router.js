@@ -20,7 +20,6 @@ import WelcomeScreen from './screens/WelcomeScreen';
 
 import TestScreen from './screens/TestScreen';
 import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
-import CoureselScreen from './screens/CoureselScreen';
 
 import HomePageScreen from './screens/HomePageScreen';
 

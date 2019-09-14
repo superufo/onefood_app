@@ -1,98 +1,99 @@
-import React, { Component } from 'react';
-import { View, Image, StyleSheet, Dimensions,TouchableOpacity } from 'react-native';
+import React, { Component } from 'react'
+import {
+  Text,
+  View,
+  Image,
+  Dimensions
+} from 'react-native'
+import Swiper from 'react-native-swiper'
+const { width } = Dimensions.get('window')
+const screenWidth = width-100
+const contentWidth = width/2 -40
 
-import { Container, Header, Content, Card, CardItem, Thumbnail, Text, Button, Icon, Left, Body, Right } from 'native-base'
+import Assets from '../../../src/constants/assets';
 
-import Carousel, { Pagination } from 'react-native-snap-carousel';
+const styles = {
+  wrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    width:width-20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  slide: {
+    width:contentWidth,
+    flex: 1,
+    backgroundColor: 'transparent',
+    backgroundColor: 'rgba(0,0,0,.2)',
+  },
+  image: {
+    width:contentWidth,
+    flex: 4,
+    backgroundColor: 'transparent',
+  },
+  loadingView: {
+    width:contentWidth,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,.2)'
+  },
 
-const SCREEN_WIDTH = Dimensions.get('window').width
-//https://snack.expo.io/@zizwar/react-native-snap-carousel-with-custom-dots
-//https://github.com/archriss/react-native-snap-carousel/blob/master/doc/PROPS_METHODS_AND_GETTERS.md
+  loadingImage: {
+    width: 60,
+    height: 60
+  }
+}
 
-const Screen = (props) => (
-   <Card>
-      <CardItem>
-        <Left>
-          <Thumbnail source={{uri: 'Image URL'}} />
-          <Body>
-            <Text>NativeBase</Text>
-            <Text note>GeekyAnts</Text>
-          </Body>
-        </Left>
-      </CardItem>
-      <CardItem cardBody>
-        <Image source={{uri: 'Image URL'}} style={{height: 200, width: null, flex: 1}}/>
-      </CardItem>
-      <CardItem>
-        <Left>
-          <Button transparent>
-            <Icon active name="thumbs-up" />
-            <Text>12 Likes</Text>
-          </Button>
-        </Left>
-        <Body>
-          <Button transparent>
-            <Icon active name="chatbubbles" />
-            <Text>4 Comments</Text>
-          </Button>
-        </Body>
-        <Right>
-          <Text>11h ago</Text>
-        </Right>
-      </CardItem>
-    </Card>
-);
+const Slide = props => {
+  return (<View style={styles.slide}>
+    <Image onLoad={props.loadHandle.bind(null, props.i)} style={styles.image} source={{uri: props.uri}} />
+    {
+      !props.loaded && <View style={styles.loadingView}>
+        <Image resizeMode='stretch'  style={styles.loadingImage} source={Assets.Images.pizza} />
+      </View>
+    }
+    <Text style={{flex: 1,flexWrap: 'wrap',width:contentWidth}} >Current Loaded Images: 111111</Text>
+  </View>)
+}
 
-class HotCoursel extends Component {
-  SCREENS = [
-    <Screen text='first screen' />,
-    <Screen text='second screen' />,
-    <Screen text='third screen' />
-  ]
-
-  constructor(props) {
+class  FeatureCoursel extends Component {
+  constructor (props) {
     super(props)
     this.state = {
-      activeTab : 0
+      imgList: [
+        'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
+        'http://pic16.nipic.com/20111006/6239936_092702973000_21!!!.jpg',
+        'http://pic13.nipic.com/20110409/7119492_114440620000_2.jpg',
+        'http://pic68.nipic.com/file/20150601/8164280_104301508000_2.jpg'
+      ],
+      loadQueue: [0, 0, 0, 0]
     }
+    this.loadHandle = this.loadHandle.bind(this)
   }
-
-  render() {
+  loadHandle (i) {
+    let loadQueue = this.state.loadQueue
+    loadQueue[i] = 1
+    this.setState({
+      loadQueue
+    })
+  }
+  render () {
     return (
-      <View style={styles.container}>
-        <Carousel
-          autoplay={true}
-          autoplayDelay={1000}
-          autoplayInterval={1000}
-          ref={ ref => this.carouselRef = ref }
-          data={ this.SCREENS }
-          renderItem={ ({ item }) => item }
-
-          loop={true}
-          onSnapToItem={ i => this.setState({ activeTab : i }) }
-          sliderWidth={ SCREEN_WIDTH }
-          itemWidth={ SCREEN_WIDTH }
-          inactiveSlideOpacity={ 1 }
-          inactiveSlideScale={ 1 }
-
-        />
+      <View style={{flex:1,height:170,width:width-20,}}>
+        <Swiper  buttonWrapperStyle={{paddingBottom:50}} style={styles.wrapper} loop={true} horizontal={true}
+                showsPagination={false}  autoplayTimeout={8}  autoplay={true} showsButtons={true} >
+          {
+            this.state.imgList.map((item, i) => <Slide
+              loadHandle={this.loadHandle}
+              loaded={!!this.state.loadQueue[i]}
+              uri={item}
+              i={i}
+              key={i} />)
+          }
+        </Swiper>
       </View>
-
     )
   }
 }
 
-const styles = StyleSheet.create({
-  ww:{
-      width: 10,
-      height: 10,
-      borderRadius: 5,
-      marginHorizontal: 8, backgroundColor: 'rgba(255, 255, 255, 0.92)'
-  },
-  container: {
-    width:SCREEN_WIDTH,
-    height:300,
-  }
-})
-
-export default HotCoursel;
+export default  FeatureCoursel;
