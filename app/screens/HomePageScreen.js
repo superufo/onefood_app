@@ -62,20 +62,20 @@ class HomePageScreen extends Component {
                       <HotCoursel />
                    </View>
 
-                    <View style={{height:40,backgroundColor:'#ffffff'}}>
+                    <View style={{height:40,backgroundColor:'#ffffff',color:'#1A1824'}}>
                         <Card transparent style={{height:20}}>
                             <TouchableOpacity style={{height:20,backgroundColor:'transparent'}}>
                                 <CardItem>
                                   <Left>
                                     <Button transparent>
-                                      <Text style={{fontSize:20}}>Feature</Text>
+                                      <Text style={{fontSize:24,}}>Feature</Text>
                                     </Button>
                                   </Left>
 
-                                  <Right>
+                                  <Right style={{fontSize:14,color:'#1A1824',textAlign:'center',textAlignVertical:'center'}}>
                                     <Item>
                                         <Text>View all </Text>
-                                        <Icon name='right' type="AntDesign"/>
+                                        <Icon style={{fontSize:14,color:'#1A1824'}}  name='right' type="AntDesign"/>
                                     </Item>
                                   </Right>
                                 </CardItem>
@@ -83,9 +83,25 @@ class HomePageScreen extends Component {
                         </Card>
                     </View>
 
-                    <View style={{height:250}}>
+                    <View style={{height:290}}>
                        <FeatureCoursel />
                     </View>
+
+                    <View style={{height:40,backgroundColor:'#ffffff',color:'#1A1824'}}>
+                        <Card transparent style={{height:20}}>
+                            <TouchableOpacity style={{height:20,backgroundColor:'transparent'}}>
+                                <CardItem>
+                                  <Left>
+                                    <Button transparent>
+                                      <Text style={{fontSize:24,}}>Full Menu</Text>
+                                    </Button>
+                                  </Left>
+                                </CardItem>
+                            </TouchableOpacity>
+                        </Card>
+                    </View>
+
+
 
                   </View>
                </Content>

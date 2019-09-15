@@ -163,6 +163,45 @@ layout
                        <HotCoursel />
                     </view>
 
-                    <view style="flex:1">
-                       <FeatureCoursel />
-                    </view>
+    <view style="flex:1">
+       <FeatureCoursel />
+    </view>
+    
+    <FlatList
+        data={[{key: 'a'}, {key: 'b'}]}
+        renderItem={({item}) => <Text>{item.key}</Text>}
+    />
+      
+      
+    <FlatList
+         data={this.state.topic}
+         keyExtractor={(item, index) => item.gid}
+         renderItem={this.renderFeatrueItem}
+         horizontal={true}
+         showsHorizontalScrollIndicator={false}
+     />  
+    
+    
+     ListHeaderComponent={this.readerHead}
+     ListFooterComponent={this.readerEnd}
+                          
+                          
+      renderFeatrueItem = ({item})=> {
+            return (
+                <TouchableOpacity style={styles.topicItem}>
+                    <Image source={{uri:item.url}} style={styles.topicImg} />
+                    <View style={styles.topicContainer}>
+                        <View style={styles.topicText}>
+                            <Text style={styles.topicTitle}>{item.title}</Text>
+                            <Text style={styles.topicDesc}>{item.describe}</Text>
+                        </View>
+                        <Text style={styles.topicPrice}>{item.price}</Text>
+                    </View>
+                </TouchableOpacity>
+            )
+      }
+      
+      removeClippedSubviews={false}
+                       initialNumToRender={2}
+                       windowSize={400}
+                       refreshing={true}
