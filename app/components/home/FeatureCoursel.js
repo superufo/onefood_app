@@ -92,7 +92,7 @@ class  FeatureCoursel extends Component {
                   scrollEventThrottle={500}
                   scrollPercent={5}
              />
-         </View>
+        </View>
     )
   }
 

@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import Search from '../components/home/Search';
 import HotCoursel from '../components/home/HotCoursel';
 import FeatureCoursel from '../components/home/FeatureCoursel';
+import CategroryList from '../components/home/CategroryList';
 
 import { Actions } from 'react-native-router-flux';
 import storage from 'redux-persist/lib/storage';
@@ -100,6 +101,10 @@ class HomePageScreen extends Component {
                             </TouchableOpacity>
                         </Card>
                     </View>
+
+                   <View>
+                      <CategroryList />
+                   </View>
 
 
 
