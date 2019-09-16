@@ -75,3 +75,27 @@ export const choiceVd = (useremail, mobile,choice) => ({
     choice
   },
 });
+
+//homepage
+export const getGoods = (goodsName,isFeature,isHot,isNew) => ({
+  type: 'GET_GOODS',
+  payload: {
+    goodsName,
+    isFeature,
+    isHot,
+    isNew
+  },
+});
+
+export const getAdv= (category) => ({
+  type: 'GET_ADV',
+  payload: {
+   category:1
+  },
+});
+
+export const getGoodsCatagrory= () => ({
+  type: 'GET_GOODS_CATAGRORY',
+  payload: {
+  },
+});

@@ -205,3 +205,28 @@ layout
                        initialNumToRender={2}
                        windowSize={400}
                        refreshing={true}
+                       
+      <Left>
+          <Button transparent></Button>
+      </Left>
+      <Body style={{justifyContent: "center", alignItems: "center", }} >
+         <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
+      </Body>
+      <Right>
+        <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+      </Right>    
+      
+      
+      <Header style={{height:36,backgroundColor:'#FFFFFF',borderWidth:0}}>
+        <Left>
+            <Button transparent></Button>
+        </Left>
+        <Body style={{justifyContent: "center", alignItems: "center", paddingLeft:60}} >
+           <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
+        </Body>
+        <Right>
+          <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+        </Right>
+     </Header>           
+                       
+                       

@@ -58,6 +58,9 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 <img src="screenshots/12.png" data-canonical-src="screenshots/12.png" width="250" />
 <img src="screenshots/13.png" data-canonical-src="./screenshots/13.png" width="250" />
 <img src="screenshots/npm.png" data-canonical-src="./screenshots/npm.png" width="250" />
+<img src="screenshots/14.png" data-canonical-src="./screenshots/npm.png" width="250" />
+<img src="screenshots/15.png" data-canonical-src="./screenshots/npm.png" width="250" />
+<img src="screenshots/17.png" data-canonical-src="./screenshots/npm.png" width="250" />
 
 
 ### 开发

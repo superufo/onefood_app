@@ -9,6 +9,8 @@ const client = axios.create({
  * Request Wrapper with default success/error actions
  */
 const request = (options) => {
+   console.log('Request options:', options);
+
   const onSuccess = (response) => {
     console.debug('Request Successful!', response);
     return response;

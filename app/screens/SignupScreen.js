@@ -25,7 +25,7 @@ class SignupScreen extends Component {
 
    componentWillReceiveProps(nextProps, nextContext) {
        this.handleRedirect(nextProps.registerMessage);
-    }
+   }
 
     handleRedirect = (registerMessage) => {
         if (registerMessage) {
@@ -43,7 +43,7 @@ class SignupScreen extends Component {
        const { registerMessage,registerError,...rest } = this.props;
        if( registerMessage !== null  ){
          //Actions.rewardScreen();
-         console.log("***************componentDidMount",{useremail:this.state.useremail,mobile:this.state.mobile});
+         //console.log("***************componentDidMount",{useremail:this.state.useremail,mobile:this.state.mobile});
          Actions.choiceSendTypeScreen({useremail:this.state.useremail,mobile:this.state.mobile,choice:"mobile"});
        }
   }

@@ -9,6 +9,8 @@ import foodsReducer from './foodsReducer';
 import cartReducer from './cart';
 import ordersReducer from './ordersReducer';
 
+import homeReducer from './home';
+
 const authPersistConfig = {
   key: 'auth',
   storage,
@@ -44,12 +46,21 @@ const orderPersistConfig = {
   stateReconciler: autoMergeLevel2,
 };
 
+//advList  goodsList catagroryFullList
+const homePersistConfig = {
+  key: 'home',
+  storage,
+  whitelist: ['advList','goodsList','catagroryFullList'],
+  stateReconciler: autoMergeLevel2,
+};
+
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
   restaurant: persistReducer(restaPersistConfig, restaurantReducer),
   food: persistReducer(foodPersistConfig, foodsReducer),
   cart: persistReducer(cartPersistConfig, cartReducer),
   orders: persistReducer(orderPersistConfig, ordersReducer),
+  home:persistReducer(homePersistConfig, homeReducer),
 });
 
 export default rootReducer;

@@ -45,6 +45,7 @@ class RewardWelcome extends Component {
                                                                         Actions.loginScreen()
                                                                     }else {
                                                                         Toast.show({text:"You have been login ok, plese login out to relogin",position:"top",textStyle:{ color: "#34C47C" }, buttonText: "Okay"})
+                                                                        Actions.rewardScreen()
                                                                     }
                                                                });
                                                           }} >

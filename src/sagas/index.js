@@ -11,6 +11,7 @@ import cartItemUpdateQtySaga from './cart/cartItemsUpdateQtySaga';
 import orderSaga from './orderSaga';
 import validateSaga from './validateSaga';
 
+import homeSaga from './homeSaga';
 
 function* rootSaga() {
   yield fork(authSaga);
@@ -24,6 +25,7 @@ function* rootSaga() {
   yield fork(cartItemUpdateQtySaga);
   yield fork(orderSaga);
   yield fork(validateSaga);
+  yield fork(homeSaga);
 }
 
 export default rootSaga;

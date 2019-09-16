@@ -57,7 +57,6 @@ function* registerTask(action) {
 
     const { payload } = action;
 
-    console.log("**************action:",action);
     const res = yield call( Auth.doRegister,
                             payload.account.replace(/\s/g,""),
                             payload.useremail.replace(/\s/g,""),
@@ -66,7 +65,6 @@ function* registerTask(action) {
                             payload.firstname.replace(/\s/g,""),
                             payload.lastname.replace(/\s/g,""),
                            );
-   console.log("**************res:",res);
 
     if (res.data.status === 0 || res.status === 200) {
       yield put({

@@ -12,13 +12,13 @@ import FeatureCoursel from '../components/home/FeatureCoursel';
 import CategroryList from '../components/home/CategroryList';
 
 import { Actions } from 'react-native-router-flux';
-import storage from 'redux-persist/lib/storage';
 import DeviceStorage from '../../src/utils/DeviceStorage';
-import { AsyncStorage} from  'react-native';
 
 import getTheme from '../../native-base-theme/components';
 import material from '../../native-base-theme/variables/material';
 import commonColor from '../../native-base-theme/variables/commonColor';
+
+import { getGoods,getAdv,getGoodsCatagrory } from '../../src/actions/index';
 
 class HomePageScreen extends Component {
   constructor(props) {
@@ -26,17 +26,20 @@ class HomePageScreen extends Component {
   }
 
   componentWillMount(){
-      /*AsyncStorage.getItem("authToken").then( (val)=>{
-        if(  val!=null &&  val!="" ){
-          Actions.rewardScreen();
-        }
-      });*/
   }
 
   componentDidMount() {
+      console.log("componentDidMount test")
+      this.props.getGoodsCatagrory()
+      this.props.getGoods()
+      console.log("componentDidMount test111")
+      this.props.getAdv();
+      console.log("componentDidMount test2222")
   }
 
   render() {
+    console.log("this.props.goodsCatagroryList:",this.props.goodsCatagroryList)
+
     return (
          <StyleProvider  style={getTheme(material)}>
             <Container>
@@ -44,7 +47,7 @@ class HomePageScreen extends Component {
                   <Left>
                       <Button transparent></Button>
                   </Left>
-                  <Body style={{justifyContent: "center", alignItems: "center", }} >
+                  <Body style={{justifyContent: "center", alignItems: "center", paddingLeft:60}} >
                      <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
                   </Body>
                   <Right>
@@ -60,7 +63,7 @@ class HomePageScreen extends Component {
                     </View>
 
                    <View style={{height:170,}}>
-                      <HotCoursel />
+                      <HotCoursel advList={this.props.advList} />
                    </View>
 
                     <View style={{height:40,backgroundColor:'#ffffff',color:'#1A1824'}}>
@@ -85,7 +88,7 @@ class HomePageScreen extends Component {
                     </View>
 
                     <View style={{height:290}}>
-                       <FeatureCoursel />
+                       <FeatureCoursel goodsList={this.props.goodsList}/>
                     </View>
 
                     <View style={{height:40,backgroundColor:'#ffffff',color:'#1A1824'}}>
@@ -103,10 +106,8 @@ class HomePageScreen extends Component {
                     </View>
 
                    <View>
-                      <CategroryList />
+                      <CategroryList  goodsCatagroryList={this.props.goodsCatagroryList} />
                    </View>
-
-
 
                   </View>
                </Content>
@@ -121,14 +122,23 @@ HomePageScreen.defaultProps = {
 }
 
 HomePageScreen.ProType = {
+    getGoods:PropTypes.func.isRequired,
+    getAdv:PropTypes.func.isRequired,
+    getGoodsCatagrory:PropTypes.func.isRequired
 }
 
-function initMapStateToProps(State){
-  return {}
+function initMapStateToProps(state){
+  return {
+      advList: state.home.advList,
+      goodsList: state.home.goodsList,
+      goodsCatagroryList: state.home.catagroryFullList,
+  };
 }
 
-function InitDispachTOProps(state){
-    return {}
+function InitDispachTOProps(dipatch){
+    return bindActionCreators({
+        getGoods,getAdv,getGoodsCatagrory
+      }, dipatch);
 }
 
 const styles = StyleSheet.create({

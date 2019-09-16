@@ -120,6 +120,7 @@ SignupComponent.propTypes = {
   loading: PropTypes.bool.isRequired,
   registerMessage: PropTypes.object,
   registerError: PropTypes.object,
+  onAccountChange:PropTypes.func.isRequired,
   onEmailChange: PropTypes.func.isRequired,
   onMobileChange: PropTypes.func.isRequired,
   onRepeatPasswordChange: PropTypes.func.isRequired,
