@@ -25,11 +25,25 @@ import { getGoods,getAdv,getGoodsCatagrory } from '../../src/actions/index';
       Actions.foodListScreen(params)
  }
 
+ const searchAction = ()=>{
+       if (this.state.searchEname!=''){
+             let params = {catagrory:null,goodsName:this.state.searchEname,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:this.state.searchEname}
+             Actions.foodListScreen(params)
+       }
+ }
+
+ changeSearchkey = (searchkey)=>{
+     this.setState({
+       searchkey,
+     });
+ }
+
 class HomePageScreen extends Component {
   constructor(props) {
       super(props);
 
       this.state = {
+        searchEname:''
       };
   }
 
@@ -66,7 +80,7 @@ class HomePageScreen extends Component {
                   <View style="">
 
                     <View style={{height:50}}>
-                       <Search />
+                       <Search changeSearchkey={changeSearchkey}   searchAction={searchAction} />
                     </View>
 
                    <View style={{height:170,}}>

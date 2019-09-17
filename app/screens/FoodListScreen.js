@@ -42,7 +42,7 @@ class FoodListScreen extends Component {
                <Header style={{ backgroundColor: "#ffffff", borderColor: '#ffffff', }}>
                  <Left>
                     <Button transparent>
-                     <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.pop()}}/>
+                     <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.homePage()}}/>
                    </Button>
                  </Left>
                  <Body style={{justifyContent: "center",alignItems: "center",marginRight:80}}>

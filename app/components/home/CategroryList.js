@@ -41,8 +41,7 @@ const contentWidth = width/2 -40
 const catagroryAction = (catagroryId,catagroryEname)=>{
       let params = {catagrory:catagroryId,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:catagroryEname}
       Actions.foodListScreen(params)
- }
-
+}
 
 class  CategroryList extends Component {
   constructor (props) {
