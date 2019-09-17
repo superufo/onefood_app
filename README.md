@@ -249,10 +249,10 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   ```
 - 云服务开发者
 
-  ```
+  ```shell
  https://aws.amazon.com/cn/sns/sms-pricing/
  https://aws.amazon.com/cn/sns/pricing/
- https://aws-amplify.github.io/docs/js/start?ref=amplify-rn-btn&platform=react-native
+ https://aws-amplify.github.io/docs/js/start?ref=amplify-rn- btn&platform=react-native
  https://aws-amplify.github.io/docs/
  Google: developonefood@gmail.com psw：xc8tmg2b
   ```
