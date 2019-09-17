@@ -50,7 +50,7 @@ const orderPersistConfig = {
 const homePersistConfig = {
   key: 'home',
   storage,
-  whitelist: ['advList','goodsList','catagroryFullList'],
+  whitelist: ['advList','catagroryFullList'],
   stateReconciler: autoMergeLevel2,
 };
 

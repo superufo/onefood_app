@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import {StyleSheet,Text,View,Image,Dimensions,TouchableOpacity,ScrollView,FlatList} from 'react-native'
 import {  Button,Icon, Item,Card ,CardItem, Left,Right } from 'native-base';
 
+import { Actions } from 'react-native-router-flux';
+import BR from '../base_components/BR';
+
 const { width,height } = Dimensions.get('window')
 const screenWidth = width-100
 const contentWidth = width/2 -40
 
-import { Actions } from 'react-native-router-flux';
-import Assets from '../../../src/constants/assets';
 
 //参考https://github.com/gingerJY/React-Native-Demo/blob/master/app/page/home/recommend.js
 //https://www.cnblogs.com/MaiJiangDou/p/8351288.html
@@ -31,11 +32,13 @@ class  FoodList extends Component {
                       <Text style={styles.topicTitle}>{item.ename}</Text>
                       <Text style={styles.topicPri}>{item.edescription}</Text>
                   </View>
+
                   <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} >
                      <Text style={styles.topicPri}>price:{item.price}{item.unit}</Text>
+
                      <Text style={styles.topicPri}>point:{item.point}</Text>
-                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus'  type="AntDesign"  onPress={() => Actions.cartScreen({id:item.id})}  />
-                     <Icon style={{fontSize:15,color:'#FF2650'}}   name='cart' />
+                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus' type="AntDesign" onPress={() => Actions.cartScreen({id:item.id})} />
+                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='cart' />
                   </Text>
               </View>
           </TouchableOpacity>
@@ -96,15 +99,15 @@ const styles = StyleSheet.create({
         padding:15,
     },
     topicItem: {
-        width: 240,
+        width: width-10,
         height:68,
         marginLeft:10,
         marginRight:10,
         flexDirection:'row'
     },
     topicImg: {
-        width: 240,
-        height: 68,
+        width: 44,
+        height: 44,
         borderWidth:0.5,
         borderColor:'#cdcdcd',
         borderRadius:2,
@@ -123,7 +126,6 @@ const styles = StyleSheet.create({
     topicPri:{
         fontSize:13,
         color:'rgba(26,26,26,1)',
-        marginTop:3,
     },
 
 });

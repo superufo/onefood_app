@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import FoodList from '../components/home/CategroryList';
+import FoodList from '../components/FoodList';
 
 import { Actions } from 'react-native-router-flux';
 import DeviceStorage from '../../src/utils/DeviceStorage';
@@ -30,31 +30,29 @@ class FoodListScreen extends Component {
   }
 
   componentDidMount() {
-      const { catagrory,goodsName,isFeature,isHot,isNew,page,size,sort} = this.props
+      const { catagrory,goodsName,isFeature,isHot,isNew,page,size,sort,title} = this.props
+      console.log("FoodListScreen:",this.props)
       this.props.getGoods(catagrory,goodsName,isFeature,isHot,isNew,page,size,sort)
   }
 
   render() {
-     //console.log("this.props.goodsList:",this.props.goodsList)
-
     return (
          <StyleProvider  style={getTheme(material)}>
             <Container>
-               <Header style={{height:36,backgroundColor:'#FFFFFF',borderWidth:0}}>
-                  <Left>
-                      <Icon fontSize='30'  name='left'  type="AntDesign"/>
-                  </Left>
-                  <Body style={{justifyContent: "center", alignItems: "center", paddingLeft:60}} >
-                     <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
-                  </Body>
-                  <Right>
-                    <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
-                  </Right>
+               <Header style={{ backgroundColor: "#ffffff", borderColor: '#ffffff', }}>
+                 <Left>
+                    <Button transparent>
+                     <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.pop()}}/>
+                   </Button>
+                 </Left>
+                 <Body style={{justifyContent: "center",alignItems: "center",marginRight:80}}>
+                   <Title style={{fontSize:15,color:'#34C47C'}}>{this.props.title}</Title>
+                 </Body>
                </Header>
 
                <Content padder>
                    <View>
-                      <FoodList  goodsList={this.props.goodsList} />
+                      <FoodList goodsList={this.props.goodsList} />
                    </View>
                </Content>
             </Container>

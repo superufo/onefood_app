@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import {StyleSheet,Text,View,Image,Dimensions,TouchableOpacity,ScrollView,FlatList} from 'react-native'
 import {  Button,Icon, Item,Card ,CardItem, Left,Right } from 'native-base';
 
+import { Actions } from 'react-native-router-flux';
+import Assets from '../../../src/constants/assets';
+
 const { width,height } = Dimensions.get('window')
 const screenWidth = width-100
 const contentWidth = width/2 -40
-
-import Assets from '../../../src/constants/assets';
 
 //参考https://github.com/gingerJY/React-Native-Demo/blob/master/app/page/home/recommend.js
 //https://www.cnblogs.com/MaiJiangDou/p/8351288.html
@@ -37,6 +38,11 @@ import Assets from '../../../src/constants/assets';
 //           }
 //],
 
+const catagroryAction = (catagroryId,catagroryEname)=>{
+      let params = {catagrory:catagroryId,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:catagroryEname}
+      Actions.foodListScreen(params)
+ }
+
 
 class  CategroryList extends Component {
   constructor (props) {
@@ -48,7 +54,7 @@ class  CategroryList extends Component {
 
   dataItem = ({item})=> {
       return (
-          <TouchableOpacity style={styles.topicItem}>
+          <TouchableOpacity style={styles.topicItem} onPress={catagroryAction(item.id,item.ename)}>
                 <View style={styles.topicContainer}>
                     <View style={styles.topicText}>
                         <Text style={styles.topicTitle}>{item.ename}</Text>

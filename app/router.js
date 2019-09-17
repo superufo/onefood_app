@@ -88,13 +88,6 @@ const AppRouter = () => (
                             />
 
                             <Scene
-                                path={"/foodListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort"}
-                                key="foodListScreen"
-                                component={FoodListScreen}
-                                hideNavBar
-                            />
-
-                            <Scene
                                 key="loginScreen"
                                 component={LoginScreen}
                                 hideNavBar
@@ -173,6 +166,13 @@ const AppRouter = () => (
                            path={"/choiceSendTypeScreen/:useremail/:mobile/:choice/"}
                            key="choiceSendTypeScreenS"
                            component={ChoiceSendTypeScreen}
+                           hideNavBar
+                       />
+
+                       <Scene
+                           path={"/foodListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort/:title"}
+                           key="foodListScreen"
+                           component={FoodListScreen}
                            hideNavBar
                        />
 

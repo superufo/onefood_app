@@ -20,6 +20,11 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 import { getGoods,getAdv,getGoodsCatagrory } from '../../src/actions/index';
 
+ const foodAction = ()=>{
+      let params = {catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:"Feature"}
+      Actions.foodListScreen(params)
+ }
+
 class HomePageScreen extends Component {
   constructor(props) {
       super(props);
@@ -79,8 +84,8 @@ class HomePageScreen extends Component {
                                   </Left>
 
                                   <Right style={{fontSize:14,color:'#1A1824',textAlign:'center',textAlignVertical:'center'}}>
-                                    <Item>
-                                        <Text onPress={() => Actions.foodListScreen({catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc'})}  >View all </Text>
+                                    <Item onPress={foodAction}>
+                                        <Text >View all</Text>
                                         <Icon style={{fontSize:14,color:'#1A1824'}}  name='right' type="AntDesign"/>
                                     </Item>
                                   </Right>
