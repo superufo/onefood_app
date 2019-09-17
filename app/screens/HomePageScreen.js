@@ -23,23 +23,25 @@ import { getGoods,getAdv,getGoodsCatagrory } from '../../src/actions/index';
 class HomePageScreen extends Component {
   constructor(props) {
       super(props);
+
+      this.state = {
+      };
   }
 
   componentWillMount(){
   }
 
   componentDidMount() {
-      console.log("componentDidMount test")
       this.props.getGoodsCatagrory()
       this.props.getGoods()
-      console.log("componentDidMount test111")
       this.props.getAdv();
-      console.log("componentDidMount test2222")
+
+      console.log("this.props:",this.props)
   }
 
+  //foodListScreen 参数 :catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort
   render() {
-    console.log("this.props.goodsCatagroryList:",this.props.goodsCatagroryList)
-
+     //console.log("this.props.goodsCatagroryList:",this.props.goodsCatagroryList)
     return (
          <StyleProvider  style={getTheme(material)}>
             <Container>
@@ -78,7 +80,7 @@ class HomePageScreen extends Component {
 
                                   <Right style={{fontSize:14,color:'#1A1824',textAlign:'center',textAlignVertical:'center'}}>
                                     <Item>
-                                        <Text>View all </Text>
+                                        <Text onPress={() => Actions.foodListScreen({catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc'})}  >View all </Text>
                                         <Icon style={{fontSize:14,color:'#1A1824'}}  name='right' type="AntDesign"/>
                                     </Item>
                                   </Right>
@@ -128,6 +130,8 @@ HomePageScreen.ProType = {
 }
 
 function initMapStateToProps(state){
+  // store 数据传递过来  与本页面定义的state数据不同集合
+  // console.log("initMapStateToProps this.state:",state,"------------------------")
   return {
       advList: state.home.advList,
       goodsList: state.home.goodsList,

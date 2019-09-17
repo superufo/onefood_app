@@ -77,13 +77,17 @@ export const choiceVd = (useremail, mobile,choice) => ({
 });
 
 //homepage
-export const getGoods = (goodsName,isFeature,isHot,isNew) => ({
+export const getGoods = (catagrory,goodsName,isFeature,isHot,isNew,page,size,sort) => ({
   type: 'GET_GOODS',
   payload: {
+    catagrory,
     goodsName,
     isFeature,
     isHot,
-    isNew
+    isNew,
+    page,
+    size,
+    sort
   },
 });
 

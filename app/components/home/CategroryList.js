@@ -12,33 +12,37 @@ import Assets from '../../../src/constants/assets';
 //https://www.cnblogs.com/MaiJiangDou/p/8351288.html
 //https://reactnative.cn/docs/sample-application-movies/#flatlist
 
+//测试数据
+//data1: [
+//           {
+//            id:'2',
+//            parent_id:'0',
+//            ename:"Drinks",
+//            url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
+//           },{
+//            id:'3',
+//            parent_id:'0',
+//            ename:"Colds Foods",
+//            url:'http://pic13.nipic.com/20110409/7119492_114440620000_2.jpg',
+//           },{
+//            id:'4',
+//            parent_id:'0',
+//            ename:"Chuan Foods",
+//            url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
+//           },{
+//            id:'1',
+//            parent_id:'0',
+//            ename:"Xiang Foods",
+//            url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
+//           }
+//],
+
+
 class  CategroryList extends Component {
   constructor (props) {
       super(props)
       this.state = {
-        data: [
-          {
-           id:'2',
-           parent_id:'0',
-           ename:"Drinks",
-           url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-          },{
-           id:'3',
-           parent_id:'0',
-           ename:"Colds Foods",
-           url:'http://pic13.nipic.com/20110409/7119492_114440620000_2.jpg',
-          },{
-           id:'4',
-           parent_id:'0',
-           ename:"Chuan Foods",
-           url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-          },{
-           id:'1',
-           parent_id:'0',
-           ename:"Xiang Foods",
-           url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-          }
-        ],
+        data: this.props.goodsCatagroryList
       }
   }
 

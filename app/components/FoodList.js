@@ -13,36 +13,7 @@ import Assets from '../../../src/constants/assets';
 //https://www.cnblogs.com/MaiJiangDou/p/8351288.html
 //https://reactnative.cn/docs/sample-application-movies/#flatlist
 
-// test  data
-//FeatureList: [
-//          {
-//           gid:'2',
-//           title:'地瓜汤',
-//           description:'忆苦思甜',
-//           price:'12$',
-//           url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-//          },{
-//           gid:'3',
-//           title:'鹿肉炒大蒜',
-//           description:'更轻松、更美好的大扫除攻略',
-//           price:'12$',
-//           url:'http://pic13.nipic.com/20110409/7119492_114440620000_2.jpg',
-//          },{
-//           gid:'4',
-//           title:'河鱼炖虾',
-//           description:'那些让你“红”运当头的好物',
-//           price:'12$',
-//           url:'http://pic68.nipic.com/file/20150601/8164280_104301508000_2.jpg'
-//          },{
-//           gid:'1',
-//           title:'test001',
-//           description:'testoo1',
-//           price:'12$',
-//           url:'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-//          }
-//        ],
-
-class  FeatureCoursel extends Component {
+class  FoodList extends Component {
   constructor (props) {
       super(props)
 
@@ -58,9 +29,11 @@ class  FeatureCoursel extends Component {
               <View style={styles.topicContainer}>
                   <View style={styles.topicText}>
                       <Text style={styles.topicTitle}>{item.ename}</Text>
-                      <Text style={styles.topicPri}>{item.price}{item.unit}</Text>
+                      <Text style={styles.topicPri}>{item.edescription}</Text>
                   </View>
                   <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} >
+                     <Text style={styles.topicPri}>price:{item.price}{item.unit}</Text>
+                     <Text style={styles.topicPri}>point:{item.point}</Text>
                      <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus'  type="AntDesign"  onPress={() => Actions.cartScreen({id:item.id})}  />
                      <Icon style={{fontSize:15,color:'#FF2650'}}   name='cart' />
                   </Text>
@@ -95,7 +68,7 @@ class  FeatureCoursel extends Component {
                   data={this.state.FeatureList}
                   keyExtractor={(item, index) => item.id}
                   renderItem={this.renderFeatrueItem}
-                  horizontal={true}
+                  horizontal={false}
                   showsHorizontalScrollIndicator={false}
                   scrollEventThrottle={500}
                   scrollPercent={5}
@@ -124,13 +97,14 @@ const styles = StyleSheet.create({
     },
     topicItem: {
         width: 240,
-        height:290,
+        height:68,
         marginLeft:10,
         marginRight:10,
+        flexDirection:'row'
     },
     topicImg: {
         width: 240,
-        height: 240,
+        height: 68,
         borderWidth:0.5,
         borderColor:'#cdcdcd',
         borderRadius:2,
@@ -154,4 +128,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default  FeatureCoursel;
+export default  FoodList;

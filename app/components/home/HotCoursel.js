@@ -10,6 +10,7 @@ const { width } = Dimensions.get('window')
 const screenWidth = width-100
 const contentWidth = width/2 -40
 
+import { Actions } from 'react-native-router-flux';
 import Assets from '../../../src/constants/assets';
 
 const styles = {
@@ -46,31 +47,33 @@ const styles = {
 }
 
 const Slide = props => {
-  return (<View style={styles.slide}>
-    <Image onLoad={props.loadHandle.bind(null, props.i)} style={styles.image} source={{uri: props.uri}} />
+  return (<View style={styles.slide}  onPress={() => Actions.cartScreen({id:props.item.id})} >
+    <Image onLoad={props.loadHandle.bind(null, props.i)} style={styles.image} source={{uri:props.item.pic}} />
     {
       !props.loaded && <View style={styles.loadingView}>
         <Image  style={styles.loadingImage} source={Assets.Images.pizza} />
       </View>
     }
-    <Text style={{flex: 1,flexWrap: 'wrap',width:width-20,}} >Current Loaded Images: 111111</Text>
+    <Text style={{flex: 1,flexWrap: 'wrap',width:width-20,}} >{props.item.title}{props.item.content}</Text>
   </View>)
 }
 
 class HotCoursel extends Component {
   constructor (props) {
     super(props)
+
+    let loadQueueVal = []
+    for(let i=0;i< this.props.advList.length; i++){
+        loadQueueVal.push(0);
+    }
+
     this.state = {
-      imgList: [
-        'http://pic16.nipic.com/20111006/6239936_092702973000_2.jpg',
-        'http://pic16.nipic.com/20111006/6239936_092702973000_21!!!.jpg',
-        'http://pic13.nipic.com/20110409/7119492_114440620000_2.jpg',
-        'http://pic68.nipic.com/file/20150601/8164280_104301508000_2.jpg'
-      ],
-      loadQueue: [0, 0, 0, 0]
+      imgList: this.props.advList,
+      loadQueue: loadQueueVal
     }
     this.loadHandle = this.loadHandle.bind(this)
   }
+
   loadHandle (i) {
     let loadQueue = this.state.loadQueue
     loadQueue[i] = 1
@@ -78,7 +81,10 @@ class HotCoursel extends Component {
       loadQueue
     })
   }
+
   render () {
+    const {advList} =  this.props
+
     return (
       <View style={{height:170,width:width-20,}}>
         <Swiper loadMinimal loadMinimalSize={1}  style={styles.wrapper}   loop={true}
@@ -87,7 +93,7 @@ class HotCoursel extends Component {
             this.state.imgList.map((item, i) => <Slide
               loadHandle={this.loadHandle}
               loaded={!!this.state.loadQueue[i]}
-              uri={item}
+              item={item}
               i={i}
               key={i} />)
           }

@@ -22,6 +22,7 @@ import TestScreen from './screens/TestScreen';
 import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 
 import HomePageScreen from './screens/HomePageScreen';
+import FoodListScreen from './screens/FoodListScreen';
 
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
@@ -31,7 +32,6 @@ import { Actions } from 'react-native-router-flux';
 import DeviceStorage from '../src/utils/DeviceStorage';
 
 //import TabNavigation from './screens/TabNavigation';
-
 var inited = false;
 DeviceStorage.get("authToken").then( (val)=>{
 });
@@ -84,6 +84,13 @@ const AppRouter = () => (
                                 path={"/choiceSendTypeScreen/:useremail/:mobile/:choice/"}
                                 key="choiceSendTypeScreen"
                                 component={ChoiceSendTypeScreen}
+                                hideNavBar
+                            />
+
+                            <Scene
+                                path={"/foodListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort"}
+                                key="foodListScreen"
+                                component={FoodListScreen}
                                 hideNavBar
                             />
 
@@ -183,7 +190,7 @@ const AppRouter = () => (
                                  inactiveBackgroundColor="#EAEAEB"
                                >
                                  <Scene
-                                   key="Test"
+                                   key="homePage"
                                    icon={MenuIcon}
                                    component={HomePageScreen}
                                    title="Menu"

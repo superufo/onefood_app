@@ -6,7 +6,7 @@ const initialState = {
 };
 
 export default (state = initialState, { type, payload }) => {
-  console.log("home.js type:",type,"payload:",payload)
+  //console.log("home.js type:",type,"payload:",payload)
   switch (type) {
     case 'FETCH_GOODS_CATAGRORY_SUCCESS':
       return {
