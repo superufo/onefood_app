@@ -19,8 +19,8 @@ class Search extends Component {
 
          return (
              <View style={{height:50,marginTop:-10,marginBottom:-10,backgroundColor: 'rgba(0, 0, 0,0.01)'}} transparent >
-                 <Item style={{paddingLeft:30,}}   onPress={searchAction}>
-                   <Icon style={{fontSize:14, color: '#34C47C'}} name="ios-search" />
+                 <Item style={{paddingLeft:30,}}   >
+                   <Icon style={{fontSize:14, color: '#34C47C'}} name="ios-search"   onPress={searchAction} />
                    <Input style={{fontSize:14, color: '#34C47C'}}  placeholder="Search food you like" onChangeText={debounce(changeSearchkey, 1000)} />
                  </Item>
               </View>

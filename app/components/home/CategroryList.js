@@ -38,11 +38,6 @@ const contentWidth = width/2 -40
 //           }
 //],
 
-const catagroryAction = (catagroryId,catagroryEname)=>{
-      let params = {catagrory:catagroryId,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:catagroryEname}
-      Actions.foodListScreen(params)
-}
-
 class  CategroryList extends Component {
   constructor (props) {
       super(props)
@@ -51,15 +46,20 @@ class  CategroryList extends Component {
       }
   }
 
+  catagroryAction = (catagroryId,catagroryEname)=>{
+        let params = {catagrory:catagroryId,goodsName:null,isFeature:null,isHot:null,isNew:null,page:0,size:10,sort:'id,desc',title:catagroryEname}
+        Actions.catagroryListScreen(params)
+  }
+
   dataItem = ({item})=> {
       return (
-          <TouchableOpacity style={styles.topicItem} onPress={catagroryAction(item.id,item.ename)}>
-                <View style={styles.topicContainer}>
+          <TouchableOpacity style={styles.topicItem} >
+                <View style={styles.topicContainer} >
                     <View style={styles.topicText}>
                         <Text style={styles.topicTitle}>{item.ename}</Text>
                     </View>
-                    <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} >
-                       <Icon style={{fontSize:15,color:'#FF2650'}}  name='right'  type="AntDesign"/>
+                    <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}}  >
+                       <Icon style={{fontSize:15,color:'#FF2650'}}  onPress={this.catagroryAction(item.id,item.ename)} name='right'  type="AntDesign"/>
                     </Text>
                 </View>
           </TouchableOpacity>

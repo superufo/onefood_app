@@ -20,24 +20,6 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 import { getGoods,getAdv,getGoodsCatagrory } from '../../src/actions/index';
 
- const foodAction = ()=>{
-      let params = {catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:"Feature"}
-      Actions.foodListScreen(params)
- }
-
- const searchAction = ()=>{
-       if (this.state.searchEname!=''){
-             let params = {catagrory:null,goodsName:this.state.searchEname,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id desc',title:this.state.searchEname}
-             Actions.foodListScreen(params)
-       }
- }
-
- changeSearchkey = (searchkey)=>{
-     this.setState({
-       searchkey,
-     });
- }
-
 class HomePageScreen extends Component {
   constructor(props) {
       super(props);
@@ -55,7 +37,25 @@ class HomePageScreen extends Component {
       this.props.getGoods()
       this.props.getAdv();
 
-      console.log("this.props:",this.props)
+      //console.log("this.props:",this.props)
+  }
+
+  searchAction = ()=>{
+     if (this.state.searchEname!=''){
+           let params =  {catagrory:null,goodsName:this.state.searchEname,isFeature:null,isHot:null,isNew:null,page:0,size:10,sort:'id,desc',title:this.state.searchEname}
+           Actions.searchListScreen(params)
+     }
+   }
+
+  changeSearchkey = (searchkey)=>{
+       this.setState({
+         searchEname:searchkey,
+       });
+  }
+
+  foodAction = ()=>{
+        let params = {catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id,desc',title:"Feature"}
+        Actions.foodListScreen(params)
   }
 
   //foodListScreen 参数 :catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort
@@ -80,7 +80,7 @@ class HomePageScreen extends Component {
                   <View style="">
 
                     <View style={{height:50}}>
-                       <Search changeSearchkey={changeSearchkey}   searchAction={searchAction} />
+                       <Search changeSearchkey={this.changeSearchkey}   searchAction={this.searchAction} />
                     </View>
 
                    <View style={{height:170,}}>
@@ -98,9 +98,9 @@ class HomePageScreen extends Component {
                                   </Left>
 
                                   <Right style={{fontSize:14,color:'#1A1824',textAlign:'center',textAlignVertical:'center'}}>
-                                    <Item onPress={foodAction}>
+                                    <Item >
                                         <Text >View all</Text>
-                                        <Icon style={{fontSize:14,color:'#1A1824'}}  name='right' type="AntDesign"/>
+                                        <Icon style={{fontSize:14,color:'#1A1824'}} onPress={this.foodAction}  name='right' type="AntDesign"/>
                                     </Item>
                                   </Right>
                                 </CardItem>

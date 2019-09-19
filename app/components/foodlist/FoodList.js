@@ -3,7 +3,7 @@ import {StyleSheet,Text,View,Image,Dimensions,TouchableOpacity,ScrollView,FlatLi
 import {  Button,Icon, Item,Card ,CardItem, Left,Right } from 'native-base';
 
 import { Actions } from 'react-native-router-flux';
-import BR from '../base_components/BR';
+import BR from '../../base_components/BR';
 
 const { width,height } = Dimensions.get('window')
 const screenWidth = width-100
@@ -28,18 +28,24 @@ class  FoodList extends Component {
           <TouchableOpacity style={styles.topicItem}>
               <Image source={{uri:item.goodsPics[0]}} style={styles.topicImg} />
               <View style={styles.topicContainer}>
-                  <View style={styles.topicText}>
+                  <View style={{flex:2,marginTop:-3,}}>
                       <Text style={styles.topicTitle}>{item.ename}</Text>
-                      <Text style={styles.topicPri}>{item.edescription}</Text>
+                      <Text style={styles.topicDes}>{item.edescription}</Text>
                   </View>
 
-                  <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} >
-                     <Text style={styles.topicPri}>price:{item.price}{item.unit}</Text>
+                  <View style={{flex:1,marginTop:3,flexDirection:"column",alignItems:'flex-end',marginRight:10,}} >
+                     <View style={{flex:1,flexDirection:"row",alignItems:"flex-end",justifyContent:'space-between',marginRight:10}}>
+                         <Text style={styles.topicPri}>price:{item.price}{item.unit}</Text>
+                         <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus' type="AntDesign" onPress={() => Actions.cartScreen({id:item.id})} />
+                         <Icon style={{fontSize:15,color:'#FF2650'}}  name='cart' />
+                     </View>
 
-                     <Text style={styles.topicPri}>point:{item.point}</Text>
-                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus' type="AntDesign" onPress={() => Actions.cartScreen({id:item.id})} />
-                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='cart' />
-                  </Text>
+                     <View style={{flex:1,flexDirection:"row",alignItems:"flex-end",marginTop:3,marginRight:10,justifyContent:'space-between', }}>
+                        <Text style={styles.topicPri}>point:{item.point}</Text>
+                        <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus' type="AntDesign" onPress={() => Actions.cartScreen({id:item.id})} />
+                        <Icon style={{fontSize:15,color:'#FF2650'}}  name='cart' />
+                     </View>
+                  </View>
               </View>
           </TouchableOpacity>
       )
@@ -108,22 +114,27 @@ const styles = StyleSheet.create({
     topicImg: {
         width: 44,
         height: 44,
+        marginRight:10,
         borderWidth:0.5,
         borderColor:'#cdcdcd',
         borderRadius:2,
     },
     topicContainer:{
-        width: 240,
+        width: width-10-44-10,
         height: 30,
         flexDirection: 'row',
         justifyContent:'space-between',
-        marginTop:10,
     },
     topicTitle:{
         fontSize:16,
         color:'rgba(26,26,26,1)',
     },
+    topicDes:{
+       fontSize:13,
+       color:'rgba(26,26,26,1)',
+    },
     topicPri:{
+        marginRight:10,
         fontSize:13,
         color:'rgba(26,26,26,1)',
     },

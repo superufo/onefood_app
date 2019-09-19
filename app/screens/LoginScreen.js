@@ -113,8 +113,6 @@ class LoginScreen extends Component {
     }
   };
 
-
-
   render() {
     const { loginLoading, loginMessage } = this.props;
     if (loginMessage && loginMessage.token) {

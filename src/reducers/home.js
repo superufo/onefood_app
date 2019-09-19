@@ -1,7 +1,10 @@
+//goodsList 首页
 const initialState = {
   catagroryFullList: [],
   advList:[],
   goodsList:[],
+  searchList:[],
+  catagroryList:[],
   homeError: null,
 };
 
@@ -21,9 +24,25 @@ export default (state = initialState, { type, payload }) => {
           homeError: null,
       };
     case 'FETCH_GOODS_SUCCESS':
+           if  ( typeof payload.goodsName!=undefined &&  payload.goodsName!=null ){
+               return {
+                    ...state,
+                    searchList: payload.response,
+                    homeError: null,
+               };
+           }else if  ( typeof payload.catagrory!=undefined &&  payload.catagrory!=null ){
+              //let map = new Map();
+              //let key = payload.catagrory+"_"+payload.size
+              //map.set(key,payload.response);
+              return {
+                    ...state,
+                    catagroryList:payload.response,
+                    homeError: null,
+               };
+           }
           return {
               ...state,
-              goodsList: payload,
+              goodsList: payload.response,
               homeError: null,
           };
     case 'FETCH_ADV_ERROR':

@@ -23,6 +23,8 @@ import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 
 import HomePageScreen from './screens/HomePageScreen';
 import FoodListScreen from './screens/FoodListScreen';
+import SearchListScreen from './screens/SearchListScreen';
+import CatagroryListScreen from './screens/CatagroryListScreen';
 
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
@@ -175,6 +177,20 @@ const AppRouter = () => (
                            component={FoodListScreen}
                            hideNavBar
                        />
+
+                       <Scene
+                          path={"/searchListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort/:title"}
+                          key="searchListScreen"
+                          component={SearchListScreen}
+                          hideNavBar
+                      />
+
+                       <Scene
+                             path={"/catagroryListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort/:title"}
+                             key="catagroryListScreen"
+                             component={CatagroryListScreen}
+                             hideNavBar
+                        />
 
                        <Scene hideNavBar tabBarPosition="bottom"  initial={inited}>
                                <Tabs

@@ -6,14 +6,31 @@ const shopId = 2;
 function getGoodsList(catagrory=null,goodsName=null,isFeature=null,isHot=null,isNew=null,page=0,size=10,sort='id,desc',headers = {}) {
   //todo add catagrory filter
   const data = {
-    goodsName,
-    isFeature,
-    isHot,
-    isNew,
     shopId:shopId
   };
 
-  let SUBMIT_URL = GET_GOODS_URL + '?page=' + page + '&size=' + size +  '&sort=' + sort
+  let query = '?page=' + page + '&size=' + size +  '&sort=' + sort
+  if (catagrory!=null){
+       query +=  '&catagroryId=' + catagrory
+  }
+
+  if (goodsName!=null){
+       query +=  '&ename=' + goodsName
+  }
+
+  if (isFeature!=null){
+       query +=  '&isFeature=' + isFeature
+  }
+
+  if (isHot!=null){
+       query +=  '&isHot=' + isHot
+  }
+
+  if (isNew!=null){
+      query +=  '&isNew=' + isNew
+  }
+
+  let SUBMIT_URL = GET_GOODS_URL + encodeURI(query)
   console.log("service getGoodsList:",SUBMIT_URL,"data:",data,"headers:",headers)
   return request({ url: SUBMIT_URL, method: 'GET', data,headers });
 }

@@ -21,7 +21,7 @@ function* getGoods(action) {
 
         let sort = 'id,desc'
         if ( typeof payload.sort  != undefined  ||  payload.sort != null  ){
-            size = payload.sort
+            sort = payload.sort
         }
 
         const res = yield call(API.getGoodsList,payload.catagrory,payload.goodsName,payload.isFeature,payload.isHot,payload.isNew,page,size,sort,{
@@ -32,7 +32,7 @@ function* getGoods(action) {
         if (res.data.status === 0) {
             yield put({
               type: 'FETCH_GOODS_SUCCESS',
-              payload: res.data.data.content,
+              payload: {response:res.data.data.content,...payload}
             });
         } else {
           yield put({
@@ -113,6 +113,7 @@ function* homeSaga() {
   yield takeLatest('GET_ADV', getAdv);
   yield takeLatest('GET_GOODS', getGoods);
   yield takeLatest('GET_GOODS_CATAGRORY', getGoodsCatagrory);
+
 }
 
 export default homeSaga;

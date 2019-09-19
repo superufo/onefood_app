@@ -19,12 +19,12 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 import { getGoods } from '../../src/actions/index';
 
 //Actions.homePage()
-class FoodListScreen extends Component {
+class CatagroryListScreen extends Component {
   constructor(props) {
       super(props);
 
       this.state = {
-         goodsList:[]
+         CatagroryList:[]
       };
   }
 
@@ -34,13 +34,13 @@ class FoodListScreen extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
          this.setState({
-              goodsList:nextProps.goodsList,
+              CatagroryList:nextProps.CatagroryList,
          });
   }
 
   componentDidMount() {
       const { catagrory,goodsName,isFeature,isHot,isNew,page,size,sort,title} = this.props
-      //console.log("FoodListScreen:",this.props)
+      //console.log("CatagroryListScreen:",this.props)
       this.props.getGoods(catagrory,goodsName,isFeature,isHot,isNew,page,size,sort)
   }
 
@@ -52,7 +52,7 @@ class FoodListScreen extends Component {
 
                <Content padder>
                    <View>
-                      <FoodList goodsList={this.props.goodsList} />
+                      <FoodList goodsList={this.props.CatagroryList} />
                    </View>
                </Content>
             </Container>
@@ -61,10 +61,10 @@ class FoodListScreen extends Component {
   }
 }
 
-FoodListScreen.defaultProps = {
+CatagroryListScreen.defaultProps = {
 }
 
-FoodListScreen.ProType = {
+CatagroryListScreen.ProType = {
     getGoods:PropTypes.func.isRequired,
 }
 
@@ -72,7 +72,7 @@ function initMapStateToProps(state){
   // store 数据传递过来  与本页面定义的state数据不同集合
   // console.log("initMapStateToProps this.state:",state,"------------------------")
   return {
-      goodsList: state.home.goodsList,
+      CatagroryList: state.home.CatagroryList,
   };
 }
 
@@ -101,4 +101,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(initMapStateToProps,InitDispachTOProps)(FoodListScreen);
+export default connect(initMapStateToProps,InitDispachTOProps)(CatagroryListScreen);
