@@ -1,0 +1,1 @@
+../../../../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/RNVectorIconsManager/RNVectorIconsManager.h
