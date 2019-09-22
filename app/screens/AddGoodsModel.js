@@ -34,8 +34,8 @@ class AddGoodsModel extends Component {
   render() {
     return (
       <Lightbox verticalPercent={0.5} horizontalPercent={1}>
-        <Text>Demo Lightbox: {this.props.goodsInfo}</Text>
-        <Text>Allows transparency for background</Text>
+        <Text>Demo Cart : {this.props.goodsInfo}</Text>
+        <Text>cart listitem</Text>
       </Lightbox>
     );
   }
