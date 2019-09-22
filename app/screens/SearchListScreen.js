@@ -52,7 +52,15 @@ class SearchListScreen extends Component {
 
                <Content padder>
                    <View>
-                      <FoodList goodsList={this.props.searchList} />
+                      <FoodList   catagrory={this.props.catagrory}
+                                  goodsName={this.props.goodsName}
+                                  isFeature={this.props.isFeature}
+                                  isHot={this.props.isHot}
+                                  isNew={this.props.isNew}
+                                  page={this.props.page}
+                                  size={this.props.size}
+                                  sort={this.props.sort}
+                                  goodsList={this.props.searchList} />
                    </View>
                </Content>
             </Container>

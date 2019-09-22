@@ -24,7 +24,6 @@ class FoodListScreen extends Component {
       super(props);
 
       this.state = {
-         goodsList:[]
       };
   }
 
@@ -34,14 +33,12 @@ class FoodListScreen extends Component {
 
   componentWillReceiveProps(nextProps, nextContext) {
          this.setState({
-              goodsList:nextProps.goodsList,
+
          });
   }
 
   componentDidMount() {
-      const { catagrory,goodsName,isFeature,isHot,isNew,page,size,sort,title} = this.props
-      //console.log("FoodListScreen:",this.props)
-      this.props.getGoods(catagrory,goodsName,isFeature,isHot,isNew,page,size,sort)
+      const { catagrory,goodsName,isFeature,isHot,isNew,sort,title} = this.props
   }
 
   render() {
@@ -52,34 +49,19 @@ class FoodListScreen extends Component {
 
                <Content padder>
                    <View>
-                      <FoodList goodsList={this.props.goodsList} />
+                      <FoodList catagrory={this.props.catagrory}
+                                goodsName={this.props.goodsName}
+                                isFeature={this.props.isFeature}
+                                isHot={this.props.isHot}
+                                isNew={this.props.isNew}
+                                sort={this.props.sort}
+                      />
                    </View>
                </Content>
             </Container>
         </StyleProvider>
     );
   }
-}
-
-FoodListScreen.defaultProps = {
-}
-
-FoodListScreen.ProType = {
-    getGoods:PropTypes.func.isRequired,
-}
-
-function initMapStateToProps(state){
-  // store 数据传递过来  与本页面定义的state数据不同集合
-  // console.log("initMapStateToProps this.state:",state,"------------------------")
-  return {
-      goodsList: state.home.goodsList,
-  };
-}
-
-function InitDispachTOProps(dipatch){
-    return bindActionCreators({
-        getGoods
-      }, dipatch);
 }
 
 const styles = StyleSheet.create({
@@ -101,4 +83,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(initMapStateToProps,InitDispachTOProps)(FoodListScreen);
+export default FoodListScreen;

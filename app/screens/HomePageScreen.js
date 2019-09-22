@@ -42,8 +42,8 @@ class HomePageScreen extends Component {
 
   searchAction = ()=>{
      if (this.state.searchEname!=''){
-           let params =  {catagrory:null,goodsName:this.state.searchEname,isFeature:null,isHot:null,isNew:null,page:0,size:10,sort:'id,desc',title:this.state.searchEname}
-           Actions.searchListScreen(params)
+           let params =  {catagrory:null,goodsName:this.state.searchEname,isFeature:null,isHot:null,isNew:null,sort:'id,desc',title:this.state.searchEname}
+           Actions.foodListScreen(params)
      }
    }
 
@@ -54,7 +54,7 @@ class HomePageScreen extends Component {
   }
 
   foodAction = ()=>{
-        let params = {catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,page:0,size:10,sort:'id,desc',title:"Feature"}
+        let params = {catagrory:null,goodsName:null,isFeature:1,isHot:null,isNew:null,sort:'id,desc',title:"Feature"}
         Actions.foodListScreen(params)
   }
 
@@ -89,7 +89,7 @@ class HomePageScreen extends Component {
 
                     <View style={{height:40,backgroundColor:'#ffffff',color:'#1A1824'}}>
                         <Card transparent style={{height:20}}>
-                            <TouchableOpacity style={{height:20,backgroundColor:'transparent'}}>
+                            <TouchableOpacity style={{height:20,backgroundColor:'transparent'}} onPress={this.foodAction}>
                                 <CardItem>
                                   <Left>
                                     <Button transparent>
@@ -100,7 +100,7 @@ class HomePageScreen extends Component {
                                   <Right style={{fontSize:14,color:'#1A1824',textAlign:'center',textAlignVertical:'center'}}>
                                     <Item >
                                         <Text >View all</Text>
-                                        <Icon style={{fontSize:14,color:'#1A1824'}} onPress={this.foodAction}  name='right' type="AntDesign"/>
+                                        <Icon style={{fontSize:14,color:'#1A1824'}}  name='right' type="AntDesign"/>
                                     </Item>
                                   </Right>
                                 </CardItem>

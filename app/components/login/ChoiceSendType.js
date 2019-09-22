@@ -13,7 +13,7 @@ import BR from '../../base_components/BR';
 import UiAdapter from '../../utils/UiAdapter';
 //1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
 const screenWidth = UiAdapter.autoWidth(360);
-const tilteText = (<Title style={{flex:1,paddingTop:15,heght:50,width:screenWidth,flexDirection:'row',textAlign:'center',fontSize:25,color:'#34C47C'}}>One Food</Title>);
+const tilteText = (<Title style={{flex:1,paddingTop:15,height:50,width:screenWidth,flexDirection:'row',textAlign:'center',fontSize:25,color:'#34C47C'}}>One Food</Title>);
 
 class ChoiceSendType extends Component {
     componentWillMount() {

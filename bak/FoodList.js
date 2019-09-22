@@ -16,7 +16,7 @@ const contentWidth = width/2 -40
 //https://reactnative.cn/docs/sample-application-movies/#flatlist
 // 参考 https://www.jianshu.com/p/4e7185fc9740
 
-//ItemSeparatorComponent={this._separator}
+//getGoods(catagrory,goodsName,isFeature,isHot,isNew,page,size,sort)
 let pageNo = 0;//当前第几页
 let totalPage=3;//总的页数
 let itemNo=0;//item的个数
@@ -59,7 +59,7 @@ class  FoodList extends Component {
 
                  this.setState({
                     //复制数据源
-                    dataList:this.state.dataList.concat(res.data.data.content),
+                    dataList:res.data.data.content,
                     isLoading: false,
                     showFoot:foot,
                     isRefreshing:false,
@@ -140,24 +140,15 @@ class  FoodList extends Component {
           return (
              <View style={styles.topic}>
                  <FlatList
-                      style={{flex: 1}}
                       data={this.state.dataList}
                       keyExtractor={(item, index) => item.id}
                       renderItem={this.renderFeatrueItem}
                       horizontal={false}
 
                       ListFooterComponent={this._renderFooter.bind(this)}
-                      onEndReached={()=>{
-                             // 等待页面布局完成以后，在让加载更多
-                             if (this.isCanLoadMore){
-                                 this.loadMore();
-                                 this.isCanLoadMore = false // 加载更多时，不让再次的加载更多
-                             }
-                      }}
-                      onEndReachedThreshold={0.01}
-                      onContentSizeChange={() => {
-                          this.isCanLoadMore = true // flatview内部组件布局完成以后会调用这个方法
-                      }}
+                      onEndReached={this._onEndReached.bind(this)}
+                      onEndReachedThreshold={1}
+                      ItemSeparatorComponent={this._separator}
                  />
             </View>
           )
@@ -192,7 +183,7 @@ class  FoodList extends Component {
          }
      }
 
-    loadMore(){
+    _onEndReached(){
             //如果是正在加载中或没有更多数据了，则返回
             if(this.state.showFoot != 0 ){
                 return ;
@@ -230,7 +221,6 @@ const styles = StyleSheet.create({
           backgroundColor: '#efefef',
     },
     topic: {
-        height: '100%',
         width: width-10,
         alignItems:'center',
         backgroundColor: '#ffffff',
@@ -242,7 +232,7 @@ const styles = StyleSheet.create({
     },
     topicItem: {
         width: width-10,
-        height:268,
+        height:168,
         marginLeft:10,
         marginRight:10,
         flexDirection:'row'

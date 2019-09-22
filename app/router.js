@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { Drawer, Router, Scene,Stack ,Tabs,Overlay,Modal ,Lightbox  } from 'react-native-router-flux';
+import { Scene, Router, Actions, Reducer, ActionConst, Overlay, Tabs, Modal, Drawer, Stack, Lightbox} from 'react-native-router-flux';
 
 import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
@@ -21,6 +21,9 @@ import WelcomeScreen from './screens/WelcomeScreen';
 import TestScreen from './screens/TestScreen';
 import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 
+import MyScreen from './screens/MyScreen';
+import AddGoodsModel from './screens/AddGoodsModel';
+
 import HomePageScreen from './screens/HomePageScreen';
 import FoodListScreen from './screens/FoodListScreen';
 import SearchListScreen from './screens/SearchListScreen';
@@ -29,7 +32,6 @@ import CatagroryListScreen from './screens/CatagroryListScreen';
 import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
 import storage from 'redux-persist/lib/storage';
-import { Actions } from 'react-native-router-flux';
 
 import DeviceStorage from '../src/utils/DeviceStorage';
 
@@ -172,7 +174,7 @@ const AppRouter = () => (
                        />
 
                        <Scene
-                           path={"/foodListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort/:title"}
+                           path={"/foodListScreen/:catagrory/:goodsName/:isFeature/:isHot/:isNew/:sort/:title"}
                            key="foodListScreen"
                            component={FoodListScreen}
                            hideNavBar
@@ -221,14 +223,18 @@ const AppRouter = () => (
                                  />
 
                                  <Scene
-                                   key="More"
-                                   component={WelcomeScreen}
+                                   key="myScreen"
+                                   component={MyScreen}
                                    title="More"
                                    icon={MoreIcon}
                                  />
                                </Tabs>
                       </Scene>
                  </Stack>
+
+                 {/* Lightbox components will lay over the screen, allowing transparency*/}
+                 <Scene  path={"/addGoodsModel/:id"}
+                         key="addGoodsModel" component={AddGoodsModel} />
 
              </Lightbox>
           </Modal>

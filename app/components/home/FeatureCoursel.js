@@ -60,8 +60,8 @@ class  FeatureCoursel extends Component {
                       <Text style={styles.topicTitle}>{item.ename}</Text>
                       <Text style={styles.topicPri}>{item.price}{item.unit}</Text>
                   </View>
-                  <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} >
-                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus'  type="AntDesign"  onPress={() => Actions.cartScreen({id:item.id})}  />
+                  <Text style={{justifyContent:'center',alignItems:'center',textAlign:'center',textAlignVertical:'center'}} onPress={()=>Actions.addGoodsModel({goodsInfo:item.id})} >
+                     <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus'  type="AntDesign"    />
                      <Icon style={{fontSize:15,color:'#FF2650'}}   name='cart' />
                   </Text>
               </View>

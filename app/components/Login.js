@@ -48,7 +48,7 @@ class LoginComponent extends Component {
                       <Header style={{ backgroundColor: "#ffffff" }}>
                         <Left>
                            <Button transparent>
-                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={() => {  Actions.welcomeScreen()}}/>
+                              <Icon name="arrow-back" style={{fontSize: 20, color: '#34C47C'}} onPress={()=>{Actions.pop()}}/>
                               {/*<Title style={{fontSize:15, color: '#34C47C'}} onPress={() => {  Actions.Reward()}}>Redeem</Title>*/}
                           </Button>
                         </Left>

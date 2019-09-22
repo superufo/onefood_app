@@ -157,10 +157,16 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
   ```
 
 ​        删除指定的远程分支,   删除指定的本地分支
+  ```shell
+git push origin --delete tmp 
+git branch -d  tmp
   ```
- git push origin --delete tmp  
- git branch -d  tmp
+- reactnative debug
+
   ```
+  brew update && brew cask install react-native-debugger
+  ```
+
 - npm 设置
 
   ```
@@ -174,12 +180,14 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 
    yarn start --reset-cache 或者 npm start --reset-cache  npm cache clean --force
   ```
+  
 - 并行生成，请添加“/m”
 
   ```
   更新npm
 
   ```
+  
 -   npm c c++编译工具
 
   ```

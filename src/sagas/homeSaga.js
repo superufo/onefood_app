@@ -7,8 +7,6 @@ function* getGoods(action) {
     try {
         const { payload } = action;
 
-        const authToken = yield select(authTokenSelector);
-
         let page = 0
         if (typeof payload.page != undefined || typeof payload.page !=null ){
             page = payload.page
@@ -24,9 +22,7 @@ function* getGoods(action) {
             sort = payload.sort
         }
 
-        const res = yield call(API.getGoodsList,payload.catagrory,payload.goodsName,payload.isFeature,payload.isHot,payload.isNew,page,size,sort,{
-          Authorization: `Bearer ${authToken}`,
-        });
+        const res = yield call(API.getGoodsList,payload.catagrory,payload.goodsName,payload.isFeature,payload.isHot,payload.isNew,page,size,sort);
 
         //console.log("res.data.data.content:",res.data.data.content)
         if (res.data.status === 0) {
@@ -52,11 +48,12 @@ function* getGoodsCatagrory(action) {
     try {
         const { payload } = action
 
-        const authToken = yield select(authTokenSelector)
+        //const authToken = yield select(authTokenSelector)
+        //const res = yield call(API.getGoodsCatagroryList, {
+        //  Authorization: `Bearer ${authToken}`,
+        //})
 
-        const res = yield call(API.getGoodsCatagroryList, {
-          Authorization: `Bearer ${authToken}`,
-        })
+        const res = yield call(API.getGoodsCatagroryList)
 
         if (res.data.status === 0) {
             yield put({
@@ -84,9 +81,7 @@ function* getAdv(action) {
 
         const authToken = yield select(authTokenSelector);
 
-        const res = yield call(API.getAdvList, payload.category,{
-          Authorization: `Bearer ${authToken}`,
-        });
+        const res = yield call(API.getAdvList, payload.category);
 
         //console.log("res.data.data.content:",res.data.data.content)
         if (res.data.status === 0) {
