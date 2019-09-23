@@ -46,7 +46,7 @@ class  FoodList extends Component {
          let size = 3
          try {
               const res =   await API.getGoodsList(catagrory,goodsName,isFeature,isHot,isNew,page,size,sort)
-              console.log("fetchData res",res)
+
               if (res.data.status === 0) {
                  itemNo = res.data.data.totalElements;
                  totalPage =  Math.ceil(itemNo/size)

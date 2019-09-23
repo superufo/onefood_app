@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Animated, Dimensions, Button } from 'react-native';
+import { View, StyleSheet, Animated, Dimensions } from 'react-native';
+import { Button,Text } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
 import BR from './BR.js';
@@ -12,6 +13,7 @@ export default class BaseLightbox extends Component {
     children: PropTypes.any,
     horizontalPercent: PropTypes.number,
     verticalPercent: PropTypes.number,
+    justifyContent:  PropTypes.string,
   };
 
   constructor(props) {
@@ -37,7 +39,7 @@ export default class BaseLightbox extends Component {
   };
 
   _renderLightBox = () => {
-    const { children, horizontalPercent = 1, verticalPercent = 1 } = this.props;
+    const { children, horizontalPercent = 1, verticalPercent = 1,justifyContent='center'} = this.props;
     const height = verticalPercent ? deviceHeight * verticalPercent : deviceHeight;
     const width = horizontalPercent ? deviceWidth * horizontalPercent : deviceWidth;
     return (
@@ -45,20 +47,25 @@ export default class BaseLightbox extends Component {
         style={{
           width,
           height,
-          justifyContent: 'center',
+          justifyContent: 'flex-end',
           alignItems: 'center',
           backgroundColor: 'rgba(255,255,255,0.9)',
         }}
       >
         {children}
-        <BR size='10' />
-        <Button title="Close" onPress={this.closeModal} />
+        <View>
+            <BR size='10' />
+            <Button bordered success style={[styles.closestyle,{width:width-20}]} title="Close" onPress={this.closeModal}>
+                <Text style={{fontSize:14,}}>Close</Text>
+            </Button>
+       </View>
       </View>
     );
   };
 
   render() {
-    return <Animated.View style={[styles.container, { opacity: this.state.opacity }]}>{this._renderLightBox()}</Animated.View>;
+    const { children, horizontalPercent = 1, verticalPercent = 1,justifyContent='center'} = this.props;
+    return <Animated.View style={[styles.container, {opacity: this.state.opacity},{justifyContent:justifyContent}]}>{this._renderLightBox()}</Animated.View>;
   }
 }
 
@@ -70,8 +77,14 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     right: 0,
-    justifyContent: 'flex-end',
-    alignItems: 'flex-end',
-    flex:1
+    flex:1,
+    alignItems:'center'
   },
+  closestyle:{
+     textAlign:'center',
+     textAlignVertical:'center',
+     justifyContent:'center',
+     alignItems: 'center',
+     marginBottom:2
+  }
 });

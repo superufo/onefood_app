@@ -1,5 +1,5 @@
 import request from './request';
-import { GET_GOODS_URL, GET_ADV_URL,GET_GOODS_CATAGRORY_URL } from './api_constants';
+import { GET_GOODS_URL, GET_ADV_URL,GET_GOODS_CATAGRORY_URL,GET_GOODSBYID_URL } from './api_constants';
 
 const shopId = 2;
 
@@ -31,7 +31,20 @@ function getGoodsList(catagrory=null,goodsName=null,isFeature=null,isHot=null,is
   }
 
   let SUBMIT_URL = GET_GOODS_URL + encodeURI(query)
-  console.log("service getGoodsList:",SUBMIT_URL,"data:",data)
+  return request({ url: SUBMIT_URL, method: 'GET', data});
+}
+
+function getGoodsInfo(id=null) {
+  query = '?shopId='+ shopId
+  if (id!=null){
+      query +=  '&id=' + id
+  }
+
+  const data = {
+      shopId:shopId
+  };
+
+  let SUBMIT_URL = GET_GOODS_URL + encodeURI(query)
   return request({ url: SUBMIT_URL, method: 'GET', data});
 }
 
@@ -56,5 +69,6 @@ function getGoodsCatagroryList() {
 export default {
   getGoodsList,
   getAdvList,
-  getGoodsCatagroryList
+  getGoodsCatagroryList,
+  getGoodsInfo
 };
