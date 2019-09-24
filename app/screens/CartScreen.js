@@ -18,7 +18,7 @@ import { createOrder } from '../../src/actions';
 
 
 const FooterContainer = styled.View`
-  height: 10%;
+  height: 5%;
   width: 100%;
   background-color: white;
   flex-direction: row;
@@ -76,6 +76,7 @@ class CartScreen extends Component {
     const { cartData } = this.props;
 
     if (cartData.length > 0) {
+      console.log("cartData:",cartData)
       const postData = cartData.map(item => ({
         id: item.food._id,
         quantity: item.qty,
@@ -88,9 +89,9 @@ class CartScreen extends Component {
 
   _renderItem = ({ item }) => (
     <Item
-      key={item._id}
-      name={item.food.name}
-      price={`₹${item.price * item.qty}`}
+      key={item.id}
+      ename={item.ename}
+      price={`{item.unit}{item.price * item.qty}`}
       qty={item.qty}
       onChange={qty => this.handleItemValueChange(item, qty)}
     />
@@ -145,7 +146,7 @@ class CartScreen extends Component {
       return (
         <FooterContainer>
           <AmountContainer>
-            <PrimaryText>₹ {totalAmount}</PrimaryText>
+            <PrimaryText>$ {totalAmount}</PrimaryText>
           </AmountContainer>
           <PayButton
             onPress={() => this.handlePayment(totalAmount)}

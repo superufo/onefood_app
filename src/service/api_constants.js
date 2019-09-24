@@ -2,7 +2,7 @@
 //export const API_BASE = 'http://192.168.0.29:8101/';
 //export const API_BASE = 'http://192.168.0.222:8101/';
 //export const API_BASE = 'http://47.74.240.50:8101/';
-export const API_BASE = 'http://192.168.0.32:8101/';
+export const API_BASE = 'http://192.168.1.5:8101/';
 export const LOGIN_URL = '/auth/login';
 export const REGISTER_URL = '/api/member';
 

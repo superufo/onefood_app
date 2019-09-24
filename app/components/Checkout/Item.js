@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-
 import CounterButton from './CounterButton';
 import PrimaryText from '../../base_components/PrimaryText';
 
@@ -33,11 +32,11 @@ const PriceText = styled.Text`
 `;
 
 const Item = ({
-  name, price, onChange, qty,
+   key,ename, price, onChange, qty,
 }) => (
   <Container>
     <NameView>
-      <PrimaryText size={14} align="left">{name}</PrimaryText>
+      <PrimaryText size={14} align="left">{ename}</PrimaryText>
     </NameView>
     <RightSection>
       <CounterButton onChange={onChange} qty={qty} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Image, TouchableOpacity, ImageBackground,AsyncStorage,Dimensions,StyleSheet} from "react-native";
-import { Input,Container,View,Header,Left,Body, Right,Button, Content,Icon,Title,Subtitle ,List, ListItem, Text, Separator,Thumbnail } from 'native-base';
+import { TextInput, Image, TouchableOpacity, ImageBackground,AsyncStorage,Dimensions,StyleSheet} from "react-native";
+import { Input,Form,Container,View,Header,Left,Body, Right,Button, Content,Icon,Title,Subtitle ,List,Item, ListItem, Text, Separator,Thumbnail } from 'native-base';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Actions } from 'react-native-router-flux';
 
@@ -15,6 +15,7 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import API from '../../src/service/home';
+import { updateCartItems } from '../../src/actions/cart';
 
 const screenWidth = Dimensions.get('window').width;
 const screenHeight = Dimensions.get('window').height;
@@ -64,18 +65,22 @@ class AddGoodsModel extends Component {
           this.fetchData(nextProps.id)
       }
 
+     componentWillUnmount() {
+
+     }
+
       async fetchData(goodsId) {
           let res =   await API.getGoodsInfo(goodsId)
 
           let  goods =  res.data.data.content[0]
-          alert(res.data.data.content[0].price)
-
           if (res.data.status === 0) {
                this.setState({
                   goods:res.data.data.content[0],
                   url:goods.goodsPics[0],
+                  urls:goods.goodsPics,
                   num:1,
                   price:goods.price,
+                  point:goods.point,
                   ename:goods.ename,
                   id:goods.id,
                   unit:res.data.data.content[0].unit,
@@ -88,9 +93,59 @@ class AddGoodsModel extends Component {
           }
       }
 
+      changeNum = (num) => {
+         let gnum = parseInt(num)
+
+         if ( gnum>0 ||  gnum<1000 ){
+           sumprice = this.state.price *  gnum
+         } else {
+           gnum = 1
+           sumprice = this.state.price.price*1
+         }
+
+         this.setState({
+            num:gnum,
+            sumprice: sumprice,
+         })
+      }
+
+     add = (num) => {
+         let gnum =  parseInt(num)
+         gnum = this.state.num + gnum
+         let summary = 0
+
+         if ( gnum> 0 ){
+           summary = this.state.price *  gnum
+         } else {
+           gnum = 1
+           summary = this.state.price*1
+         }
+
+         this.setState({
+            num:gnum,
+            sumprice: summary,
+         })
+     }
+
+     addToCart = () => {
+        let item = {}
+        item.id = this.state.id
+        item.ename = this.state.ename
+        item.url = this.state.url
+        item.urls = this.state.urls
+        item.price = this.state.price
+        item.unit = this.state.unit
+        item.sumprice = this.state.sumprice
+
+        let qty =  this.state.num
+        this.props.updateCartItems(item,qty)
+
+        this.refs.cartLightBox.closeModal()
+     }
+
       render() {
         return (
-          <Lightbox verticalPercent={0.4} horizontalPercent={1} justifyContent={'flex-end'}>
+          <Lightbox verticalPercent={0.4} horizontalPercent={1} justifyContent={'flex-end'} ref='cartLightBox' >
             <View>
                 <List>
                     <ListItem thumbnail>
@@ -102,9 +157,13 @@ class AddGoodsModel extends Component {
                         <Text note numberOfLines={1}>{parseFloat(this.state.price).toFixed(2)}{this.state.unit}</Text>
                       </Body>
                       <Right>
-                         <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus' />
-                         <Input style={{wifth:40}}  value={this.state.num}  />
-                         <Icon style={{fontSize:15,color:'#FF2650'}}  name='minus' />
+                           <Item>
+                             <Icon style={{fontSize:15,color:'#FF2650'}}  name='plus'  type="AntDesign" onPress={() => this.add(1)} />
+                               <Text style={{fontSize:15}} >
+                                        {this.state.num}
+                               </Text>
+                             <Icon style={{fontSize:15,color:'#FF2650'}}  name='minus' type="AntDesign" onPress={() => this.add(-1)} />
+                           </Item>
                       </Right>
                     </ListItem>
                 </List>
@@ -113,7 +172,7 @@ class AddGoodsModel extends Component {
                         summary price:{parseFloat(this.state.sumprice).toFixed(2)}{this.state.unit}
                 </Text>
 
-                <Button primary style={styles.buttonstyle} title="Close" onPress={this.closeModal}><Text style={{fontSize:14,}}>Add To Cart</Text></Button>
+                <Button primary style={styles.buttonstyle} title="Close" onPress={()=>this.addToCart()}><Text style={{fontSize:14,}}>Add To Cart</Text></Button>
             </View>
           </Lightbox>
         );
@@ -125,7 +184,8 @@ AddGoodsModel.defaultProps = {
 };
 
 AddGoodsModel.propTypes = {
-  cartData: PropTypes.object,
+  cartData: PropTypes.array.isRequired,
+  updateCartItems: PropTypes.func.isRequired,
 };
 
 function initMapStateToProps(state) {
@@ -135,16 +195,9 @@ function initMapStateToProps(state) {
 }
 
 function initMapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
+  return bindActionCreators({updateCartItems}, dispatch);
 }
 
 export default connect(initMapStateToProps, initMapDispatchToProps)(AddGoodsModel);
 
-{/*
-
-   <Lightbox verticalPercent={0.5} horizontalPercent={1}>
-          <Text>Demo Lightbox: {this.props.goodsInfo}</Text>
-          <Text>Allows transparency for background</Text>
-        </Lightbox>
-
-*/}
+{/**/}

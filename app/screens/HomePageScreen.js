@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Image,Text, View, StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
-import { StyleProvider,Container, Header, Left, Body,Content, Right, Button, Icon, Title,Item,Card, CardItem } from 'native-base';
+import { StyleProvider,Container, Header, Left, Body,Content, Right, Button, Icon, Title,Item,Card, CardItem,Badge } from 'native-base';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -60,7 +60,20 @@ class HomePageScreen extends Component {
 
   //foodListScreen 参数 :catagrory/:goodsName/:isFeature/:isHot/:isNew/:page/:size/:sort
   render() {
-     //console.log("this.props.goodsCatagroryList:",this.props.goodsCatagroryList)
+     let  cart = {}
+     if ( this.props.cartData.length != undefined &&  this.props.cartData.length>0){
+         cart = (
+           <Button badge vertical transparent>
+             <Badge style={{marginLeft:20,marginBottom:-16,backgroundColor:'rgba(0,0,0,.1)',alignItems:'center',textAlign:'center',textAlignVertical:'center'}}>
+               <Text style={{fontSize:12}}>{this.props.cartData.length}</Text>
+             </Badge>
+             <Icon name="cart" style={{fontSize:25,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+           </Button>
+         )
+       } else {
+         cart = (<Icon name="cart" style={{fontSize:25,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />)
+    }
+
     return (
          <StyleProvider  style={getTheme(material)}>
             <Container>
@@ -72,7 +85,7 @@ class HomePageScreen extends Component {
                      <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
                   </Body>
                   <Right>
-                    <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+                    {cart}
                   </Right>
                </Header>
 
@@ -140,9 +153,11 @@ class HomePageScreen extends Component {
 
 
 HomePageScreen.defaultProps = {
+  cartData: null,
 }
 
-HomePageScreen.ProType = {
+HomePageScreen.PropTypes = {
+    cartData: PropTypes.object,
     getGoods:PropTypes.func.isRequired,
     getAdv:PropTypes.func.isRequired,
     getGoodsCatagrory:PropTypes.func.isRequired
@@ -152,6 +167,7 @@ function initMapStateToProps(state){
   // store 数据传递过来  与本页面定义的state数据不同集合
   // console.log("initMapStateToProps this.state:",state,"------------------------")
   return {
+      cartData: state.cart.cartData,
       advList: state.home.advList,
       goodsList: state.home.goodsList,
       goodsCatagroryList: state.home.catagroryFullList,

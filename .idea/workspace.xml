@@ -8,12 +8,16 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/5.4.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/base_components/BaseLightbox.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/base_components/BaseLightbox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/foodlist/FoodList.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/foodlist/FoodList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/components/home/FeatureCoursel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/home/FeatureCoursel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Checkout/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Checkout/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/components/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/components/Signup.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/screens/AddGoodsModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/AddGoodsModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/CartScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/CartScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/screens/HomePageScreen.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/screens/HomePageScreen.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/error.md" beforeDir="false" afterPath="$PROJECT_DIR$/error.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenshots/23.png" beforeDir="false" afterPath="$PROJECT_DIR$/screenshots/23.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/cart/cartItemsAddSaga.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/cart/cartItemsAddSaga.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/service/api_constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/api_constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/array.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,26 +33,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/router.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="235" column="50" selection-start-line="235" selection-start-column="48" selection-end-line="235" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/screens/AddGoodsModel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+            <state relative-caret-position="193">
+              <caret line="131" column="45" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/base_components/BaseLightbox.js">
+        <entry file="file://$PROJECT_DIR$/app/screens/AddGoodsModel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-24">
-              <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
+            <state relative-caret-position="336">
+              <caret line="140" column="34" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/actions/cart.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="26" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sagas/cart/cartItemsAddSaga.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/array.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -56,35 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/screens/MyScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="77" selection-start-line="2" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/screens/CartScreen.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="229" column="5" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/foodlist/FoodList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="87" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/service/home.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="77" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="77" />
+            <state relative-caret-position="571">
+              <caret line="93" column="141" selection-start-line="93" selection-start-column="125" selection-end-line="93" selection-end-column="141" />
             </state>
           </provider>
         </entry>
@@ -92,17 +87,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/screens/HomePageScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="82" column="84" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="84" />
+            <state relative-caret-position="201">
+              <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/home/FeatureCoursel.js">
+        <entry file="file://$PROJECT_DIR$/app/screens/CartScreen.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="77">
-              <caret line="52" selection-start-line="52" selection-end-line="52" />
+            <state relative-caret-position="2220">
+              <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/components/Checkout/Item.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/error.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="328">
+              <caret line="238" column="19" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -111,39 +124,38 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>flexD</find>
-      <find>flex-end</find>
-      <find>flexDirection:'column'</find>
-      <find>alignItems</find>
-      <find>Button transparent</find>
-      <find>CartScreen</find>
-      <find>MyScreen</find>
-      <find>dimension</find>
-      <find>cart</find>
-      <find>container</find>
-      <find>Scene</find>
-      <find>_renderLightBox</find>
-      <find>flex-</find>
-      <find>BR.js</find>
-      <find>&lt;BR</find>
-      <find>horizontalPercent</find>
-      <find>Button</find>
-      <find>&lt;Button</find>
-      <find>Text</find>
-      <find>VIEW</find>
-      <find>willre</find>
-      <find>AddGoodsModel</find>
-      <find>justifyContent</find>
-      <find>PropTypes.</find>
+      <find>parseInt</find>
+      <find>validat</find>
+      <find>gnum</find>
+      <find>onClick</find>
+      <find>onPress=</find>
+      <find>this.sta</find>
+      <find>cartItemsAddSaga</find>
+      <find>saveNewCart</find>
+      <find>cartItemsSelector</find>
+      <find>Actions.cartScreen</find>
+      <find>cartScreen</find>
+      <find>ProType</find>
+      <find>propTypes</find>
+      <find>advList</find>
+      <find>badgeBg</find>
+      <find>'center'</find>
+      <find>rgba</find>
+      <find>undefi</find>
       <find>cartData</find>
-      <find>source=</find>
-      <find>Input</find>
-      <find>fontF</find>
-      <find>weight</find>
-      <find>Parsefloat</find>
+      <find>DeviceEventEmitter</find>
+      <find>updateCartItems</find>
+      <find>UPDATE_CART_ITEMS</find>
+      <find>deDupeItems</find>
+      <find>renderFooter</find>
+      <find>FooterText</find>
+      <find>PrimaryText</find>
+      <find>PayButton</find>
+      <find>FooterContainer</find>
+      <find>_id</find>
+      <find>₹</find>
     </findStrings>
     <replaceStrings>
-      <replace>16.8.6</replace>
       <replace>16.8.3</replace>
       <replace>ChoiceSendType</replace>
       <replace>HomePageScreen</replace>
@@ -173,6 +185,7 @@
       <replace>height</replace>
       <replace>MyScreen</replace>
       <replace>AddGoodsModel</replace>
+      <replace>$</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -181,12 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/sagas/validateSaga.js" />
-        <option value="$PROJECT_DIR$/app/screens/TestScreen.js" />
-        <option value="$PROJECT_DIR$/app/screens/login/ChoiceSendTypeScreen.js" />
-        <option value="$PROJECT_DIR$/app/components/login/ChoiceSendType.js" />
-        <option value="$PROJECT_DIR$/app/screens/CoureselScreen.js" />
-        <option value="$PROJECT_DIR$/app/components/common/TopHeader.js" />
         <option value="$PROJECT_DIR$/app/components/home/TopCoursel.js" />
         <option value="$PROJECT_DIR$/app/components/home/Categrory.js" />
         <option value="$PROJECT_DIR$/src/constants/assets.js" />
@@ -194,12 +201,10 @@
         <option value="$PROJECT_DIR$/node_modules/react-native-swiper/src/index.js" />
         <option value="$PROJECT_DIR$/bak/FeatureCoursel.js" />
         <option value="$PROJECT_DIR$/src/sagas/authSaga.js" />
-        <option value="$PROJECT_DIR$/error.md" />
         <option value="$PROJECT_DIR$/src/service/restaurants.js" />
         <option value="$PROJECT_DIR$/src/reducers/restaurantReducer.js" />
         <option value="$PROJECT_DIR$/src/sagas/index.js" />
         <option value="$PROJECT_DIR$/src/sagas/restaurantSaga.js" />
-        <option value="$PROJECT_DIR$/app/components/Signup.js" />
         <option value="$PROJECT_DIR$/app/screens/SignupScreen.js" />
         <option value="$PROJECT_DIR$/src/service/request.js" />
         <option value="$PROJECT_DIR$/app/components/Welcome.js" />
@@ -219,23 +224,31 @@
         <option value="$PROJECT_DIR$/app/screens/FoodListScreen.js" />
         <option value="$PROJECT_DIR$/app/App.js" />
         <option value="$PROJECT_DIR$/src/sagas/homeSaga.js" />
-        <option value="$PROJECT_DIR$/app/screens/HomePageScreen.js" />
         <option value="$PROJECT_DIR$/app/components/home/CategroryList.js" />
         <option value="$PROJECT_DIR$/app/components/Login.js" />
         <option value="$PROJECT_DIR$/app/screens/MyScreen.js" />
         <option value="$PROJECT_DIR$/app/screens/AddToCartModel.js" />
         <option value="$PROJECT_DIR$/app/router.js" />
         <option value="$PROJECT_DIR$/app/components/foodlist/FoodList.js" />
-        <option value="$PROJECT_DIR$/src/service/api_constants.js" />
         <option value="$PROJECT_DIR$/app/components/home/FeatureCoursel.js" />
         <option value="$PROJECT_DIR$/app/base_components/BaseLightbox.js" />
         <option value="$PROJECT_DIR$/src/service/home.js" />
         <option value="$PROJECT_DIR$/bak/FeatureCourselFlatList.js" />
+        <option value="$PROJECT_DIR$/src/service/api_constants.js" />
+        <option value="$PROJECT_DIR$/app/components/Signup.js" />
+        <option value="$PROJECT_DIR$/node_modules/native-base/src/theme/components/Badge.js" />
+        <option value="$PROJECT_DIR$/error.md" />
         <option value="$PROJECT_DIR$/app/screens/AddGoodsModel.js" />
+        <option value="$PROJECT_DIR$/app/screens/HomePageScreen.js" />
+        <option value="$PROJECT_DIR$/src/utils/array.js" />
+        <option value="$PROJECT_DIR$/src/sagas/cart/cartItemsAddSaga.js" />
+        <option value="$PROJECT_DIR$/web/screens/CartScreen.js" />
+        <option value="$PROJECT_DIR$/app/components/Checkout/Item.js" />
+        <option value="$PROJECT_DIR$/app/screens/CartScreen.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="827" />
@@ -245,6 +258,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
@@ -252,29 +266,6 @@
             <path>
               <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
-            </path>
-            <path>
-              <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="base_components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="screens" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -291,13 +282,19 @@
               <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="sagas" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="cart" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="rn0.60Stable" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="~/StudioProjects/rn0.60Stable" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="service" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -540,12 +537,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="827" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="826" extended-state="0" />
     <layout>
       <window_info id="Captures" order="0" weight="0.25" />
       <window_info id="Storybook" order="1" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.18252291" />
+      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.22903453" />
       <window_info id="Structure" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
       <window_info id="Designer" order="5" />
@@ -553,15 +549,15 @@
       <window_info id="Resources Explorer" order="7" weight="0.108350955" />
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="0" />
-      <window_info active="true" anchor="bottom" id="RNConsole" order="1" sideWeight="0.4982382" visible="true" weight="0.109550565" />
+      <window_info active="true" anchor="bottom" id="RNConsole" order="1" sideWeight="0.4982382" visible="true" weight="0.27285513" />
       <window_info anchor="bottom" id="TODO" order="2" weight="0.32951945" />
       <window_info anchor="bottom" id="Buck" order="3" weight="0.36498857" />
-      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49947146" weight="0.5492958" />
+      <window_info anchor="bottom" id="Terminal" order="4" sideWeight="0.49947146" weight="0.21097046" />
       <window_info anchor="bottom" id="Event Log" order="5" sideWeight="0.5017618" side_tool="true" weight="0.54366195" />
       <window_info anchor="bottom" id="Version Control" order="6" weight="0.2" />
       <window_info anchor="bottom" id="Debug" order="7" />
       <window_info anchor="bottom" id="Weex Console" order="8" weight="0.32951945" />
-      <window_info anchor="bottom" id="Find" order="9" weight="0.32816902" />
+      <window_info anchor="bottom" id="Find" order="9" weight="0.32770744" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Theme Preview" order="1" />
       <window_info anchor="right" id="Palette&#9;" order="2" />
@@ -596,110 +592,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="首页" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/service/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="31" column="12" selection-start-line="31" selection-start-column="2" selection-end-line="31" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/orderSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="23" column="17" lean-forward="true" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/restaurantSaga.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="46" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native/ReactCommon/cxxreact/NativeToJsBridge.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3525">
-          <caret line="235" column="21" selection-start-line="235" selection-start-column="5" selection-end-line="235" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/react-native/ReactCommon/cxxreact/NativeToJsBridge.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="87" lean-forward="true" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/home/Categrory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/bak/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="186" column="56" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/foodsReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="52" column="45" lean-forward="true" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Welcome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="47" column="92" selection-start-line="47" selection-start-column="92" selection-end-line="47" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/WelcomeScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="22" column="37" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/RestaurantList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="12" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="21" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/home/HotCoursel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/SignupScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="151" column="40" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Podfile">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/screens/SplashScreen.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -823,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/Signup.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="53" column="112" selection-start-line="53" selection-start-column="109" selection-end-line="53" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/screens/LoginScreen.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="521">
@@ -858,69 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/api_constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="30" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/HomePageScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="82" column="84" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/home/FeatureCoursel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="52" selection-start-line="52" selection-end-line="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/CartScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="229" column="5" selection-start-line="229" selection-start-column="4" selection-end-line="229" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/screens/MyScreen.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="77" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/base_components/BaseLightbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-24">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/router.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="235" column="50" selection-start-line="235" selection-start-column="48" selection-end-line="235" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="77" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/components/foodlist/FoodList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
@@ -928,10 +750,172 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/foodlist/FoodList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1950">
+          <caret line="130" column="28" selection-start-line="130" selection-start-column="28" selection-end-line="130" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/native-base/Fonts/FontAwesome.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/native-base/Fonts/AntDesign.ttf">
+      <provider selected="true" editor-type-id="fontseditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/api_constants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="43" selection-start-line="4" selection-start-column="43" selection-end-line="4" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/utils/Validate.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/food.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/cart/cartItemsFetchSaga.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/cart/cartItemsUpdateQtySaga.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/home/FeatureCoursel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="589">
+          <caret line="52" selection-start-line="52" selection-end-line="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Signup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="96" column="18" selection-start-line="96" selection-start-column="18" selection-end-line="96" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="46" column="32" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/base_components/BaseLightbox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="33" column="12" selection-start-line="33" selection-start-column="2" selection-end-line="33" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/screens/RestaurantInfoScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="40" column="63" selection-start-line="40" selection-start-column="63" selection-end-line="40" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/native-base/src/theme/components/Badge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="35" column="14" lean-forward="true" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/native-base/src/basic/Badge.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/screens/MyScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="93" column="141" selection-start-line="93" selection-start-column="125" selection-end-line="93" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/screens/CartScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="104" column="21" selection-start-line="104" selection-start-column="17" selection-end-line="104" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="131" column="45" selection-start-line="131" selection-start-column="35" selection-end-line="131" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/error.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="238" column="19" selection-start-line="238" selection-start-column="1" selection-end-line="238" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/screens/AddGoodsModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
+        <state relative-caret-position="336">
+          <caret line="140" column="34" selection-start-line="140" selection-start-column="19" selection-end-line="140" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/actions/cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="26" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/array.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sagas/cart/cartItemsAddSaga.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/screens/HomePageScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="61" column="12" selection-start-line="61" selection-start-column="12" selection-end-line="61" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/screens/CartScreen.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2220">
+          <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/components/Checkout/Item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>

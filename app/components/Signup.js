@@ -94,7 +94,7 @@ class SignupComponent extends Component {
                     </Item>
                   </Form>
 
-                   <View style={styles.box}>
+                  <View style={styles.box}>
                        <View style={styles.list}>
                          <Icon name="facebook-official"  type="FontAwesome" style={{fontSize:25, color: '#34C47C'}} onPress={() =>{Actions.pop()}}/>
                        </View>

@@ -145,7 +145,7 @@ layout
     backgroundColor : '#fff'
   },
 
-    <View style={styles.tabBar}>
+ <View style={styles.tabBar}>
             <Pagination
                   containerStyle={{backgroundColor: 'rgba(0, 0, 0, 0.75)' }}
                   dotsLength={3}
@@ -160,73 +160,82 @@ layout
       </View>
 
 <view style="flex:1">
-                       <HotCoursel />
-                    </view>
+    <HotCoursel />
+</view>
 
-    <view style="flex:1">
-       <FeatureCoursel />
-    </view>
-    
-    <FlatList
-        data={[{key: 'a'}, {key: 'b'}]}
-        renderItem={({item}) => <Text>{item.key}</Text>}
-    />
-      
-      
-    <FlatList
-         data={this.state.topic}
-         keyExtractor={(item, index) => item.gid}
-         renderItem={this.renderFeatrueItem}
-         horizontal={true}
-         showsHorizontalScrollIndicator={false}
-     />  
-    
-    
-     ListHeaderComponent={this.readerHead}
-     ListFooterComponent={this.readerEnd}
-                          
-                          
-      renderFeatrueItem = ({item})=> {
-            return (
-                <TouchableOpacity style={styles.topicItem}>
-                    <Image source={{uri:item.url}} style={styles.topicImg} />
-                    <View style={styles.topicContainer}>
-                        <View style={styles.topicText}>
-                            <Text style={styles.topicTitle}>{item.title}</Text>
-                            <Text style={styles.topicDesc}>{item.describe}</Text>
-                        </View>
-                        <Text style={styles.topicPrice}>{item.price}</Text>
+<view style="flex:1">
+   <FeatureCoursel />
+</view>
+
+<FlatList
+    data={[{key: 'a'}, {key: 'b'}]}
+    renderItem={({item}) => <Text>{item.key}</Text>}
+/>
+  
+  
+<FlatList
+     data={this.state.topic}
+     keyExtractor={(item, index) => item.gid}
+     renderItem={this.renderFeatrueItem}
+     horizontal={true}
+     showsHorizontalScrollIndicator={false}
+ />  
+
+
+ ListHeaderComponent={this.readerHead}
+ ListFooterComponent={this.readerEnd}
+                      
+                      
+  renderFeatrueItem = ({item})=> {
+        return (
+            <TouchableOpacity style={styles.topicItem}>
+                <Image source={{uri:item.url}} style={styles.topicImg} />
+                <View style={styles.topicContainer}>
+                    <View style={styles.topicText}>
+                        <Text style={styles.topicTitle}>{item.title}</Text>
+                        <Text style={styles.topicDesc}>{item.describe}</Text>
                     </View>
-                </TouchableOpacity>
-            )
-      }
+                    <Text style={styles.topicPrice}>{item.price}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+  }
+  
+  removeClippedSubviews={false}
+                   initialNumToRender={2}
+                   windowSize={400}
+                   refreshing={true}
+                   
+  <Left>
+      <Button transparent></Button>
+  </Left>
+  <Body style={{justifyContent: "center", alignItems: "center", }} >
+     <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
+  </Body>
+  <Right>
+    <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+  </Right>    
+  
+  
+  <Header style={{height:36,backgroundColor:'#FFFFFF',borderWidth:0}}>
+    <Left>
+        <Button transparent></Button>
+    </Left>
+    <Body style={{justifyContent: "center", alignItems: "center", paddingLeft:60}} >
+       <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
+    </Body>
+    <Right>
+      <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
+    </Right>
+ </Header>           
       
-      removeClippedSubviews={false}
-                       initialNumToRender={2}
-                       windowSize={400}
-                       refreshing={true}
-                       
-      <Left>
-          <Button transparent></Button>
-      </Left>
-      <Body style={{justifyContent: "center", alignItems: "center", }} >
-         <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
-      </Body>
-      <Right>
-        <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
-      </Right>    
+ <Header noLeft>
+ 
+  <Header transparent>
+ <Left>
+      <Button transparent>      
       
       
-      <Header style={{height:36,backgroundColor:'#FFFFFF',borderWidth:0}}>
-        <Left>
-            <Button transparent></Button>
-        </Left>
-        <Body style={{justifyContent: "center", alignItems: "center", paddingLeft:60}} >
-           <Title style={{fontSize:20,color: '#34C47C'}}>One Food</Title>
-        </Body>
-        <Right>
-          <Icon name="cart" style={{fontSize:20,color: '#34C47C'}} onPress={() => Actions.cartScreen({id: ''})} />
-        </Right>
-     </Header>           
-                       
-                       
+ DeviceEventEmitter.emit('haveAddCart', {...item,'qty':qty});
+ this.deEmitter.remove();
+ DeviceEventEmitter             
