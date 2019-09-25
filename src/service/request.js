@@ -19,11 +19,11 @@ const request = (options) => {
   const onError = (error) => {
     console.log('Request Failed:', error.config);
     if (error.response) {
-      console.log('Status:', error.response.status);
-      console.log('Data:', error.response.data);
-      console.log('Headers:', error.response.headers);
+      console.log('Request Status:', error.response.status);
+      console.log('Request  Data:', error.response.data);
+      console.log('Request Headers:', error.response.headers);
     } else {
-      console.log('Error Message:', error.message);
+      console.log('Request Error Message:', error.message);
     }
     return Promise.reject(error.response || error.message);
   };

@@ -5,7 +5,8 @@ const initialState = {
   registerLoading: false,
   registerError: null,
   registerMessage: null,
-  showToast:false
+  showToast:false,
+  shop:null
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -63,6 +64,8 @@ export default (state = initialState, { type, payload }) => {
              ...rest,
              ...payload,
        };
+    case 'GET_SHOP_SUCCESS':
+        return {shop:payload};
     default:
       return state;
   }

@@ -1,5 +1,5 @@
 import request from './request';
-import { LOGIN_URL, REGISTER_URL } from './api_constants';
+import { LOGIN_URL, REGISTER_URL,GET_SHOP_URL } from './api_constants';
 
 const shopId = 2;
 
@@ -27,7 +27,15 @@ function doRegister(account, useremail,mobile,password,firstname,lastname) {
   return request({ url: REGISTER_URL, method: 'POST', data });
 }
 
+function getShop() {
+   const data = {}
+   const url = GET_SHOP_URL + "/" +  shopId
+   return request({ url: url, method: 'GET', data });
+}
+
+
 export default {
   doLogin,
   doRegister,
+  getShop
 };

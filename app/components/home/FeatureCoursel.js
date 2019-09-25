@@ -86,9 +86,6 @@ class  FeatureCoursel extends Component {
     }
 
   render () {
-     //const {goodsList} =  this.props
-     //console.log("FeatureCoursel goodsList:",goodsList)
-
     return (
         <View style={styles.topic}>
              <FlatList

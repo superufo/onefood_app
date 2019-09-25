@@ -78,7 +78,6 @@ SearchListScreen.ProType = {
 
 function initMapStateToProps(state){
   // store 数据传递过来  与本页面定义的state数据不同集合
-  console.log("SearchListScreen initMapStateToProps this.state:",state,"------------------------")
   return {
       searchList: state.home.searchList,
   };

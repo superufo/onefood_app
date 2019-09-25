@@ -16,7 +16,6 @@ import PrimaryText from '../base_components/PrimaryText';
 import { deleteCartItem, fetchCartItems, updateCartItemQty } from '../../src/actions/cart';
 import { createOrder } from '../../src/actions';
 
-
 const FooterContainer = styled.View`
   height: 5%;
   width: 100%;
@@ -91,7 +90,8 @@ class CartScreen extends Component {
     <Item
       key={item.id}
       ename={item.ename}
-      price={`{item.unit}{item.price * item.qty}`}
+      price={item.price * item.qty}
+      unit = {item.unit}
       qty={item.qty}
       onChange={qty => this.handleItemValueChange(item, qty)}
     />
@@ -146,7 +146,7 @@ class CartScreen extends Component {
       return (
         <FooterContainer>
           <AmountContainer>
-            <PrimaryText>$ {totalAmount}</PrimaryText>
+            <PrimaryText>$ {parseFloat(totalAmount).toFixed(2)}</PrimaryText>
           </AmountContainer>
           <PayButton
             onPress={() => this.handlePayment(totalAmount)}
@@ -168,7 +168,7 @@ class CartScreen extends Component {
       (total, item) => total + (item.price * item.qty),
       0,
     ));
-    const taxPercent = 8;
+    const taxPercent = this.props.shop.tax * 100;
 
     const tax = +(totalBill * (taxPercent / 100)).toFixed(2);
 
@@ -217,6 +217,7 @@ CartScreen.defaultProps = {
 };
 
 CartScreen.propTypes = {
+  shop:PropTypes.object,
   cartData: PropTypes.array.isRequired,
   deleteCartItem: PropTypes.func.isRequired,
   fetchCartItems: PropTypes.func.isRequired,
@@ -225,10 +226,10 @@ CartScreen.propTypes = {
   createdOrder: PropTypes.object,
 };
 
-
 function initMapStateToProps(state) {
   return {
     cartData: state.cart.cartData,
+    shop: state.auth.shop,
     createdOrder: state.orders.createdOrder,
   };
 }

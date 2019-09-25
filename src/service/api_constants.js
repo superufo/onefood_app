@@ -11,6 +11,8 @@ export const GET_GOODS_URL = '/api/shopGoods';
 export const GET_GOODSBYID_URL = '/api/getGoodsInfo';
 export const GET_GOODS_CATAGRORY_URL = '/api/shopGoodsCatagrory';
 
+export const GET_SHOP_URL = '/api/shop';
+
 export const RESTAURANT_URL = '/restaurant';
 export const RESTAURANT_FILTER_URL = '/restaurant/filter';
 export const FOOD_INFO_URL = '/food';

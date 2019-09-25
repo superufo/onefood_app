@@ -14,7 +14,7 @@ import homeReducer from './home';
 const authPersistConfig = {
   key: 'auth',
   storage,
-  whitelist: ['loginMessage'],
+  whitelist: ['loginMessage','shop'],
   stateReconciler: autoMergeLevel2,
 };
 

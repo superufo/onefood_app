@@ -32,7 +32,7 @@ const PriceText = styled.Text`
 `;
 
 const Item = ({
-   key,ename, price, onChange, qty,
+   key,ename,price,unit,onChange,qty,
 }) => (
   <Container>
     <NameView>
@@ -40,7 +40,7 @@ const Item = ({
     </NameView>
     <RightSection>
       <CounterButton onChange={onChange} qty={qty} />
-      <PriceText>{price}</PriceText>
+      <PriceText>{price}{unit}</PriceText>
     </RightSection>
   </Container>
 );

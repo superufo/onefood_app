@@ -41,11 +41,11 @@ class DeviceStorage {
      */
     static save(key, value) {
         if ( typeof value == Object )  {
-           console.log("DeviceStorage save key Object:",key," value:",JSON.stringify(value));
+           //console.log("DeviceStorage save key Object:",key," value:",JSON.stringify(value));
            return AsyncStorage.setItem(key, JSON.stringify(value));
         }
 
-        console.log("DeviceStorage save key String:",key," value:",value);
+        //console.log("DeviceStorage save key String:",key," value:",value);
         return AsyncStorage.setItem(key, value);
     }
 

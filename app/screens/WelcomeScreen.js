@@ -7,6 +7,8 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 import Welcome from '../components/Welcome';
 
+import { getShop } from '../../src/actions/index';
+
 import { Actions } from 'react-native-router-flux';
 import storage from 'redux-persist/lib/storage';
 import DeviceStorage from '../../src/utils/DeviceStorage';
@@ -19,14 +21,12 @@ class WelcomeScreen extends Component {
   }
 
   componentWillMount(){
-      /*AsyncStorage.getItem("authToken").then( (val)=>{
-        if(  val!=null &&  val!="" ){
-          Actions.rewardScreen();
-        }
-      });*/
+
   }
 
+  // 获取店铺信息
   componentDidMount() {
+      this.props.getShop();
   }
 
   render() {
@@ -40,15 +40,16 @@ class WelcomeScreen extends Component {
 WelcomeScreen.defaultProps = {
 }
 
-WelcomeScreen.ProType = {
+WelcomeScreen.PropTypes = {
+   getShop:PropTypes.func.isRequired,
 }
 
 function initMapStateToProps(State){
   return {}
 }
 
-function InitDispachTOProps(state){
-    return {}
+function InitDispachTOProps(dipatch){
+    return bindActionCreators({getShop}, dipatch);
 }
 
 const styles = StyleSheet.create({

@@ -36,8 +36,6 @@ class HomePageScreen extends Component {
       this.props.getGoodsCatagrory()
       this.props.getGoods()
       this.props.getAdv();
-
-      //console.log("this.props:",this.props)
   }
 
   searchAction = ()=>{
