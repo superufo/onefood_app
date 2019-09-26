@@ -13,6 +13,17 @@ export const GET_GOODS_CATAGRORY_URL = '/api/shopGoodsCatagrory';
 
 export const GET_SHOP_URL = '/api/shop';
 
+//address + miod
+export const GET_All_ADDRESS = '/api/address';
+export const GET_DAFAULT_ADDRESS = '/api/addressdefault';
+
+//  add
+export const ADD_ADDRESS = '/api/address';
+// edit  + miod
+export const EDIT_ADDRESS = '/api/address';
+// delete   + miod
+export const DELETE_ADDRESS = '/api/address';
+
 export const RESTAURANT_URL = '/restaurant';
 export const RESTAURANT_FILTER_URL = '/restaurant/filter';
 export const FOOD_INFO_URL = '/food';

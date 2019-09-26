@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { Actions } from 'react-native-router-flux';
+import { Input,Form,Container,View,Header,Button,Text } from 'native-base';
 
 import Item from '../components/Checkout/Item';
 import AppBase from '../base_components/AppBase';
@@ -15,6 +16,8 @@ import ViewRow from '../base_components/ViewRow';
 import PrimaryText from '../base_components/PrimaryText';
 import { deleteCartItem, fetchCartItems, updateCartItemQty } from '../../src/actions/cart';
 import { createOrder } from '../../src/actions';
+
+import { fetchAddress, fetchDefaultAddress, addAddress, deleteAddress } from '../../src/actions/my';
 
 const FooterContainer = styled.View`
   height: 5%;
@@ -57,7 +60,7 @@ class CartScreen extends Component {
     if (nextProps.createdOrder !== null) {
       const { createdOrder } = nextProps;
       Actions.paymentHome({
-        orderId: createdOrder._id,
+        orderId: createdOrder.id,
         totalAmount: createdOrder.totalCost,
       });
     }
@@ -65,9 +68,9 @@ class CartScreen extends Component {
 
   handleItemValueChange = (item, qty) => {
     if (qty === 0) {
-      this.props.deleteCartItem(item._id);
+      this.props.deleteCartItem(item.id);
     } else {
-      this.props.updateCartItemQty(item._id, qty);
+      this.props.updateCartItemQty(item.id, qty);
     }
   };
 
@@ -77,7 +80,7 @@ class CartScreen extends Component {
     if (cartData.length > 0) {
       console.log("cartData:",cartData)
       const postData = cartData.map(item => ({
-        id: item.food._id,
+        id: item.food.id,
         quantity: item.qty,
         price: item.price,
       }));
@@ -97,6 +100,21 @@ class CartScreen extends Component {
     />
   );
 
+ renderAddressItems = (addressData)=>{
+        if (addressData.length > 0) {
+
+        } else {
+           return (<View>
+                       <Button onPress={() => Actions.choiceAddressModel({id: ''})}>
+                         <Text>
+                             Add Address
+                         </Text>
+                       </Button>
+                   </View>);
+        }
+ }
+
+
   renderCartItems = (cartData) => {
     if (cartData.length > 0) {
       return (
@@ -108,7 +126,7 @@ class CartScreen extends Component {
           }}
           data={cartData}
           renderItem={this._renderItem}
-          keyExtractor={item => item._id}
+          keyExtractor={item => item.id}
         />
       );
     }
@@ -162,7 +180,7 @@ class CartScreen extends Component {
   };
 
   render() {
-    const { cartData } = this.props;
+    const { cartData,address } = this.props;
 
     let totalBill = parseFloat(cartData.reduce(
       (total, item) => total + (item.price * item.qty),
@@ -203,6 +221,8 @@ class CartScreen extends Component {
           <BR size={10} />
           {this.renderCartItems(cartData)}
           <BR />
+          {this.renderAddressItems(address)}
+          <BR />
           {this.renderBillReceipt(billInfo)}
           <BR />
         </ScrollView>
@@ -218,19 +238,34 @@ CartScreen.defaultProps = {
 
 CartScreen.propTypes = {
   shop:PropTypes.object,
+
   cartData: PropTypes.array.isRequired,
   deleteCartItem: PropTypes.func.isRequired,
   fetchCartItems: PropTypes.func.isRequired,
   updateCartItemQty: PropTypes.func.isRequired,
   createOrder: PropTypes.func.isRequired,
   createdOrder: PropTypes.object,
+
+  address: PropTypes.array.isRequired,
+  defaultAddress:PropTypes.object,
+  fetchAddress:PropTypes.func.isRequired,
+  fetchDefaultAddress:PropTypes.func.isRequired,
+  addAddress:PropTypes.func.isRequired,
+  deleteAddress:PropTypes.func.isRequired,
+
 };
 
 function initMapStateToProps(state) {
   return {
     cartData: state.cart.cartData,
     shop: state.auth.shop,
+    address:state.my.address,
     createdOrder: state.orders.createdOrder,
+
+    fetchAddress: state.my.fetchAddress,
+    fetchDefaultAddress: state.my.fetchDefaultAddress,
+    addAddress: state.my.addAddress,
+    deleteAddress: state.my.deleteAddress,
   };
 }
 

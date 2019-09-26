@@ -24,6 +24,8 @@ import ChoiceSendTypeScreen from './screens/login/ChoiceSendTypeScreen';
 import MyScreen from './screens/MyScreen';
 import AddGoodsModel from './screens/AddGoodsModel';
 
+import ChoiceAddressModel from './screens/ChoiceAddressModel';
+
 import HomePageScreen from './screens/HomePageScreen';
 import FoodListScreen from './screens/FoodListScreen';
 import SearchListScreen from './screens/SearchListScreen';
@@ -235,6 +237,9 @@ const AppRouter = () => (
                  {/* Lightbox components will lay over the screen, allowing transparency*/}
                  <Scene  path={"/addGoodsModel/:id"}
                          key="addGoodsModel" component={AddGoodsModel} />
+
+                 <Scene  path={"/choiceAddressModel/:id"}
+                                          key="choiceAddressModel" component={ChoiceAddressModel} />
 
              </Lightbox>
           </Modal>

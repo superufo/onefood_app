@@ -1,3 +1,5 @@
+Google: developonefood@gmail.com psw：xc8tmg2b Facebook,
+
 "native-base": "^2.12.1",
  "presets": ["react-native"]
  

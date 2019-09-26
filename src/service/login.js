@@ -1,5 +1,5 @@
 import request from './request';
-import { LOGIN_URL, REGISTER_URL,GET_SHOP_URL } from './api_constants';
+import { LOGIN_URL, REGISTER_URL,GET_SHOP_URL,GET_All_ADDRESS,GET_DAFAULT_ADDRESS } from './api_constants';
 
 const shopId = 2;
 
@@ -32,7 +32,6 @@ function getShop() {
    const url = GET_SHOP_URL + "/" +  shopId
    return request({ url: url, method: 'GET', data });
 }
-
 
 export default {
   doLogin,

@@ -23,6 +23,7 @@ function* loginTask(action) {
       /*storage.setItem('loginMessage', JSON.stringify(res.data.data));
       storage.setItem("authToken", res.data.data.token);
       storage.setItem("jwtMember", JSON.stringify(res.data.data.jwtMember));*/
+
       if (res.data.data!=null)  DeviceStorage.save('loginMessage', res.data.data);
       if (res.data.data.token!=null) DeviceStorage.save("authToken", res.data.data.token);
       if (res.data.data.jwtMember!=null)  DeviceStorage.save("jwtMember", res.data.data.jwtMember);
