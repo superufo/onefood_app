@@ -11,6 +11,7 @@
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
 #import <GoogleMaps/GoogleMaps.h>
+#import <GooglePlaces/GMSPlacesClient.h>
 
 @implementation AppDelegate
 

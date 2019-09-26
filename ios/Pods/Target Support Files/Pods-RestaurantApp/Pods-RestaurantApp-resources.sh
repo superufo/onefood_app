@@ -97,6 +97,8 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"
+  install_resource "${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Entypo.ttf"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/EvilIcons.ttf"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf"
@@ -109,6 +111,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Zocial.ttf"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle"
+  install_resource "${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/Entypo.ttf"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/EvilIcons.ttf"
   install_resource "${PODS_ROOT}/../../node_modules/@expo/vector-icons/vendor/react-native-vector-icons/Fonts/FontAwesome.ttf"

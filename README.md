@@ -61,21 +61,13 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
 <img src="screenshots/14.png" data-canonical-src="./screenshots/npm.png" width="250" />
 <img src="screenshots/15.png" data-canonical-src="./screenshots/npm.png" width="250" />
 <img src="screenshots/17.png" data-canonical-src="./screenshots/npm.png" width="250" />
-
 <img src="screenshots/20.png" data-canonical-src="./screenshots/npm.png" width="250" />
-
 <img src="screenshots/21.png" data-canonical-src="./screenshots/21.png" width="250" />
-
 <img src="screenshots/22.png" data-canonical-src="./screenshots/22.png" width="250" />
-
 <img src="screenshots/23.png" data-canonical-src="./screenshots/23.png" width="250" />
-
 <img src="screenshots/26.png" data-canonical-src="./screenshots/26.png" width="250" />
-
 <img src="screenshots/25.png" data-canonical-src="./screenshots/25.png" width="250" />
-
 <img src="screenshots/24.png" data-canonical-src="./screenshots/24.png" width="250" />
-
 
 ### 开发
 - forward:  PC->Phone 作为Client客户端,可以任意访问Phone上的 Server 服务器  reverse:反向代理  Phone->PC     8081端口的服务就是React Native项目的一个本地服务器, 用于提供JSBundle包和一些静态资源
@@ -117,6 +109,7 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
     cd D:\sdk\tools\          
     emulator.exe -netdelay  none  -netspeed full -avd api23  -partition-size 2048   
     emulator.exe -netdelay  none  -netspeed full -avd API2301   
+    ios模拟器 open -a Simulator
   ```
   
   打开模拟机dev   

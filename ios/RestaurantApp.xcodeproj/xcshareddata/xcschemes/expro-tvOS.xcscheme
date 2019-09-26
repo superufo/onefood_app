@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "restaurantapp-tvOS.app"
-               BlueprintName = "restaurantapp-tvOS"
-               ReferencedContainer = "container:restaurantapp.xcodeproj">
+               BuildableName = "RestaurantApp-tvOS.app"
+               BlueprintName = "RestaurantApp-tvOS"
+               ReferencedContainer = "container:RestaurantApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "restaurantapp-tvOSTests.xctest"
-               BlueprintName = "restaurantapp-tvOSTests"
-               ReferencedContainer = "container:restaurantapp.xcodeproj">
+               BuildableName = "RestaurantApp-tvOSTests.xctest"
+               BlueprintName = "RestaurantApp-tvOSTests"
+               ReferencedContainer = "container:RestaurantApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -55,29 +55,27 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
+            BuildableName = "RestaurantApp-tvOS.app"
+            BlueprintName = "RestaurantApp-tvOS"
+            ReferencedContainer = "container:RestaurantApp.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "restaurantapp-tvOSTests.xctest"
-               BlueprintName = "restaurantapp-tvOSTests"
-               ReferencedContainer = "container:restaurantapp.xcodeproj">
+               BuildableName = "RestaurantApp-tvOSTests.xctest"
+               BlueprintName = "RestaurantApp-tvOSTests"
+               ReferencedContainer = "container:RestaurantApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "restaurantapp-tvOS.app"
-            BlueprintName = "restaurantapp-tvOS"
-            ReferencedContainer = "container:restaurantapp.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -94,13 +92,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "restaurantapp-tvOS.app"
-            BlueprintName = "restaurantapp-tvOS"
-            ReferencedContainer = "container:restaurantapp.xcodeproj">
+            BuildableName = "RestaurantApp-tvOS.app"
+            BlueprintName = "RestaurantApp-tvOS"
+            ReferencedContainer = "container:RestaurantApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -113,9 +109,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "restaurantapp-tvOS.app"
-            BlueprintName = "restaurantapp-tvOS"
-            ReferencedContainer = "container:restaurantapp.xcodeproj">
+            BuildableName = "RestaurantApp-tvOS.app"
+            BlueprintName = "RestaurantApp-tvOS"
+            ReferencedContainer = "container:RestaurantApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
