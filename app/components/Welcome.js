@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, Dimensions,  StyleSheet, TouchableOpacity, ImageBackground } from "react-native";
+import AsyncStorage from '@react-native-community/async-storage';
 import { Toast,Container,View, Header, Left, Body,Content, Right, Button, Icon,Text,Title, Grid ,Row,StyleProvider,Label } from 'native-base';
 import { Actions } from 'react-native-router-flux';
 
@@ -9,7 +10,6 @@ import commonColor from '../../native-base-theme/variables/commonColor';
 
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
-import DeviceStorage from '../../src/utils/DeviceStorage';
 
 import UiAdapter from '../utils/UiAdapter';
 //1080dp/3 * 1920dp/3 = 360px*640px   1px = 9dp
@@ -39,8 +39,8 @@ class RewardWelcome extends Component {
                             <BR size={20} />
 
                             <Button block success onPress={() =>{
-                                                               DeviceStorage.get("authToken").then( (val)=>{
-                                                                    console.log("authToken",val)
+                                                               AsyncStorage.getItem("authToken").then( (val)=>{
+                                                                    console.warn("authToken",val)
                                                                     if (val==null){
                                                                         Actions.loginScreen()
                                                                     }else {

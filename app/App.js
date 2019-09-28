@@ -9,17 +9,21 @@ import LoadingView from './base_components/LoadingView';
 import { YellowBox } from 'react-native';
 
 import { Root } from "native-base";
-import DeviceStorage from '../src/utils/DeviceStorage';
 import { Actions } from 'react-native-router-flux';
 
+import AsyncStorage from '@react-native-community/async-storage';
+
+//屏蔽黄屏广告  也可以使用    console.warn('')  console.error('')  来调试
+console.disableYellowBox = false;
+
+
 //isMounted(...)is deprecated in plain JavaScript React classes解决方法
-YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module  ']);
+YellowBox.ignoreWarnings(['Warning', 'Module']);
 //https://www.jianshu.com/p/8a2b9be974a7  关于 PersistGate
 export default class App extends Component {
   componentWillMount(){
-       DeviceStorage.get("authToken").then( (val)=>{
-         //alert("111111"+ JSON.stringify(val));
-         if( val!=null &&  val!="" ){
+       AsyncStorage.getItem("authToken").then( (token)=>{
+         if( token!=null &&  token!="" ){
            Actions.rewardScreen();
          }
        });

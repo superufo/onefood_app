@@ -10,7 +10,6 @@ import FoodList from '../components/foodlist/FoodList';
 import FoodHeader from '../components/foodlist/FoodHeader';
 
 import { Actions } from 'react-native-router-flux';
-import DeviceStorage from '../../src/utils/DeviceStorage';
 
 import getTheme from '../../native-base-theme/components';
 import material from '../../native-base-theme/variables/material';

@@ -2,7 +2,8 @@ import { call, put, takeLatest } from 'redux-saga/effects';
 import storage from 'redux-persist/lib/storage';
 import Auth from '../service/login';
 
-import DeviceStorage from '../utils/DeviceStorage';
+import React from  'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import {hex_md5} from '../utils/Md5';
 
 
@@ -24,9 +25,9 @@ function* loginTask(action) {
       storage.setItem("authToken", res.data.data.token);
       storage.setItem("jwtMember", JSON.stringify(res.data.data.jwtMember));*/
 
-      if (res.data.data!=null)  DeviceStorage.save('loginMessage', res.data.data);
-      if (res.data.data.token!=null) DeviceStorage.save("authToken", res.data.data.token);
-      if (res.data.data.jwtMember!=null)  DeviceStorage.save("jwtMember", res.data.data.jwtMember);
+      if (res.data.data!=null)  AsyncStorage.setItem('loginMessage', JSON.stringify(res.data.data));
+      if (res.data.data.token!=null) AsyncStorage.setItem("authToken", res.data.data.token);
+      if (res.data.data.jwtMember!=null)  AsyncStorage.setItem("jwtMember", JSON.stringify(res.data.data.jwtMember));
 
       yield put({
         type: 'AUTH_LOGIN_SUCCESS',
@@ -89,7 +90,7 @@ function* registerTask(action) {
 function* logoutTask() {
   try {
     storage.removeItem('authToken');
-    DeviceStorage.remove("authToken");
+    AsyncStorage.removeItem("authToken");
     yield put({
       type: 'AUTH_LOGOUT_RESET',
     });

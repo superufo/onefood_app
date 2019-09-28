@@ -47,7 +47,7 @@ class BillReceipt extends React.Component {
       <Paper elevation={2} style={{ width: '80vw', marginTop: '2%' }}>
         <MainContainer>
           <Container>
-            <BillTitle>Bill Receipt</BillTitle>
+            <RewardScreen>Bill Receipt</BillTitle>
             {
             this.props.billInfo.map(item => (
               <BillRow key={item.name}>

@@ -35,11 +35,14 @@ import RewardScreen from './screens/reward/RewardScreen';
 import { Icon } from 'native-base';
 import storage from 'redux-persist/lib/storage';
 
-import DeviceStorage from '../src/utils/DeviceStorage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 //import TabNavigation from './screens/TabNavigation';
 var inited = false;
-DeviceStorage.get("authToken").then( (val)=>{
+AsyncStorage.getItem("authToken").then( (token)=>{
+     if (token!=null){
+        inited = true
+     }
 });
 
 const MenuIcon = ({focused , title}) => {

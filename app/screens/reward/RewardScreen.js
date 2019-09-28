@@ -8,23 +8,32 @@ import RewardIndex from '../../components/reward/RewardIndex';
 class RewardScreen extends Component {
   render() {
     return (
-     <RewardIndex />
+     <RewardIndex  cartData={this.props.cartData} />
     );
   }
 }
 
 RewardScreen.defaultProps = {
+  cartData: null,
 }
 
-RewardScreen.ProType = {
+RewardScreen.PropTypes = {
+    cartData: PropTypes.object,
 }
 
-function initMapStateToProps(State){
-  return {}
+function initMapStateToProps(state){
+  // store 数据传递过来  与本页面定义的state数据不同集合
+  // console.log("initMapStateToProps this.state:",state,"------------------------")
+  return {
+      cartData: state.cart.cartData,
+  };
 }
 
-function InitDispachTOProps(state){
-    return {}
+function InitDispachTOProps(dipatch){
+    return bindActionCreators({
+
+      }, dipatch);
 }
+
 
 export default connect(initMapStateToProps,InitDispachTOProps)(RewardScreen);

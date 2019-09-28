@@ -12,7 +12,6 @@ import FeatureCoursel from '../components/home/FeatureCoursel';
 import CategroryList from '../components/home/CategroryList';
 
 import { Actions } from 'react-native-router-flux';
-import DeviceStorage from '../../src/utils/DeviceStorage';
 
 import getTheme from '../../native-base-theme/components';
 import material from '../../native-base-theme/variables/material';
@@ -75,7 +74,7 @@ class HomePageScreen extends Component {
     return (
          <StyleProvider  style={getTheme(material)}>
             <Container>
-               <Header style={{height:36,backgroundColor:'#FFFFFF',borderWidth:0}}>
+               <Header noleft transparent>
                   <Left>
                       <Button transparent></Button>
                   </Left>

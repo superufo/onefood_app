@@ -33,6 +33,9 @@ target 'RestaurantApp' do
   pod 'Google-Maps-iOS-Utils'
   pod 'GooglePlaces'
 
+
+  pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
+
   target 'RestaurantAppTests' do
     inherit! :search_paths
     # Pods for testing

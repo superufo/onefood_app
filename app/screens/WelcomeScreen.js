@@ -11,9 +11,8 @@ import { getShop } from '../../src/actions/index';
 
 import { Actions } from 'react-native-router-flux';
 import storage from 'redux-persist/lib/storage';
-import DeviceStorage from '../../src/utils/DeviceStorage';
 
-import { AsyncStorage} from  'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 
 class WelcomeScreen extends Component {
   constructor(props) {

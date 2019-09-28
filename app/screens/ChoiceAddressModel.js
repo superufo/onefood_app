@@ -1,25 +1,14 @@
-import React, { Component } from 'react';
-import { TextInput, Image, TouchableOpacity, ImageBackground,AsyncStorage,Dimensions,StyleSheet, View, Text, ScrollView} from "react-native";
-import { Col, Row, Grid } from "react-native-easy-grid";
-import { Actions } from 'react-native-router-flux';
+import React from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+  TouchableOpacity,
+} from 'react-native';
+import MapView, { ProviderPropType } from 'react-native-maps';
+import MyLocationMapMarker from '../components/map/MyLocationMapMarker';
 
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import PropTypes from 'prop-types';
-import API from '../../src/service/home';
-
-import Lightbox from '../base_components/BaseLightbox';
-
-import PriceMarker from './PriceMarker';
-
-import MapView, {
-  PROVIDER_GOOGLE,
-  Marker,
-  ProviderPropType,
-  Polygon,
-  Polyline,
-  Callout,
-} from 'react-native-maps';
 const { width, height } = Dimensions.get('window');
 
 const ASPECT_RATIO = width / height;
@@ -27,31 +16,8 @@ const LATITUDE = 37.78825;
 const LONGITUDE = -122.4324;
 const LATITUDE_DELTA = 0.0922;
 const LONGITUDE_DELTA = LATITUDE_DELTA * ASPECT_RATIO;
-let id = 0;
 
-class Event extends React.Component {
-  shouldComponentUpdate(nextProps) {
-    return this.props.event.id !== nextProps.event.id;
-  }
-
-  render() {
-    const { event } = this.props;
-    return (
-      <View style={styles.event}>
-        <Text style={styles.eventName}>{event.name}</Text>
-        <Text style={styles.eventData}>
-          {JSON.stringify(event.data, null, 2)}
-        </Text>
-      </View>
-    );
-  }
-}
-
-Event.propTypes = {
-  event: PropTypes.object,
-};
-
-class ChoiceAddressModel extends Component {
+class  ChoiceAddressModel extends React.PureComponent {
       constructor(props) {
           super(props);
 
@@ -62,176 +28,77 @@ class ChoiceAddressModel extends Component {
               latitudeDelta: LATITUDE_DELTA,
               longitudeDelta: LONGITUDE_DELTA,
             },
-            events: [],
-          };
-      }
-
-      makeEvent(e, name) {
-          return {
-            id: id++,
-            name,
-            data: e.nativeEvent ? e.nativeEvent : e,
+            coordinate: {
+              latitude: LATITUDE,
+              longitude: LONGITUDE,
+            },
+            amount: 0,
+            enableHack: false,
           };
         }
 
-      recordEvent(name) {
-          return e => {
-            if (e.persist) {
-              e.persist(); // Avoids warnings relating to https://fb.me/react-event-pooling
-            }
-            this.setState(prevState => ({
-              events: [this.makeEvent(e, name), ...prevState.events.slice(0, 10)],
-            }));
-          };
-      }
-
-      componentWillReceiveProps(nextProps) {
-
-      }
-
-      componentWillUnmount() {
-
-      }
-
-      async fetchData(goodsId) {
-
-      }
-
-      choice = () => {
-        this.refs.mapBox.closeModal()
-      }
-
-      render() {
-          // Events that are dependent on
-        let googleProviderProps = {};
-        if (this.props.provider === PROVIDER_GOOGLE) {
-          googleProviderProps = {
-            onUserLocationChange: this.recordEvent('Map::onUserLocationChange'),
-          };
+        increment() {
+          this.setState({ amount: this.state.amount + 10 });
         }
 
-        return (
-          <Lightbox verticalPercent={1} horizontalPercent={1} justifyContent={'flex-end'} ref='mapBox' >
+        decrement() {
+          this.setState({ amount: this.state.amount - 10 });
+        }
+
+        toggleHack() {
+          this.setState({ enableHack: !this.state.enableHack });
+        }
+
+        render() {
+          return (
             <View style={styles.container}>
-                    <MapView
-                      provider={this.props.provider}
-                      style={styles.map}
-                      initialRegion={this.state.region}
-                      showsUserLocation
-                      showsMyLocationButton
-                      onRegionChange={this.recordEvent('Map::onRegionChange')}
-                      onRegionChangeComplete={this.recordEvent(
-                        'Map::onRegionChangeComplete'
-                      )}
-                      onPress={this.recordEvent('Map::onPress')}
-                      onPanDrag={this.recordEvent('Map::onPanDrag')}
-                      onLongPress={this.recordEvent('Map::onLongPress')}
-                      onMarkerPress={this.recordEvent('Map::onMarkerPress')}
-                      onMarkerSelect={this.recordEvent('Map::onMarkerSelect')}
-                      onMarkerDeselect={this.recordEvent('Map::onMarkerDeselect')}
-                      onCalloutPress={this.recordEvent('Map::onCalloutPress')}
-                      {...googleProviderProps}
-                    >
-                      <Marker
-                        coordinate={{
-                          latitude: LATITUDE + LATITUDE_DELTA / 2,
-                          longitude: LONGITUDE + LONGITUDE_DELTA / 2,
-                        }}
-                      />
-                      <Marker
-                        coordinate={{
-                          latitude: LATITUDE - LATITUDE_DELTA / 2,
-                          longitude: LONGITUDE - LONGITUDE_DELTA / 2,
-                        }}
-                      />
-                      <Marker
-                        title="This is a title"
-                        description="This is a description"
-                        coordinate={this.state.region}
-                        onPress={this.recordEvent('Marker::onPress')}
-                        onSelect={this.recordEvent('Marker::onSelect')}
-                        onDeselect={this.recordEvent('Marker::onDeselect')}
-                        onCalloutPress={this.recordEvent('Marker::onCalloutPress')}
-                      >
-                        <PriceMarker amount={99} />
-                        <Callout
-                          style={styles.callout}
-                          onPress={this.recordEvent('Callout::onPress')}
-                        >
-                          <View>
-                            <Text>Well hello there...</Text>
-                          </View>
-                        </Callout>
-                      </Marker>
-                      <Polygon
-                        fillColor={'rgba(255,0,0,0.3)'}
-                        onPress={this.recordEvent('Polygon::onPress')}
-                        tappable
-                        coordinates={[
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 5,
-                            longitude: LONGITUDE + LONGITUDE_DELTA / 4,
-                          },
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 3,
-                            longitude: LONGITUDE + LONGITUDE_DELTA / 4,
-                          },
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 4,
-                            longitude: LONGITUDE + LONGITUDE_DELTA / 2,
-                          },
-                        ]}
-                      />
-                      <Polyline
-                        strokeColor={'rgba(255,0,0,1)'}
-                        onPress={this.recordEvent('Polyline::onPress')}
-                        tappable
-                        coordinates={[
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 5,
-                            longitude: LONGITUDE - LONGITUDE_DELTA / 4,
-                          },
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 3,
-                            longitude: LONGITUDE - LONGITUDE_DELTA / 4,
-                          },
-                          {
-                            latitude: LATITUDE + LATITUDE_DELTA / 4,
-                            longitude: LONGITUDE - LONGITUDE_DELTA / 2,
-                          },
-                        ]}
-                      />
-                    </MapView>
-                    <View style={styles.eventList}>
-                      <ScrollView>
-                        {this.state.events.map(event => (
-                          <Event key={event.id} event={event} />
-                        ))}
-                      </ScrollView>
-                    </View>
+              <MapView
+                provider={this.props.provider}
+                style={styles.map}
+                initialRegion={this.state.region}
+                showsMyLocationButton={true}
+                zoomEnabled={true}
+                zoomTapEnabled={true}
+                zoomControlEnabled={true}
+              >
+                <MyLocationMapMarker
+                  coordinate={this.state.coordinate}
+                  heading={this.state.amount}
+                  enableHack={this.state.enableHack}
+                />
+              </MapView>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                  onPress={() => this.toggleHack()}
+                  style={[styles.bubble, styles.button, styles.hackButton]}
+                >
+                  <Text style={styles.toggleHack}>
+                    {this.state.enableHack ? 'Disable Hack' : 'Enable Hack'}
+                  </Text>
+                </TouchableOpacity>
+              </View>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                  onPress={() => this.decrement()}
+                  style={[styles.bubble, styles.button]}
+                >
+                  <Text style={styles.ammountButton}>-</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={() => this.increment()}
+                  style={[styles.bubble, styles.button]}
+                >
+                  <Text style={styles.ammountButton}>+</Text>
+                </TouchableOpacity>
+              </View>
             </View>
-          </Lightbox>
-        );
+          );
       }
 }
-
-ChoiceAddressModel.defaultProps = {
-
-};
 
 ChoiceAddressModel.propTypes = {
   provider: ProviderPropType,
 };
-
-function initMapStateToProps(state) {
-  return {
-
-  };
-}
-
-function initMapDispatchToProps(dispatch) {
-  return bindActionCreators({}, dispatch);
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -239,34 +106,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  event: {
-    borderBottomWidth: 1,
-    borderBottomColor: '#ccc',
-    padding: 8,
-  },
-  eventData: {
-    fontSize: 10,
-    fontFamily: 'courier',
-    color: '#555',
-  },
-  eventName: {
-    fontSize: 13,
-    fontWeight: 'bold',
-    color: '#222',
-  },
-  eventList: {
-    position: 'absolute',
-    top: height / 2,
-    left: 0,
-    right: 0,
-    bottom: 0,
-  },
   map: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: height / 2,
+    ...StyleSheet.absoluteFillObject,
   },
   bubble: {
     backgroundColor: 'rgba(255,255,255,0.7)',
@@ -284,12 +125,16 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginHorizontal: 10,
   },
+  hackButton: {
+    width: 200,
+  },
   buttonContainer: {
     flexDirection: 'row',
     marginVertical: 20,
     backgroundColor: 'transparent',
   },
+  toggleHack: { fontSize: 12, fontWeight: 'bold' },
+  ammountButton: { fontSize: 20, fontWeight: 'bold' },
 });
 
-
-export default connect(initMapStateToProps, initMapDispatchToProps)(ChoiceAddressModel);
+export default ChoiceAddressModel;

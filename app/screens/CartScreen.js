@@ -1,12 +1,13 @@
 /* eslint-disable react/forbid-prop-types */
 import React, { Component } from 'react';
 import { FlatList, ScrollView } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { bindActionCreators } from 'redux';
 import { Actions } from 'react-native-router-flux';
-import { Input,Form,Container,View,Header,Button,Text } from 'native-base';
+import { Input,Form,Container,View,Header,Button,Text,ListItem,Left,Right,Body } from 'native-base';
 
 import Item from '../components/Checkout/Item';
 import AppBase from '../base_components/AppBase';
@@ -17,7 +18,7 @@ import PrimaryText from '../base_components/PrimaryText';
 import { deleteCartItem, fetchCartItems, updateCartItemQty } from '../../src/actions/cart';
 import { createOrder } from '../../src/actions';
 
-import { fetchAddress, fetchDefaultAddress, addAddress, deleteAddress } from '../../src/actions/my';
+import { addAddress, deleteAddress } from '../../src/actions/my';
 
 const FooterContainer = styled.View`
   height: 5%;
@@ -50,10 +51,32 @@ const FooterText = styled(PrimaryText)`
   font-size: 16px;
 `;
 
-
 class CartScreen extends Component {
+  constructor(props) {
+      super(props);
+      this.state = {
+        mid: null,
+      };
+    }
+
   componentDidMount() {
     this.props.fetchCartItems();
+
+    AsyncStorage.getItem("jwtMember").then( (res)=>{
+       const jwtMember = JSON.parse(res)
+       if (typeof jwtMember != 'undefined' && jwtMember!=null && jwtMember.mid!='undefined' ){
+          const {image,username,mobile,facebook,google,mid,useremail} = jwtMember
+          this.setState({
+                   mid:mid,
+          });
+       }else {
+          Actions.loginScreen()
+       }
+    });
+
+    console.log("address:",this.props.address)
+    console.log("address:",this.props.defaultAddress)
+    console.log("address:",this.props.shop)
   }
 
   componentWillReceiveProps(nextProps, nextContext) {
@@ -80,7 +103,7 @@ class CartScreen extends Component {
     if (cartData.length > 0) {
       console.log("cartData:",cartData)
       const postData = cartData.map(item => ({
-        id: item.food.id,
+        id: item.id,
         quantity: item.qty,
         price: item.price,
       }));
@@ -100,19 +123,76 @@ class CartScreen extends Component {
     />
   );
 
- renderAddressItems = (addressData)=>{
-        if (addressData.length > 0) {
+  addressHeader = ({}) =>
+      (<ListItem>
+        <Text>
+           My Receive Address
+        </Text>
+        <Button transparent style={{width:50}} onPress={() => Actions.choiceAddressModel({id: ''})}>
+          <Text>
+              Add Address
+          </Text>
+        </Button>
+      </ListItem>);
 
-        } else {
-           return (<View>
-                       <Button onPress={() => Actions.choiceAddressModel({id: ''})}>
-                         <Text>
-                             Add Address
+  renderAddressItems = (defaultAddress)=>{
+        if ( defaultAddress != undefined && defaultAddress.zoneVo != undefined  ) {
+           return ( <View style={{elevation: 2,borderWidth: 1,borderColor: '#fcfcfc',alignItems: "flex-start",textAlignVertical:"flex-start",backgroundColor:'white'}}>
+                       <ListItem transparent style={{height:30}}>
+                         <Text style={{fontWeight:'bold',fontSize:16}}>
+                            My Receive Address
                          </Text>
-                       </Button>
-                   </View>);
+                         <Button transparent style={{width:250}} onPress={() => Actions.choiceAddressModel({id: ''})}>
+                           <Text style={{fontWeight:'bold',fontSize:10}}>
+                               Add Address
+                           </Text>
+                         </Button>
+                       </ListItem>
+
+                       <ListItem style={{height:40}}>
+                         <Left>
+
+                         </Left>
+                         <Body>
+                              <Text>{defaultAddress.receiverName}</Text>
+                              <Text>{defaultAddress.receiverMobile}</Text>
+                              <Text numberOfLines={1} note>
+                                {defaultAddress.zoneVo.countryName}  {defaultAddress.zoneVo.provinceName}
+                                {defaultAddress.zoneVo.cityName} {defaultAddress.zoneVo.streetName}
+                                {defaultAddress.detail}
+                              </Text>
+                         </Body>
+                         <Right>
+                            <Button transparent style={{width:50}} >
+                                <Text>
+                                   Choice Another Address
+                                </Text>
+                            </Button>
+                         </Right>
+                      </ListItem>
+                      </View>);
+        } else {
+             return (
+               <View style={{elevation: 2,borderWidth: 1,borderColor: '#fcfcfc',alignItems: "flex-start",textAlignVertical:"flex-start",backgroundColor:'white'}}>
+                    <ListItem transparent style={{height:30}}>
+                         <Text style={{fontWeight:'bold',fontSize:16}}>
+                            My Receive Address
+                         </Text>
+                         <Button transparent style={{width:250}} onPress={() => Actions.choiceAddressModel({id: ''})}>
+                           <Text style={{fontWeight:'bold',fontSize:10}}>
+                               Add Address
+                           </Text>
+                         </Button>
+                    </ListItem>
+                    <ListItem transparent style={{height:40}}>
+                        <Text style={{justifyContent: "center", alignItems: "center", }}>
+                              No address ,please add Address
+                        </Text>
+                    </ListItem>
+               </View>
+             );
         }
- }
+  }
 
 
   renderCartItems = (cartData) => {
@@ -180,16 +260,19 @@ class CartScreen extends Component {
   };
 
   render() {
-    const { cartData,address } = this.props;
+    const { cartData,address,defaultAddress } = this.props;
 
     let totalBill = parseFloat(cartData.reduce(
       (total, item) => total + (item.price * item.qty),
       0,
     ));
-    const taxPercent = this.props.shop.tax * 100;
+
+    const taxPercent = 0
+    if (this.props.shop.tax != undefined){
+        const taxPercent = this.props.shop.tax * 100;
+    }
 
     const tax = +(totalBill * (taxPercent / 100)).toFixed(2);
-
     const billInfo = [
       {
         name: 'Items Total',
@@ -221,7 +304,7 @@ class CartScreen extends Component {
           <BR size={10} />
           {this.renderCartItems(cartData)}
           <BR />
-          {this.renderAddressItems(address)}
+          {this.renderAddressItems(defaultAddress)}
           <BR />
           {this.renderBillReceipt(billInfo)}
           <BR />
@@ -234,38 +317,39 @@ class CartScreen extends Component {
 
 CartScreen.defaultProps = {
   createdOrder: null,
+
+  shop:null,
+  cartData: null,
+  address: null,
+  defaultAddress:null,
 };
 
 CartScreen.propTypes = {
   shop:PropTypes.object,
-
   cartData: PropTypes.array.isRequired,
+  address: PropTypes.array.isRequired,
+  defaultAddress:PropTypes.object,
+
   deleteCartItem: PropTypes.func.isRequired,
   fetchCartItems: PropTypes.func.isRequired,
   updateCartItemQty: PropTypes.func.isRequired,
   createOrder: PropTypes.func.isRequired,
   createdOrder: PropTypes.object,
 
-  address: PropTypes.array.isRequired,
-  defaultAddress:PropTypes.object,
   fetchAddress:PropTypes.func.isRequired,
   fetchDefaultAddress:PropTypes.func.isRequired,
   addAddress:PropTypes.func.isRequired,
   deleteAddress:PropTypes.func.isRequired,
-
 };
 
 function initMapStateToProps(state) {
   return {
     cartData: state.cart.cartData,
-    shop: state.auth.shop,
-    address:state.my.address,
     createdOrder: state.orders.createdOrder,
 
-    fetchAddress: state.my.fetchAddress,
-    fetchDefaultAddress: state.my.fetchDefaultAddress,
-    addAddress: state.my.addAddress,
-    deleteAddress: state.my.deleteAddress,
+    shop: state.auth.shop,
+    address:state.my.address,
+    defaultAddress:state.my.defaultAddress
   };
 }
 
@@ -275,6 +359,8 @@ function initMapDispatchToProps(dipatch) {
     fetchCartItems,
     updateCartItemQty,
     createOrder,
+    addAddress,
+    deleteAddress
   }, dipatch);
 }
 

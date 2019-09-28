@@ -4,7 +4,6 @@ import { Container,View,Header,Left,Body, Right,Button, Content,Icon,Title,Subti
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Actions } from 'react-native-router-flux';
 
-import DeviceStorage from '../../src/utils/DeviceStorage';
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
 
@@ -13,15 +12,17 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 class MyScreen extends Component {
-  render() {
+  async render() {
        let  thumbnail = null
-       if (this.props.loginMessage.jwtMember!=null) {
-            const loginMessageInStorage =  AsyncStorage.getItem("loginMessage");
-            console.log("this.props.loginMessage.jwtMember:",this.props.loginMessage.jwtMember)
 
-            const {image,username,mobile,facebook,google,userpoint,useremail} = this.props.loginMessage.jwtMember
+       const loginMessageString = await AsyncStorage.getItem("loginMessage");
+       const loginMessage = JSON.parse(loginMessageString)
+       if ( loginMessage!=undefined && loginMessage.jwtMember!=undefined) {
+            const loginMessageString = await AsyncStorage.getItem("loginMessage");
+            const loginMessage = JSON.parse(loginMessageString)
+
+            const {image,username,mobile,facebook,google,userpoint,useremail} = loginMessage.jwtMember
             let point = (userpoint==null) ? 0 : userpoint
-
             thumbnail = (
                          <TouchableOpacity>
                            <Thumbnail large source={{uri:image}}/>

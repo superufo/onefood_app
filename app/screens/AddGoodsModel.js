@@ -4,7 +4,6 @@ import { Input,Form,Container,View,Header,Left,Body, Right,Button, Content,Icon,
 import { Col, Row, Grid } from "react-native-easy-grid";
 import { Actions } from 'react-native-router-flux';
 
-import DeviceStorage from '../../src/utils/DeviceStorage';
 import Assets from '../../src/constants/assets';
 import BR from '../base_components/BR';
 
