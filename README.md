@@ -113,7 +113,10 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
      adb shell input keyevent 82  
   ```
 
-  模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,有一些可能是10.0.0.2,模拟器会映射到PC本地的localhost  
+  模拟器上想要访问PC本地的localhost的话，要用10.0.2.2,
+
+
+z有一些可能是10.0.0.2,模拟器会映射到PC本地的localhost  
 
 - native-base 库定制界面
 
@@ -205,6 +208,14 @@ BoilerPlate Used React.JS [https://github.com/Codebrahma/Codebrahma-React-Boiler
    
   ```
 
+
+- 线上 
+
+  ```
+  更好的版本请切换到 rn0.60 上版本 分支 rn0.60Stable  
+   
+   
+  ```
      
 
 
